@@ -1,0 +1,452 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tổng quan</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="GiaSuNLU Templates" name="keywords">
+    <meta content="GiaSuNLU Templates" name="description">
+
+    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+<!-- Topbar Start -->
+<div class="container-fluid d-none d-lg-block">
+    <div class="row align-items-center py-4 px-xl-5">
+        <div class="col-lg-3">
+            <a href="" class="text-decoration-none">
+                <h1 class="m-0"><span class="text-primary">MY</span>TUTOR</h1>
+            </a>
+        </div>
+        <div class="col-lg-3 text-right">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-2x fa-map-marker-alt text-primary mr-3"></i>
+                <div class="text-left">
+                    <h6 class="font-weight-semi-bold mb-1">Địa chỉ</h6>
+                    <small>Đường số 8, Linh Trung, TP.Thủ Đức</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 text-right">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-2x fa-envelope text-primary mr-3"></i>
+                <div class="text-left">
+                    <h6 class="font-weight-semi-bold mb-1">Email</h6>
+                    <small>giasunlu@gmail.com</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 text-right">
+            <div class="d-inline-flex align-items-center">
+                <i class="fa fa-2x fa-phone text-primary mr-3"></i>
+                <div class="text-left">
+                    <h6 class="font-weight-semi-bold mb-1">Liên hệ</h6>
+                    <small>012 345 6789</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+
+<!-- Navbar Start -->
+<div class="container-fluid hr-header">
+    <div class="row border-top px-xl-5">
+        <div class="col-lg-2 d-none d-lg-block">
+            <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
+                <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Cấp bậc</h5>
+                <i class="fa fa-angle-down text-primary"></i>
+            </a>
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
+                <div class="navbar-nav w-100">
+                    <a href="" class="nav-item nav-link">Cấp 1</a>
+                    <a href="" class="nav-item nav-link">Cấp 2</a>
+                    <a href="" class="nav-item nav-link">Cấp 3</a>
+                    <a href="" class="nav-item nav-link">Đại học</a>
+                </div>
+            </nav>
+        </div>
+        <div class="col-lg-10">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                <a href="" class="text-decoration-none d-block d-lg-none">
+                    <h1 class="m-0"><span class="text-primary">MY</span>TUTOR</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav py-0">
+                        <a href="index.jsp" class="nav-item nav-link">Trang chủ</a>
+                        <a href="about.jsp" class="nav-item nav-link">Giới thiệu</a>
+                        <a href="service.jsp" class="nav-item nav-link">Dịch vụ</a>
+                        <a href="teacher.jsp" class="nav-item nav-link">Gia sư</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown">Dành cho gia sư</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="overview.jsp" class="dropdown-item">Tổng quan</a>
+                                <a href="new-class-list.jsp" class="dropdown-item">Danh sách lớp mới</a>
+                                <a href="receive-class.jsp" class="dropdown-item">Cách thức nhận lớp</a>
+                                <a href="refund-policy.jsp" class="dropdown-item">Chính sách hoàn phí</a>
+                                <a href="contract.jsp" class="dropdown-item">Hợp đồng mẫu</a>
+                                <a href="class-status.jsp" class="dropdown-item">Kiểm tra tình trạng lớp</a>
+                                <a href="note-receive-class.jsp" class="dropdown-item">Tạo note nhận lớp</a>
+                                <a href="debt-policy.jsp" class="dropdown-item">Chính sách nợ phí</a>
+                                <a href="class-admission-fee.jsp" class="dropdown-item">Tính lại phí nhận lớp </a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="blog-customer.jsp" class="dropdown-item">Blog khách hàng</a>
+                                <a href="blog-tutor.jsp" class="dropdown-item">Blog gia sư</a>
+                            </div>
+                        </div>
+                        <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
+                    </div>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="my-account.jsp">Quản lý tài khoản</a>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="register.jsp">Đăng ký làm gia sư</a>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->
+
+<main role="main">
+    <section class="py-4">
+        <div class="container container-sm">
+            <nav>
+                <ol class="my-breadcrumb breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+                    <li class="breadcrumb-item">Dành cho gia sư</li>
+                    <li class="breadcrumb-item">Tổng quan</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+<section class="bg-light-blue py-5">
+
+    <div class="container py-2">
+
+        <div class="row">
+
+            <div class="col-lg-6 pr-lg-5">
+                <img src="img/homepage/kien-thuc-gia-su-2020.jpg" alt="Kiến thức gia sư">
+            </div>
+
+            <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center justify-content-center">
+
+                <div class="text-center">
+                    <h2 class="h3 mb-3 text-333">Gia tăng thu nhập bằng kiến thức và kỹ năng giảng dạy của bạn</h2>
+                    <p class="mb-4">Mức thu nhập hấp dẫn, từ 120.000đ - 400.000đ / 1 buổi dạy.</p>
+                    <div>
+                        <a href="/register" class="btn btn-outline-callout mt-2">Đăng ký làm gia sư ngay<i class="fas fa-arrow-right ml-2"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div><!-- End row -->
+
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container bg-step py-3">
+
+        <div class="text-center">
+            <h2 class="h3">Nhận lớp tại GiaSuNLU với <span class="d-inline-block">3 bước:</span></h2>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-lg-8 offset-lg-3">
+
+                <div class="step-group">
+                    <div class="step-item pb-4">
+                        <span class="icon-number">1</span>
+                        <div class="step-ct">
+                            <h3 class="h5 mb-3">Tìm lớp phù hợp</h3>
+                            <p>Có quá nhiều lớp. Không sao cả! Sử dụng công cụ tìm kiếm hoặc bộ lọc sẽ giúp bạn dễ dàng lựa chọn lớp phù hợp.</p>
+                            <p>Đến trang <a href="new-class-list.jsp" target="_blank">Danh sách lớp mới</a></p>
+                        </div>
+                    </div>
+
+                    <div class="step-item pb-4">
+                        <span class="icon-number">2</span>
+                        <div class="step-ct">
+                            <h3 class="h5 mb-3">Tạo note nhận lớp</h3>
+                            <p>Sau khi đã xem chi tiết lớp, hãy nhấp vào nút [Đăng ký nhận lớp]. Phần tiếp theo rất đơn giản, các công cụ của website sẽ hướng dẫn chi tiết cho bạn.</p>
+                            <p>Nếu bạn đã có mã lớp mà bạn muốn nhận, truy cập vào trang <a href="/note" target="_blank">Tạo note nhận lớp</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <span class="icon-number">3</span>
+                        <div class="step-ct">
+                            <h3 class="h5 mb-3">Phỏng vấn nhận lớp</h3>
+                            <p>GiaSuNLU muốn hiểu rõ hơn về bạn. Các phương thức có thể bao gồm gọi điện thoại hoặc phỏng vấn trực tiếp tại <span class="d-inline-block">trung tâm.</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- End Col -->
+        </div><!-- End Row -->
+
+    </div>
+</section>
+
+<section class="py-5 bg-gray">
+    <div class="container py-lg-3">
+
+        <div class="text-center">
+            <h2 class="h3">Tại sao chọn GiaSuNLU?</h2>
+        </div>
+
+        <div class="row mt-5">
+
+            <div class="col-lg-4 media_block">
+
+                <img class="media_block-img" src="img/homepage/an-tam-nhan-lop_0515.png" alt="An tâm nhận lớp">
+
+                <div class="media_block-body">
+                    <h3 class="h4 mb-3">An tâm để nhận lớp</h3>
+                    <p class="mb-2">Nếu bạn không vi phạm <a href="/contract" target="_blank">hợp đồng</a>, GiaSuNLU cam kết tính lại phí và hoàn phí nếu lớp bạn nhận bị hỏng hoặc bị giảm thu nhập.</p>
+                    <p><a href="/chinh-sach-hoan-phi" class="text-underline">Xem chính sách hoàn phí</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 media_block">
+
+                <img class="media_block-img" src="img/homepage/da-dang-lua-chon_0515.png" alt="Có nhiều lựa chọn">
+
+                <div class="media_block-body">
+                    <h3 class="h4 mb-3">Có nhiều sự lựa chọn</h3>
+                    <p class="mb-2">Nhiều thì sẽ thoải mái hơn. Bạn có thể dễ dàng lựa chọn lớp phù hợp, tâm huyết giảng dạy và có thêm thu nhập.</p>
+                    <p><a href="/danh-sach-lop-moi" class="text-underline">Xem danh sách lớp mới</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-lg-4 media_block">
+
+                <img class="media_block-img" src="img/homepage/ho-tro-tot-nhat_0515.png" alt="Hỗ trợ tốt nhất">
+
+                <div class="media_block-body">
+                    <h3 class="h4 mb-3">Hỗ trợ tốt nhất</h3>
+                    <p class="mb-2">Ngay cả gia sư có nhiều kinh nghiệm nhất cũng cần được hỗ trợ. GiaSuNLU luôn sẵn lòng giải đáp và xử lý sự cố giúp bạn.</p>
+                    <p><a target="_blank" href="https://m.me/giasunlu" rel="nofollow" class="text-underline">Nhắn tin đến Fanpage</a></p>
+                </div>
+
+            </div>
+
+        </div><!-- End Row -->
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container py-2 pb-lg-4">
+
+        <div class="row">
+
+            <div class="col-lg-6 order-lg-2 pl-lg-5">
+                <img src="img/homepage/gia-su-khong-bi-lang-quen-fff.jpg" alt="Gia sư không bị lãng quên">
+            </div>
+
+            <div class="col-lg-6 order-lg-1 mt-5 mt-lg-0 d-flex align-items-center">
+
+                <div>
+                    <h2 class="h3 mb-3">Không còn sợ bị lãng quên nữa!</h2>
+                    <p>Thật rủi ro khi xảy ra sự cố mà bạn lại mất giấy tờ nhận lớp. Đừng lo lắng! GiaSuNLU quản lý tất cả bằng dữ liệu số. Dù bạn nhận lớp cách đây lâu chừng nào đi nữa, chúng tôi đều có thể hỗ trợ bạn.</p>
+                    <p>Ngoài ra, vào bất cứ khi nào, bạn đều dễ dàng xem lại thông tin lớp mà bạn đã nhận. Cả số dư và các báo cáo sự cố cũng vậy. Tất cả đều có trong <a href="/myaccount">Tài khoản gia sư của tôi</a></p>
+                </div>
+
+            </div>
+        </div><!-- End row -->
+
+    </div>
+</section>
+
+<section class="py-5 bg-gray">
+    <div class="container py-4 pb-lg-3">
+
+        <div class="row">
+
+            <div class="col-lg-6 pt-lg-4 pl-lg-5">
+                <img src="img/homepage/chon-gia-su-growgreen.png" alt="Chọn gia sư GiaSuNLU">
+            </div>
+
+            <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">
+
+                <div>
+                    <h2 class="h3 mb-3">Lựa chọn thông minh, sống <span class="d-inline-block">thông thái.</span></h2>
+                    <p>Bạn sẽ chọn trung tâm gia sư nào? Chúng tôi có <a href="/contract">Hợp đồng</a> và <a href="/chinh-sach-hoan-phi">Chính sách hoàn phí</a> đảm bảo quyền lợi của gia sư. Nhưng hơn thế nữa, hãy nhìn vào công nghệ quản lý mà chúng tôi đã xây dựng — Chỉ những công ty nghiêm túc mới làm vậy.</p>
+                    <p class="mt-4 pt-2"><a href="/danh-sach-lop-moi" class="btn btn-outline-callout">Xem danh sách lớp mới<i class="fas fa-arrow-right ml-2"></i></a></p>
+                </div>
+
+            </div>
+        </div><!-- End row -->
+
+    </div>
+</section>
+
+<section class="py-5 pb-lg-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+
+                <div class="text-center">
+                    <h2 class="h3">Câu hỏi thường gặp</h2>
+                </div>
+
+                <div class="mt-5 text-444">
+
+                    <div class="faq-item">
+                        <h3 class="h5 mb-3">Làm thế nào để biết lớp đang còn hay đã được giao rồi?</h3>
+
+                        <p class="mt-2">Bạn có thể truy cập vào trang <a href="/check">kiểm tra tình trạng lớp</a>, nhập mã lớp và nhấp vào nút tìm kiếm:</p>
+
+                        <ul class="list-square pl-3">
+                            <li>Nếu lớp đã được giao rồi, bạn sẽ nhận được thông báo trên trang kết quả tìm kiếm;</li>
+                            <li>Nếu lớp đang còn, bạn sẽ thấy được thông tin lớp, và có thể nhấp vào để xem chi tiết được.</li>
+                        </ul>
+
+                        <p>Ngoài ra, nếu bạn đang xem được thông tin của lớp trên website, điều này có nghĩa lớp đó đang có sẵn và bạn có thể đăng ký nhận lớp này.</p>
+
+                    </div>
+
+                    <div class="faq-item mt-45">
+                        <h3 class="h5 mb-3">Nếu phụ huynh không đồng ý nhận gia sư, thì gia sư có được đổi lớp không?</h3>
+
+                        <p>Nếu gia sư không vi phạm <a href="/contract">hợp đồng</a>, GiaSuNLU sẽ tính lại phí nhận lớp và hoàn phí cho gia sư. Khi đó, gia sư có thể đăng ký thêm lớp mới.</p>
+
+                        <p>Xem <a href="/tinh-lai-phi-nhan-lop">tính lại phí nhận lớp</a></p>
+                    </div>
+
+                    <div class="faq-item mt-45">
+                        <h3 class="h5 mb-3">Gia sư có được nợ phí nhận lớp không?</h3>
+
+                        <p>Trung tâm có hỗ trợ gia sư nợ phí với số tiền 50% phí nhận lớp. Để được nợ phí, gia sư có thể sẽ phải đáp ứng một số tiêu chí nhất định.</p>
+
+                        <p>Xem <a href="/no-phi">chính sách nợ phí</a></p>
+                    </div>
+
+                    <div class="faq-item mt-45">
+                        <h3 class="h5 mb-3">Lớp học bị hủy sau vài buổi dạy?</h3>
+
+                        <p>Nếu gia sư không vi phạm <a href="/contract">hợp đồng</a>, gia sư sẽ được tính lại phí nhận lớp dựa trên số buổi thực tế mà gia sư đã giảng dạy. Phí nhận lớp còn dư sẽ được trung tâm hoàn trả lại.</p>
+
+                        <p>Xem <a href="/tinh-lai-phi-nhan-lop">tính lại phí nhận lớp</a></p>
+                    </div>
+
+                    <div class="faq-item mt-45">
+                        <h3 class="h5 mb-3">Vẫn đang còn những câu hỏi khác?</h3>
+
+                        <p>Đừng ngần ngại! Chúng tôi luôn sẵn lòng hỗ trợ bạn. Hãy gửi tin nhắn đến <a target="_blank" href="https://m.me/giasunlu" rel="nofollow">Fanpage Gia Sư GiaSuNLU</a> để được giải đáp những thắc mắc.</p>
+
+                        <p class="mt-45"><a target="_blank" href="https://m.me/giasunlu" rel="nofollow" class="btn btn-primary btn-sm px-3 font-weight-bold"><i class="fab fa-facebook-messenger"></i> <span>Đi tới Messenger</span></a></p>
+                    </div>
+
+                </div>
+
+            </div><!-- End Col -->
+        </div><!-- End Row -->
+    </div><!-- End container -->
+</section>
+</main>
+<!-- Footer Start -->
+<div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 10px;">
+    <div class="row pt-5">
+        <div class="col-lg-7 col-md-12">
+            <div class="row">
+                <div class="col-md-6 mb-5">
+                    <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Liên hệ với chúng tôi</h5>
+                    <p><i class="fa fa-map-marker-alt mr-2"></i>Đường số 8, Linh Trung, TP.Thủ Đức </p>
+                    <p><i class="fa fa-phone-alt mr-2"></i>012 345 6789</p>
+                    <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                    <div class="d-flex justify-content-start mt-4">
+                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-light btn-square" href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-5">
+                    <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Các khoá học</h5>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gia sư tiếng Anh</a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gia sư luyện Toeic</a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gia sư tiếng Hàn</a>
+                        <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Gia sư tiếng Nhật</a>
+                        <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Gia sư dạy IELTS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5 col-md-12 mb-5">
+            <h5 class="text-primary text-uppercase mb-4" style="letter-spacing: 5px;">Về GiaSuNLU</h5>
+            <!-- <p>Rebum labore lorem dolores kasd est, et ipsum amet et at kasd, ipsum sea tempor magna tempor. Accu kasd sed ea duo ipsum. Dolor duo eirmod sea justo no lorem est dip> -->
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Giới thiệu</a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Liên hệ </a>
+                <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Chính sách bảo mật</a>
+            </div>
+            <div class="w-100">
+                <div class="input-group">
+
+                    <input type="text" class="form-control border-light" style="padding: 20px;" placeholder="Nhập Email">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary px-4">Gửi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+    <div class="row">
+        <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+            <p class="m-0 text-white">&copy; <a href="#">Domain Name</a>. All Rights Reserved. Designed by <a href="">GiaSuNLU</a>
+            </p>
+        </div>
+
+    </div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Contact Javascript File -->
+<script src="mail/jqBootstrapValidation.min.js"></script>
+<script src="mail/contact.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
