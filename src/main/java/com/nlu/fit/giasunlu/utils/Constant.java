@@ -5,11 +5,11 @@ public class Constant {
     public static final String COOKIE_REMEMBER = "username";
 
     public static class Path {
-        public static final String LOGIN = "/view/client/view/login.jsp";
-        public static final String LOGIN_ADMIN = "/view/admin/view/login.jsp";
-        public static final String REGISTER = "/view/client/view/register.jsp";
-        public static final String HOME = "/view/client/view/index.jsp";
-        public static final String DASHBOARD = "/view/admin/view/login.jsp";
+        public static final String LOGIN = "/view/client/login.jsp";
+        public static final String LOGIN_ADMIN = "/view/admin/login.jsp";
+        public static final String REGISTER = "/view/client/register.jsp";
+        public static final String HOME = "/view/client/index.jsp";
+        public static final String DASHBOARD = "/view/admin/login.jsp";
 
     }
 

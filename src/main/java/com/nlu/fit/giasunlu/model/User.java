@@ -13,181 +13,199 @@ import javax.persistence.Table;
 @Table(name = "user")
 public class User extends BaseEntity {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-	@Column(name = "firstname")
-	private String firstName;
+    @Column(name = "firstname")
+    private String firstName;
 
-	@Column(name = "lastname")
-	private String lastName;
+    @Column(name = "lastname")
+    private String lastName;
 
-	@Column(name = "password")
-	private String password;
+    @Column(name = "password")
+    private String password;
 
-	@Column(name = "email")
-	private String email;
+    @Column(name = "email")
+    private String email;
 
-	@Column(name = "phone_number")
-	private String phoneNumber;
+    @Column(name = "phone_number")
+    private String phoneNumber;
 
-	@Column(name = "gender")
-	private String gender;
+    @Column(name = "gender")
+    private String gender;
 
-	@Column(name = "address")
-	private String address;
+    @Column(name = "address")
+    private String address;
 
-	@Column(name = "role_id")
-	private int roleId;
+    @Column(name = "avatar")
+    private String avatar;
 
-	@Column(name = "profile_image")
-	private String profileImage;
+    @Column(name = "role_id")
+    private int roleId;
 
-	@Column(name = "date_of_birth")
-	private Date dateOfBirth;
+    @Column(name = "profile_image")
+    private String profileImage;
 
-	@Column(name = "coin")
-	private int coin;
+    @Column(name = "date_of_birth")
+    private Date dateOfBirth;
 
-	@Column(name = "verify_code")
-	private String verifyCode;
+    @Column(name = "coin")
+    private int coin;
 
-	@Column(name = "is_verify")
-	private boolean isVerify;
+    @Column(name = "verify_code")
+    private String verifyCode;
 
-	@Column(name = "access_token")
-	private String accessToken;
+    @Column(name = "is_verify")
+    private boolean isVerify;
 
-	@Column(name = "status")
-	private int status;
+    @Column(name = "access_token")
+    private String accessToken;
 
-	public int getId() {
-		return id;
-	}
+    @Column(name = "status")
+    private int status;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public int getId() {
+        return id;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public String getAddress() {
-		return address;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
+    public String getAddress() {
+        return address;
+    }
 
-	public int getRoleId() {
-		return roleId;
-	}
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
-	public void setRoleId(int roleId) {
-		this.roleId = roleId;
-	}
+    public int getRoleId() {
+        return roleId;
+    }
 
-	public String getProfileImage() {
-		return profileImage;
-	}
+    public void setRoleId(int roleId) {
+        this.roleId = roleId;
+    }
 
-	public void setProfileImage(String profileImage) {
-		this.profileImage = profileImage;
-	}
+    public String getProfileImage() {
+        return profileImage;
+    }
 
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
+    public void setProfileImage(String profileImage) {
+        this.profileImage = profileImage;
+    }
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
 
-	public int getCoin() {
-		return coin;
-	}
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
 
-	public void setCoin(int coin) {
-		this.coin = coin;
-	}
+    public int getCoin() {
+        return coin;
+    }
 
-	public int getStatus() {
-		return status;
-	}
+    public void setCoin(int coin) {
+        this.coin = coin;
+    }
 
-	public void setStatus(int status) {
-		this.status = status;
-	}
+    public int getStatus() {
+        return status;
+    }
 
-	public String getVerifyCode() {
-		return verifyCode;
-	}
+    public void setStatus(int status) {
+        this.status = status;
+    }
 
-	public void setVerifyCode(String verifyCode) {
-		this.verifyCode = verifyCode;
-	}
+    public String getVerifyCode() {
+        return verifyCode;
+    }
 
-	public boolean isVerify() {
-		return isVerify;
-	}
+    public void setVerifyCode(String verifyCode) {
+        this.verifyCode = verifyCode;
+    }
 
-	public void setVerify(boolean isVerify) {
-		this.isVerify = isVerify;
-	}
+    public boolean isVerify() {
+        return isVerify;
+    }
 
-	public String getAccessToken() {
-		return accessToken;
-	}
+    public void setVerify(boolean isVerify) {
+        this.isVerify = isVerify;
+    }
 
-	public void setAccessToken(String accessToken) {
-		this.accessToken = accessToken;
-	}
+    public String getAccessToken() {
+        return accessToken;
+    }
 
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public User() {
+    }
+
+    public User(String email, String password) {
+        this.email = email;
+        this.password = password;
+    }
 }
