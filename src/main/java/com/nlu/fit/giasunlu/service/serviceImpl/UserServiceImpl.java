@@ -1,6 +1,7 @@
 package com.nlu.fit.giasunlu.service.serviceImpl;
 
 import com.nlu.fit.giasunlu.dao.UserDao;
+import com.nlu.fit.giasunlu.dao.daoImpl.UserDaoImpl;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.utils.SecurityUtils;
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    UserDao userDao;
+    UserDao userDao = new UserDaoImpl();
 
     @Override
     public void saveUser(User user) {
@@ -47,8 +48,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User login(String username, String password) {
-        User user = this.get(username);
+    public User login(String email, String password) {
+        User user = this.get(email);
         if (user != null && SecurityUtils.encodePassword(password).equals(user.getPassword())) {
             return user;
         }
@@ -67,11 +68,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean register(String email, String password, String username) {
-        if (userDao.checkExistUsername(username)) {
+    public boolean register(String email, String password, String firstName, String lastName) {
+        if (userDao.checkExistEmail(email)) {
             return false;
         }
-        userDao.saveUser(new User(email, password));
+        userDao.saveUser(new User(email, password, firstName, lastName));
         return true;
     }
 
@@ -93,4 +94,6 @@ public class UserServiceImpl implements UserService {
     public String getPassword(String email) {
         return userDao.getPassword(email);
     }
+
 }
+

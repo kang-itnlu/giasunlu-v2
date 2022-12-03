@@ -10,7 +10,7 @@
 
 <body>
 
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="/view/client/header.jsp"/>
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0 pb-5 mb-5">

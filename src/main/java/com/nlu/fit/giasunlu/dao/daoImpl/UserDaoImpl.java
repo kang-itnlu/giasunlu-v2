@@ -14,20 +14,53 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
 
     public void saveUser(User user) {
-        Transaction transaction = null;
-        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
-            // start a transaction
-            transaction = session.beginTransaction();
-            // save the student object
-            session.save(user);
-            // commit transaction
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
+//        Transaction transaction = null;
+//        try (Session session = HibernateUtils.getSessionFactory().openSession()) {
+//            // start a transaction
+//            transaction = session.beginTransaction();
+//            // save the student object
+//            session.save(user);
+//            // commit transaction
+//            transaction.commit();
+//        } catch (Exception e) {
+//            if (transaction != null) {
+//                transaction.rollback();
+//            }
+//            e.printStackTrace();
+//        }
+        int roleId = 0;
+        String sql = "INSERT INTO User(email, firstname, lastname,date_of_birth, password,avatar,address,phone_number,role_id, create_at,update_at) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+        Connection con = JDBCConnection.getJDBCConnection();
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, user.getEmail());
+            ps.setString(2, user.getFirstName());
+            ps.setString(3, user.getLastName());
+            ps.setDate(4, user.getDateOfBirth());
+            ps.setString(5, user.getPassword());
+            ps.setString(6, user.getAvatar());
+            ps.setString(7, "");
+            ps.setString(8, "");
+            try {
+                if (user.getRoleId() == 1) {
+                    roleId = 1;
+                } else {
+                    roleId = 2;
+                }
+
+            } catch (Exception e) {
+                roleId = 2;
             }
+            ps.setInt(9, roleId);
+            ps.setDate(10, (Date) user.getCreatedAt());
+            ps.setDate(11, (Date) user.getUpdatedAt());
+            ps.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     /**
@@ -252,7 +285,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public String getPassword(String email) {
-        String sql = "SELECT user.password FROM User WHERE email LIKE ? ";
+        String sql = "SELECT user.password FROM User WHERE email = ? ";
         Connection conn = JDBCConnection.getJDBCConnection();
 
         try {

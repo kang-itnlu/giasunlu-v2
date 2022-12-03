@@ -35,6 +35,9 @@ public class User extends BaseEntity {
     @Column(name = "gender")
     private String gender;
 
+    @Column(name = "phone")
+    private String phone;
+
     @Column(name = "address")
     private String address;
 
@@ -201,11 +204,29 @@ public class User extends BaseEntity {
         this.avatar = avatar;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public User() {
     }
 
-    public User(String email, String password) {
+    public User(String email, String password, String firstName, String lastName) {
         this.email = email;
         this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public User(String email, String code, String password, String firstName, String lastName) {
+        this.email = email;
+        this.verifyCode = code;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 }

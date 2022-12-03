@@ -31,7 +31,7 @@ public class VerifyController extends HttpServlet {
 
         String code = request.getParameter("code");
         if (code.equals(user.getVerifyCode())) {
-            userService.register(user.getEmail(),SecurityUtils.encodePassword(user.getPassword()), user.getLastName());
+            userService.register(user.getEmail(),SecurityUtils.encodePassword(user.getPassword()), user.getFirstName(), user.getLastName());
             SendMail.sendMail(user.getEmail(), "GIASUNLU-Welcome", "Welcome to GIASUNLU. Your account has been verified!");
 
             response.sendRedirect(request.getContextPath() + "/login");

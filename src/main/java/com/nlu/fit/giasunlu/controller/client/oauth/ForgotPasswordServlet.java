@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Base64;
 
-@WebServlet(name = "ForgotPasswordController", value = "/forgotPassword")
+@WebServlet(name = "ForgotPasswordController", value = "/forgot-password")
 public class ForgotPasswordServlet extends HttpServlet {
     UserService userService;
 
@@ -31,7 +32,7 @@ public class ForgotPasswordServlet extends HttpServlet {
         if (password != null) {
             alertMsg = "Mật khẩu đã được gửi vào email của bạn";
             request.setAttribute("alert", alertMsg);
-            SendMail.sendMail(email, "GIASUNLU of forgot password", "Welcome to GIASUNLU. Here is your hashed password: " + password + " .Launch this link: https://10015.io/tools/sha256-encrypt-decrypt and paste your hashed password to decrypt for getting your original password. Thanks!");
+            SendMail.sendMail(email, "GIASUNLU of forgot password", "Welcome to GIASUNLU. Here is your password: " + Base64.getDecoder().decode(password) + ".Thanks!");
 
         } else {
             alertMsg = "Không tìm thấy tài khoản với email đã nhập!";

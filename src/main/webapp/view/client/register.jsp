@@ -1,6 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:url value="/view/client/" var="url"/>
+<%
+  String alert = (String) request.getAttribute("alert");
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +42,16 @@
 <%--              <span>hay tạo với</span>--%>
 <%--            </div>--%>
 <%--          </div>--%>
-
-          <form class="check_validation" id="register_form" method="POST" action="/register" novalidate="">
+          <%
+            if (alert != null) {
+          %>
+          <p class="alert alert-danger" role="alert">
+            <%= alert %>
+          </p>
+          <%
+            }
+          %>
+          <form class="check_validation" id="register_form" method="POST" action="${pageContext.request.contextPath}/register" novalidate="">
             <input type="hidden" name="_token" value="OBOZOzzZ27a1013ymexJYUcDoGRpMGOeM49BkGw5">
             <div class="form-group">
 
@@ -49,7 +60,7 @@
                   <div class="input-group-text"><i class="fas fa-user"></i></div>
                 </div>
 
-                <input id="firstname" name="firstname" type="text" class="form-control" value="" placeholder="Họ của bạn" required="">
+                <input id="firstname" name="firstName" type="text" class="form-control" value="" placeholder="Họ của bạn" required="">
 
                 <p class="invalid-feedback mb-0">Họ là bắt buộc</p>
               </div>
@@ -63,7 +74,7 @@
                   <div class="input-group-text"><i class="fas fa-user"></i></div>
                 </div>
 
-                <input id="lastname" name="lastname" type="text" class="form-control" value="" placeholder="Tên của bạn" required="">
+                <input id="lastname" name="lastName" type="text" class="form-control" value="" placeholder="Tên của bạn" required="">
 
                 <p class="invalid-feedback mb-0">Tên là bắt buộc</p>
               </div>
@@ -112,9 +123,14 @@
 
             </div>
 
-            <div class="d-flex justify-content-center mt-4">
-              <div class="g-recaptcha" data-sitekey="6Ld4sQIaAAAAAGAMMq41raNY3l4tBH2iPspxyFCX"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6Ld4sQIaAAAAAGAMMq41raNY3l4tBH2iPspxyFCX&amp;co=aHR0cHM6Ly90dXRvci5ncm93Z3JlZW4uZWR1LnZuOjQ0Mw..&amp;hl=vi&amp;v=Km9gKuG06He-isPsP6saG8cn&amp;size=normal&amp;cb=eo6mgg6r97x0" width="304" height="78" role="presentation" name="a-txzvckh7p5ki" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
-            </div>
+<%--            <div class="d-flex justify-content-center mt-4">--%>
+<%--              <div class="g-recaptcha" data-sitekey="6LfgknkhAAAAABXAQugTItLaoMe6aDZIIM-gtNQ0"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfgknkhAAAAABXAQugTItLaoMe6aDZIIM-gtNQ0&amp;co=aHR0cHM6Ly90dXRvci5ncm93Z3JlZW4uZWR1LnZuOjQ0Mw..&amp;hl=vi&amp;v=Km9gKuG06He-isPsP6saG8cn&amp;size=normal&amp;cb=eo6mgg6r97x0" width="304" height="78" role="presentation" name="a-txzvckh7p5ki" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>--%>
+<%--            </div>--%>
+            <div class="g-recaptcha" style="margin-top: 16px;"
+                 data-sitekey="6LfgknkhAAAAABXAQugTItLaoMe6aDZIIM-gtNQ0"></div>
+
+
+        </div>
 
             <div class="form-group mt-4 text-center">
               <button class="btn btn-lg-x btn-success font-weight-bold px-5" type="submit">Đăng Ký Ngay</button>
@@ -125,7 +141,7 @@
 
           <p class="my-lead mt-4 mb-0 text-center">
             <span>Bạn đã có tài khoản?</span>
-            <a href="login.jsp" class="d-inline-block text-underline ml-2">Đăng nhập</a>
+            <a href="${pageContext.request.contextPath}/login" class="d-inline-block text-underline ml-2">Đăng nhập</a>
           </p>
 
         </div>

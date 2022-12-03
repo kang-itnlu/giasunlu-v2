@@ -19,7 +19,7 @@ public interface UserService {
 
     User loginAdmin(String email, String password);
 
-    boolean register(String email, String password, String username);
+    boolean register(String email, String password, String firstName, String lastName);
 
     List<User> getAllUser();
 
