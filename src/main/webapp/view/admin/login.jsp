@@ -27,7 +27,8 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="./images/team.jpg"  alt="JPG">
+                    <img src="images/team.jpg" alt="IMG">
+
                 </div>
                 <!--=====TIÊU ĐỀ======-->
                 <form class="login100-form validate-form">
@@ -56,7 +57,6 @@
 
                         <!--=====ĐĂNG NHẬP======-->
                         <div class="container-login100-form-btn">
-                     
                             <input type="button" value="Đăng nhập" id="submit" onclick="validate()"  />
 
                         </div>
