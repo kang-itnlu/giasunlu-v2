@@ -1,45 +1,40 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "post")
-public class Post extends BaseEntity{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Post extends BaseEntity {
     private int id;
 
-    @Column(name = "user_post")
-    private Long userPost;
 
-    @Column(name = "status")
-    private int status;
+    private int userPost;
 
-    @Column(name = "content")
+    private String status;
     private String content;
-
-    @Column(name = "title")
-    private String title;
-
-    @Column(name = "image")
     private String image;
-
-    @Column(name = "subject")
-    private String subject;
-
-    @Column(name = "grade")
-    private String grade;
-
-    @Column(name = "price")
     private Long price;
 
-    @Column(name = "address")
-    private String address;
+    private String title;
 
-    @Column(name = "phone")
+    private String subject;
+    private String grade;
+    private String address;
     private String phone;
+
+    public Post() {
+    }
+
+    public Post(int id, int userPost, String status, String content, String title, String image, String subject, String grade, Long price, String address, String phone) {
+        this.id = id;
+        this.userPost = userPost;
+        this.status = status;
+        this.content = content;
+        this.title = title;
+        this.image = image;
+        this.subject = subject;
+        this.grade = grade;
+        this.price = price;
+        this.address = address;
+        this.phone = phone;
+    }
 
     public int getId() {
         return id;
@@ -49,19 +44,19 @@ public class Post extends BaseEntity{
         this.id = id;
     }
 
-    public Long getUserPost() {
+    public int getUserPost() {
         return userPost;
     }
 
-    public void setUserPost(Long userPost) {
+    public void setUserPost(int userPost) {
         this.userPost = userPost;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -127,6 +122,25 @@ public class Post extends BaseEntity{
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", userPost=" + userPost +
+                ", status=" + status +
+                ", content='" + content + '\'' +
+                ", title='" + title + '\'' +
+                ", image='" + image + '\'' +
+                ", subject='" + subject + '\'' +
+                ", grade='" + grade + '\'' +
+                ", price=" + price +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
 

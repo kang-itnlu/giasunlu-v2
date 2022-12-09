@@ -1,42 +1,42 @@
 package com.nlu.fit.giasunlu.model;
 
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "advertisement")
-public class Advertisement extends BaseEntity{
+public class Advertisement extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "price")
     private Long price;
 
-    @Column(name = "thumbnail")
     private String thumbnail;
 
-    @Column(name = "content")
     private String content;
 
-    @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "status")
     private int status;
 
-    @Column(name = "start_at")
     private Date startAt;
 
-    @Column(name = "end_at")
     private Date endAt;
 
-    @Column(name = "brief_desc")
     private String briefDesc;
+
+    public Advertisement() {
+    }
+
+    public Advertisement(int id, String title, Long price, String thumbnail, String content, Long userId, int status, Date startAt, Date endAt, String briefDesc) {
+        this.id = id;
+        this.title = title;
+        this.price = price;
+        this.thumbnail = thumbnail;
+        this.content = content;
+        this.userId = userId;
+        this.status = status;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.briefDesc = briefDesc;
+    }
 
     public int getId() {
         return id;

@@ -2,71 +2,65 @@ package com.nlu.fit.giasunlu.model;
 
 import java.sql.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "user")
 public class User extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "firstname")
     private String firstName;
-
-    @Column(name = "lastname")
     private String lastName;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "email")
     private String email;
-
-    @Column(name = "phone_number")
     private String phoneNumber;
-
-    @Column(name = "gender")
     private String gender;
-
-    @Column(name = "phone")
     private String phone;
-
-    @Column(name = "address")
     private String address;
-
-    @Column(name = "avatar")
     private String avatar;
-
-    @Column(name = "role_id")
     private int roleId;
-
-    @Column(name = "profile_image")
     private String profileImage;
-
-    @Column(name = "date_of_birth")
     private Date dateOfBirth;
-
-    @Column(name = "coin")
     private int coin;
-
-    @Column(name = "verify_code")
     private String verifyCode;
-
-    @Column(name = "is_verify")
-    private boolean isVerify;
-
-    @Column(name = "access_token")
+    private int isVerify;
     private String accessToken;
-
-    @Column(name = "status")
     private int status;
+
+    public User(int id, String firstName, String lastName, String password, String email, String phoneNumber, String gender, String phone, String address, String avatar, int roleId, String profileImage, Date dateOfBirth, int coin, String verifyCode, int isVerify, String accessToken, int status) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.gender = gender;
+        this.phone = phone;
+        this.address = address;
+        this.avatar = avatar;
+        this.roleId = roleId;
+        this.profileImage = profileImage;
+        this.dateOfBirth = dateOfBirth;
+        this.coin = coin;
+        this.verifyCode = verifyCode;
+        this.isVerify = isVerify;
+        this.accessToken = accessToken;
+        this.status = status;
+    }
+
+    public User() {
+    }
+
+    public User(String email, String password, String firstName, String lastName) {
+        this.email = email;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    public User(String email, String code, String password, String firstName, String lastName) {
+        this.email = email;
+        this.verifyCode = code;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 
     public int getId() {
         return id;
@@ -180,11 +174,11 @@ public class User extends BaseEntity {
         this.verifyCode = verifyCode;
     }
 
-    public boolean isVerify() {
+    public int isVerify() {
         return isVerify;
     }
 
-    public void setVerify(boolean isVerify) {
+    public void setVerify(int isVerify) {
         this.isVerify = isVerify;
     }
 
@@ -212,21 +206,29 @@ public class User extends BaseEntity {
         this.phone = phone;
     }
 
-    public User() {
-    }
-
-    public User(String email, String password, String firstName, String lastName) {
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-
-    public User(String email, String code, String password, String firstName, String lastName) {
-        this.email = email;
-        this.verifyCode = code;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", roleId=" + roleId +
+                ", profileImage='" + profileImage + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", coin=" + coin +
+                ", verifyCode='" + verifyCode + '\'' +
+                ", isVerify=" + isVerify +
+                ", accessToken='" + accessToken + '\'' +
+                ", status=" + status +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
