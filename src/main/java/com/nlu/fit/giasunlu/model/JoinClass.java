@@ -1,35 +1,40 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "join_class")
 public class JoinClass {
-    @Id
-    @Column(name = "class_id")
-    private Long classId;
+    private int classId;
+    private int userId;
 
-    @Column(name = "user_id")
-    private Long userId;
+    public JoinClass() {
+    }
 
-    public Long getClassId() {
+    public JoinClass(int classId, int userId) {
+        this.classId = classId;
+        this.userId = userId;
+    }
+
+    public int getClassId() {
         return classId;
     }
 
-    public void setClassId(Long classId) {
+    public void setClassId(int classId) {
         this.classId = classId;
     }
 
-    public Long getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    @Override
+    public String toString() {
+        return "JoinClass{" +
+                "classId=" + classId +
+                ", userId=" + userId +
+                '}';
     }
 }
 

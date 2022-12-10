@@ -2,50 +2,39 @@ package com.nlu.fit.giasunlu.model;
 
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+public class Class extends BaseEntity {
 
-@Entity
-@Table(name = "class")
-public class Class extends BaseEntity{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    @Column(name = "user_host")
     private Long userHost;
-
-    @Column(name = "max_student")
     private int maxStudent;
-
-    @Column(name = "class_name")
     private String className;
-
-    @Column(name = "cost")
     private Long cost;
 
-    @Column(name = "status")
     private int status;
-
-    @Column(name = "subject")
     private String subject;
-
-    @Column(name = "address")
     private String address;
 
-    @Column(name ="start_at")
     private Date startAt;
-
-    @Column(name ="end_at")
     private Date endAt;
-
-    @Column(name = "brief_desc")
     private String briefDesc;
+
+    public Class() {
+    }
+
+    public Class(int id, Long userHost, int maxStudent, String className, Long cost, int status, String subject,
+                 String address, Date startAt, Date endAt, String briefDesc) {
+        this.id = id;
+        this.userHost = userHost;
+        this.maxStudent = maxStudent;
+        this.className = className;
+        this.cost = cost;
+        this.status = status;
+        this.subject = subject;
+        this.address = address;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.briefDesc = briefDesc;
+    }
 
     public int getId() {
         return id;
@@ -133,6 +122,25 @@ public class Class extends BaseEntity{
 
     public void setBriefDesc(String briefDesc) {
         this.briefDesc = briefDesc;
+    }
+
+    @Override
+    public String toString() {
+        return "Class{" +
+                "id=" + id +
+                ", userHost=" + userHost +
+                ", maxStudent=" + maxStudent +
+                ", className='" + className + '\'' +
+                ", cost=" + cost +
+                ", status=" + status +
+                ", subject='" + subject + '\'' +
+                ", address='" + address + '\'' +
+                ", startAt=" + startAt +
+                ", endAt=" + endAt +
+                ", briefDesc='" + briefDesc + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
 

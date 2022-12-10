@@ -1,20 +1,18 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "post_image")
 public class PostImage {
 
-    @Id
     private Long postId;
-
-    @Column(name = "link")
     private String link;
+
+    public PostImage() {
+    }
+
+    public PostImage(Long postId, String link) {
+        this.postId = postId;
+        this.link = link;
+    }
 
     public Long getPostId() {
         return postId;
@@ -30,6 +28,14 @@ public class PostImage {
 
     public void setLink(String link) {
         this.link = link;
+    }
+
+    @Override
+    public String toString() {
+        return "PostImage{" +
+                "postId=" + postId +
+                ", link='" + link + '\'' +
+                '}';
     }
 }
 
