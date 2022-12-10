@@ -4,6 +4,7 @@ import com.nlu.fit.giasunlu.model.Blog;
 import org.jdbi.v3.sqlobject.SingleValue;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
@@ -20,11 +21,11 @@ public interface BlogDao {
     @SqlQuery("select * from blog where user_create = :id")
     List<Blog> getBlogByUserId(@Bind("id") int id);
 
-    @SqlUpdate("insert into blog (title, content, thumbnail, user_create, create_at,update_at) values (:title, :content, :thumbnail, :userCreate, now(), now())")
-    void insertBlog(Blog blog);
+    @SqlUpdate("insert into blog (id, title, content, thumbnail, user_create, create_at,update_at) values (:id, :title, :content, :thumbnail, :userCreate, now(), now())")
+    void insertBlog(@BindBean Blog blog);
 
     @SqlUpdate("update blog set title = :title, content = :content, thumbnail = :thumbnail, user_create = :userCreate, update_at=now() where id = :id")
-    void updateBlog(Blog blog);
+    void updateBlog(@BindBean Blog blog);
 
     @SqlUpdate("delete from blog where id = :id")
     void deleteBlog(@Bind("id") int id);

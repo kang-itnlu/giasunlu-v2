@@ -3,6 +3,7 @@ package com.nlu.fit.giasunlu.dao;
 import com.nlu.fit.giasunlu.model.Advertisement;
 import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.customizer.BindBean;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 import org.jdbi.v3.sqlobject.statement.SqlUpdate;
 
@@ -18,10 +19,10 @@ public interface AdvertisementDao {
 
 
     @SqlUpdate("insert into advertisement (id, user_id, title, price, thumbnail, content, status, start_at, end_at, brief_desc) values (:id, :userId, :title, :price, :thumbnail, :content, :status, :startAt, :endAt, :briefDesc)")
-    void insertAdvertisement(Advertisement advertisement);
+    void insertAdvertisement(@BindBean Advertisement advertisement);
 
     @SqlUpdate("update advertisement set user_id = :userId, title = :title, price = :price, thumbnail = :thumbnail, content = :content, status = :status, start_at = :startAt, end_at = :endAt, brief_desc = :briefDesc where id = :id")
-    void updateAdvertisement(Advertisement advertisement);
+    void updateAdvertisement(@BindBean Advertisement advertisement);
 
     @SqlUpdate("delete from advertisement where id = :id")
     void deleteAdvertisement(@Bind("id") int id);
