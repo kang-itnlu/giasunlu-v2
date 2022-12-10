@@ -26,4 +26,5 @@ public interface UserDao {
 
     void changePassword(int id, String password);
 
+    User findByEmail(String email);
 }

@@ -13,6 +13,8 @@ public interface UserService {
 
     User get(String username);
 
+    User findByEmail(String email);
+
     User getUser(int id);
 
     User login(String username, String password);
