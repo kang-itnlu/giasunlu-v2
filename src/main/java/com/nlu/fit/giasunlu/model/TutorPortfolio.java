@@ -1,30 +1,29 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.*;
+import java.util.Date;
 
-@Entity
-@Table(name = "teacher_portfolio")
-public class TutorPortfolio extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class TutorPortfolio extends BaseEntity {
+
     private int id;
-
-    @Column(name = "user_id")
     private Long userId;
-
-    @Column(name = "teaching_since")
-    private String teachingSince;
-
-    @Column(name = "profile_image")
+    private Date teachingSince;
     private String profileImage;
-
-    @Column(name = "brief_desc")
     private String briefDesc;
-
-    @Column(name = "teaching_experience")
     private String teachingExperience;
+
+    public TutorPortfolio() {
+    }
+
+    public TutorPortfolio(int id, Long userId, Date teachingSince, String profileImage, String briefDesc, String teachingExperience) {
+        this.id = id;
+        this.userId = userId;
+        this.teachingSince = teachingSince;
+        this.profileImage = profileImage;
+        this.briefDesc = briefDesc;
+        this.teachingExperience = teachingExperience;
+    }
 
     public String getTeachingExperience() {
         return teachingExperience;
@@ -50,11 +49,11 @@ public class TutorPortfolio extends BaseEntity{
         this.userId = userId;
     }
 
-    public String getTeachingSince() {
+    public Date getTeachingSince() {
         return teachingSince;
     }
 
-    public void setTeachingSince(String teachingSince) {
+    public void setTeachingSince(Date teachingSince) {
         this.teachingSince = teachingSince;
     }
 

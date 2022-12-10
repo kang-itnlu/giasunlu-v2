@@ -1,27 +1,28 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.*;
+import org.jdbi.v3.core.mapper.reflect.ColumnName;
 
-@Entity
-@Table(name = "q_a")
-public class QA extends BaseEntity{
+import javax.persistence.Column;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class QA extends BaseEntity {
     private int id;
-
-    @Column(name = "user_q_a")
+    @ColumnName("user_q_a")
     private Long userQA;
-
-    @Column(name = "post_id")
-    private Long postId;
-
-    @Column(name = "content")
+    private Long classId;
     private String content;
-
-    @Column(name = "quest_image")
     private String questImage;
+
+    public QA() {
+    }
+
+    public QA(int id, Long userQA, Long postId, String content, String questImage) {
+        this.id = id;
+        this.userQA = userQA;
+        this.classId = postId;
+        this.content = content;
+        this.questImage = questImage;
+    }
 
     public int getId() {
         return id;
@@ -30,21 +31,21 @@ public class QA extends BaseEntity{
     public void setId(int id) {
         this.id = id;
     }
-
+    @ColumnName("user_q_a")
     public Long getUserQA() {
         return userQA;
     }
-
+    @ColumnName("user_q_a")
     public void setUserQA(Long userQA) {
         this.userQA = userQA;
     }
 
-    public Long getPostId() {
-        return postId;
+    public Long getClassId() {
+        return classId;
     }
 
-    public void setPostId(Long postId) {
-        this.postId = postId;
+    public void setClassId(Long classId) {
+        this.classId = classId;
     }
 
     public String getContent() {
@@ -61,6 +62,19 @@ public class QA extends BaseEntity{
 
     public void setQuestImage(String questImage) {
         this.questImage = questImage;
+    }
+
+    @Override
+    public String toString() {
+        return "QA{" +
+                "id=" + id +
+                ", userQA=" + userQA +
+                ", postId=" + classId +
+                ", content='" + content + '\'' +
+                ", questImage='" + questImage + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
 

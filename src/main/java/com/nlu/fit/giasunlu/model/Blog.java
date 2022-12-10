@@ -1,26 +1,25 @@
 package com.nlu.fit.giasunlu.model;
 
-import javax.persistence.*;
+public class Blog extends BaseEntity {
 
-@Entity
-@Table(name = "blog")
-public class Blog extends BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private int userCreate;
 
-    @Column(name = "user_create")
-    private Long userCreate;
-
-    @Column(name = "thumbnail")
     private String thumbnail;
-
-    @Column(name = "title")
     private String title;
-
-    @Column(name = "content")
     private String content;
+
+    public Blog() {
+    }
+
+    public Blog(int id, int userCreate, String thumbnail, String title, String content) {
+        this.id = id;
+        this.userCreate = userCreate;
+        this.thumbnail = thumbnail;
+        this.title = title;
+        this.content = content;
+    }
 
     public int getId() {
         return id;
@@ -30,11 +29,11 @@ public class Blog extends BaseEntity{
         this.id = id;
     }
 
-    public Long getUserCreate() {
+    public int getUserCreate() {
         return userCreate;
     }
 
-    public void setUserCreate(Long userCreate) {
+    public void setUserCreate(int userCreate) {
         this.userCreate = userCreate;
     }
 
@@ -60,6 +59,19 @@ public class Blog extends BaseEntity{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Blog{" +
+                "id=" + id +
+                ", userCreate=" + userCreate +
+                ", thumbnail='" + thumbnail + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
 

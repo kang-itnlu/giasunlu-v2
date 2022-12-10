@@ -1,37 +1,38 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "receipt")
-public class Receipt extends BaseEntity{
+public class Receipt extends BaseEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private int id;
 
-    @Column(name = "class_id")
     private Long classId;
-
-    @Column(name = "start_at")
+    private Long studentId;
     private Date startAt;
-
-    @Column(name = "end_at")
     private Date endAt;
 
-    @Column(name = "teacher")
     private Long teacher;
-
-    @Column(name = "total_price")
     private Long totalPrice;
-
-    @Column(name = "desc")
     private String desc;
+    private int status;
 
-    @Column(name = "student_id")
-    private Long studentId;
+
+    public Receipt() {
+    }
+
+    public Receipt(int id, Long classId, Long studentId, Date startAt, Date endAt, Long teacher, Long totalPrice, String desc, int status) {
+        this.id = id;
+        this.classId = classId;
+        this.studentId = studentId;
+        this.startAt = startAt;
+        this.endAt = endAt;
+        this.teacher = teacher;
+        this.totalPrice = totalPrice;
+        this.desc = desc;
+        this.status = status;
+    }
 
     public int getId() {
         return id;
@@ -47,6 +48,14 @@ public class Receipt extends BaseEntity{
 
     public void setClassId(Long classId) {
         this.classId = classId;
+    }
+
+    public Long getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(Long studentId) {
+        this.studentId = studentId;
     }
 
     public Date getStartAt() {
@@ -89,12 +98,12 @@ public class Receipt extends BaseEntity{
         this.desc = desc;
     }
 
-    public Long getStudentId() {
-        return studentId;
+    public int getStatus() {
+        return status;
     }
 
-    public void setStudentId(Long studentId) {
-        this.studentId = studentId;
+    public void setStatus(int status) {
+        this.status = status;
     }
 }
 

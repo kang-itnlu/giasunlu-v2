@@ -53,8 +53,8 @@ public class UserDaoImpl implements UserDao {
                 roleId = 2;
             }
             ps.setInt(9, roleId);
-            ps.setDate(10, (Date) user.getCreatedAt());
-            ps.setDate(11, (Date) user.getUpdatedAt());
+            ps.setDate(10, (Date) user.getCreateAt());
+            ps.setDate(11, (Date) user.getUpdateAt());
             ps.executeUpdate();
             con.close();
         } catch (SQLException e) {

@@ -8,30 +8,15 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
 //import org.hibernate.annotations.CreationTimestamp;
 //import org.hibernate.annotations.UpdateTimestamp;
 
-@MappedSuperclass
 public class BaseEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="create_at")
-	@CreationTimestamp
-	private Date createdAt;
-	
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="update_at")
-	@UpdateTimestamp
-	private Date updatedAt;
+
+	protected Date createAt;
+
+	protected Date updateAt;
 	
 	public String amountToCurrencyString(float amountTotal, String currency) {
 		DecimalFormat formatter = new DecimalFormat("###,###,###");
@@ -85,27 +70,27 @@ public class BaseEntity implements Serializable {
 		}
 	}
 	
-	public Date getUpdatedAt() {
-		return this.updatedAt;
+	public Date getUpdateAt() {
+		return this.updateAt;
 	}
 
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
+	public void setUpdateAt(Date updateAt) {
+		this.updateAt = updateAt;
 	}
 	
-	public Date getCreatedAt() {
-		return this.createdAt;
+	public Date getCreateAt() {
+		return this.createAt;
 	}
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+	public void setCreateAt(Date createAt) {
+		this.createAt = createAt;
 	}
 	
 	public String getCreatedAtFormatVN() {
-		return this.getDatetimeFormatVN(createdAt);
+		return this.getDatetimeFormatVN(createAt);
 	}
 	
 	public String getUpdatedAtFormatVN() {
-		return this.getDatetimeFormatVN(updatedAt);
+		return this.getDatetimeFormatVN(updateAt);
 	}
 }

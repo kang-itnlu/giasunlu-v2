@@ -1,27 +1,28 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.*;
+public class Comment extends BaseEntity {
 
-@Entity
-@Table(name = "comment")
-public class Comment extends BaseEntity{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name="reply_id")
     private Long replyId;
 
-    @Column(name="post_id")
     private Long postId;
 
-    @Column(name="user_id")
     private Long userId;
 
-    @Column(name="content")
     private String content;
+
+    public Comment() {
+    }
+
+    public Comment(int id, Long replyId, Long postId, Long userId, String content) {
+        this.id = id;
+        this.replyId = replyId;
+        this.postId = postId;
+        this.userId = userId;
+        this.content = content;
+    }
 
     public int getId() {
         return id;
@@ -61,6 +62,19 @@ public class Comment extends BaseEntity{
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "id=" + id +
+                ", replyId=" + replyId +
+                ", postId=" + postId +
+                ", userId=" + userId +
+                ", content='" + content + '\'' +
+                ", createAt=" + createAt +
+                ", updateAt=" + updateAt +
+                '}';
     }
 }
 

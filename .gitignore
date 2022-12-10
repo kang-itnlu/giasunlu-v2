@@ -8,6 +8,8 @@ target/
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/misc.xml
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -36,3 +38,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+mvnw
+mvnw.cmd
+.idea/uiDesigner.xml
+.idea/sqldialects.xml
+
