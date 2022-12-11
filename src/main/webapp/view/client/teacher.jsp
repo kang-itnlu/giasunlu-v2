@@ -46,7 +46,7 @@
                             </div>
                         </div>
                         <div class="bg-secondary p-4">
-                            <h5>Thuỳ Dương</h5>
+                            <a href="teacher-detail.jsp"><h5>Thuỳ Dương</h5></a>
                             <p class="m-0">Hoá lớp 12</p>
                         </div>
                     </div>
