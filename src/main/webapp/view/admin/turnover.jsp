@@ -26,7 +26,7 @@
           <div class="info">
             <h4>Tổng khách hàng</h4>
             <p><b>1600 khách hàng</b></p>
-            <p>Tổng số tiền: 135,837,000</p>
+            <p>Tổng số tiền:<span>135,837,000</span></p>
           </div>
         </div>
       </div>
