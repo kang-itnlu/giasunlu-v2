@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ProfileBasicController", value = "/profile-basic")
+@WebServlet(name = "ProfileBasicController", value = "/my-account/profile-basic")
 public class ProfileBasicController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

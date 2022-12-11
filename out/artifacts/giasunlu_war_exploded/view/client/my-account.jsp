@@ -30,7 +30,7 @@
 <div class="container-fluid d-none d-lg-block">
   <div class="row align-items-center py-4 px-xl-5">
     <div class="col-lg-3">
-      <a href="" class="text-decoration-none">
+      <a href="${pageContext.request.contextPath}/home" class="text-decoration-none">
         <h1 class="m-0"><span class="text-primary">MY</span>TUTOR</h1>
       </a>
     </div>
@@ -93,43 +93,43 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav py-0">
-            <a href="index.jsp" class="nav-item nav-link active">Trang chủ</a>
-            <a href="about.jsp" class="nav-item nav-link">Giới thiệu</a>
-            <a href="service.jsp" class="nav-item nav-link">Dịch vụ</a>
-            <a href="teacher.jsp" class="nav-item nav-link">Gia sư</a>
+            <a href="${pageContext.request.contextPath}/home" class="nav-item nav-link active">Trang chủ</a>
+            <a href="${pageContext.request.contextPath}/about" class="nav-item nav-link">Giới thiệu</a>
+            <a href="${pageContext.request.contextPath}/service" class="nav-item nav-link">Dịch vụ</a>
+            <a href="${pageContext.request.contextPath}/teacher" class="nav-item nav-link">Gia sư</a>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dành cho gia sư</a>
               <div class="dropdown-menu rounded-0 m-0">
-                <a href="overview.jsp" class="dropdown-item">Tổng quan</a>
-                <a href="new-class-list.jsp" class="dropdown-item">Danh sách lớp mới</a>
-                <a href="receive-class.jsp" class="dropdown-item">Cách thức nhận lớp</a>
-                <a href="refund-policy.jsp" class="dropdown-item">Chính sách hoàn phí</a>
-                <a href="contract.jsp" class="dropdown-item">Hợp đồng mẫu</a>
-                <a href="class-status.jsp" class="dropdown-item">Kiểm tra tình trạng lớp</a>
-                <a href="note-receive-class.jsp" class="dropdown-item">Tạo note nhận lớp</a>
-                <a href="debt-policy.jsp" class="dropdown-item">Chính sách nợ phí</a>
-                <a href="class-admission-fee.jsp" class="dropdown-item">Tính lại phí nhận lớp </a>
+                <a href="${pageContext.request.contextPath}/overview" class="dropdown-item">Tổng quan</a>
+                <a href="${pageContext.request.contextPath}/new-class-list" class="dropdown-item">Danh sách lớp mới</a>
+                <a href="${pageContext.request.contextPath}/receive-class" class="dropdown-item">Cách thức nhận lớp</a>
+                <a href="${pageContext.request.contextPath}/refund-policy" class="dropdown-item">Chính sách hoàn phí</a>
+                <a href="${pageContext.request.contextPath}/contract" class="dropdown-item">Hợp đồng mẫu</a>
+                <a href="${pageContext.request.contextPath}/class-status" class="dropdown-item">Kiểm tra tình trạng lớp</a>
+                <a href="${pageContext.request.contextPath}/note-receive-class" class="dropdown-item">Tạo note nhận lớp</a>
+                <a href="${pageContext.request.contextPath}/debt-policy" class="dropdown-item">Chính sách nợ phí</a>
+                <a href="${pageContext.request.contextPath}/class-admission-fee" class="dropdown-item">Tính lại phí nhận lớp </a>
               </div>
             </div>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
               <div class="dropdown-menu rounded-0 m-0">
-                <a href="blog-customer.jsp" class="dropdown-item">Blog khách hàng</a>
-                <a href="blog-tutor.jsp" class="dropdown-item">Blog gia sư</a>
+                <a href="${pageContext.request.contextPath}/blog-customer" class="dropdown-item">Blog khách hàng</a>
+                <a href="${pageContext.request.contextPath}/blog-tutor" class="dropdown-item">Blog gia sư</a>
               </div>
             </div>
-            <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
+            <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
           </div>
-          <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="my-account.jsp">Quản lý tài khoản</a>
+          <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
           <div class="nav-item dropdown ml-4" style="margin-right: 100px">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
               <i class="fas fa-user"></i>
             </a>
             <div class="dropdown-menu rounded-0 m-0">
               <a class="dropdown-item" href="">Mã gia sư: GD3669</a>
-              <a class="dropdown-item" href="change-password.jsp">Đổi mật khẩu</a>
-              <a class="dropdown-item" href="security.jsp">Bảo mật tài khoản</a>
-              <a class="dropdown-item" href="">Đăng xuất</a>
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/change-password">Đổi mật khẩu</a>
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/security">Bảo mật tài khoản</a>
+              <a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Đăng xuất</a>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@
 
         <div class="mt-4 d-flex">
           <i class="fas fa-caret-right text-muted mr-2 mt-1"></i>
-          <div>Cài đặt thông báo mỗi khi có lớp mới tại: <a href="/myaccount/register-teach" class="d-inline-block">Đăng ký lớp phù hợp</a></div>
+          <div>Cài đặt thông báo mỗi khi có lớp mới tại: <a href="${pageContext.request.contextPath}/my-account/register-teach" class="d-inline-block">Đăng ký lớp phù hợp</a></div>
         </div>
 
         <div class="mt-4 mt-lg-3 d-flex">
@@ -195,7 +195,7 @@
 
         <div class="mt-3 d-flex">
           <i class="fas fa-caret-right text-muted mr-2 mt-1"></i>
-          <div><a href="/security" class="d-inline-block">Bảo mật tài khoản</a></div>
+          <div><a href="${pageContext.request.contextPath}/security" class="d-inline-block">Bảo mật tài khoản</a></div>
         </div>
 
       </div>
@@ -211,23 +211,23 @@
           <p><span class="text-danger">Thông tin của bạn đang còn thiếu. Hãy cập nhật đầy đủ.</span></p>
 
           <div class="mt-3">
-            <a href="/myaccount/profile/basic" class="btn btn-outline-primary">Cập nhật ngay</a>
+            <a href="${pageContext.request.contextPath}/my-account/profile-basic" class="btn btn-outline-primary">Cập nhật ngay</a>
           </div>
 
 
           <ul class="list-square mt-4 mb-0">
             <li>
-              <a href="/myaccount/profile/basic">Thông tin cơ bản</a>
+              <a href="${pageContext.request.contextPath}/my-account/profile-basic">Thông tin cơ bản</a>
               <i class="ml-1 fas fa-exclamation-circle text-warning"></i>
             </li>
             <li>
-              <a href="/myaccount/profile/identification">Thẻ căn cước</a>
+              <a href="${pageContext.request.contextPath}/my-account/profile-identification">Thẻ căn cước</a>
               <i class="ml-1 fas fa-exclamation-circle text-warning"></i>
             <li>
-              <a href="/myaccount/profile/tutor-kind">Vị trí gia sư</a>
+              <a href="${pageContext.request.contextPath}/my-account/tutor-kind">Vị trí gia sư</a>
               <i class="ml-1 fas fa-exclamation-circle text-muted"></i>
             <li>
-              <a href="/myaccount/profile/experience">Kinh nghiệm gia sư</a>
+              <a href="${pageContext.request.contextPath}/my-account/experience">Kinh nghiệm gia sư</a>
               <i class="ml-1 fas fa-exclamation-circle text-muted"></i>
             </li>
           </ul>
@@ -242,7 +242,7 @@
           <p class="text-danger">Bạn cần đồng ý với các điều khoản để có thể nhận lớp tại GiaSuNLU.</p>
 
           <div class="mt-3">
-            <a href="/myaccount/agree-term" class="btn btn-outline-primary">Bắt đầu ngay</a>
+            <a href="${pageContext.request.contextPath}/my-account/agree-term" class="btn btn-outline-primary">Bắt đầu ngay</a>
           </div>
 
 
@@ -271,7 +271,7 @@
           <p class="text-danger">Bạn cần hoàn thành bài đào tạo về cách xử lý tình huống sau khi nhận lớp tại GiaSuNLU.</p>
 
           <div class="mt-3">
-            <a href="/myaccount/training/behavior" class="btn btn-outline-primary">Bắt đầu ngay</a>
+            <a href="${pageContext.request.contextPath}/behavior" class="btn btn-outline-primary">Bắt đầu ngay</a>
           </div>
 
 
@@ -285,7 +285,7 @@
           <p>Ồ không! Bạn chưa nhận lớp nào tại GiaSuNLU.</p>
 
           <div class="mt-3">
-            <a href="new-class-list.jsp" class="btn btn-outline-primary">Xem danh sách lớp mới</a>
+            <a href="${pageContext.request.contextPath}/new-class-list" class="btn btn-outline-primary">Xem danh sách lớp mới</a>
           </div>
 
 
