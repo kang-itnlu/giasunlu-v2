@@ -91,35 +91,34 @@
                     </button>
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav py-0">
-                            <a href="index.jsp" class="nav-item nav-link">Trang chủ</a>
-                            <a href="about.jsp" class="nav-item nav-link">Giới thiệu</a>
-                            <a href="service.jsp" class="nav-item nav-link">Dịch vụ</a>
-                            <a href="teacher.jsp" class="nav-item nav-link">Gia sư</a>
+                            <a href="${pageContext.request.contextPath}/home" class="nav-item nav-link">Trang chủ</a>
+                            <a href="${pageContext.request.contextPath}/about" class="nav-item nav-link">Giới thiệu</a>
+                            <a href="${pageContext.request.contextPath}/service" class="nav-item nav-link">Dịch vụ</a>
+                            <a href="${pageContext.request.contextPath}/teacher" class="nav-item nav-link">Gia sư</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dành cho gia sư</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="overview.jsp" class="dropdown-item">Tổng quan</a>
-                                    <a href="new-class-list.jsp" class="dropdown-item">Danh sách lớp mới</a>
-                                    <a href="receive-class.jsp" class="dropdown-item">Cách thức nhận lớp</a>
-                                    <a href="refund-policy.jsp" class="dropdown-item">Chính sách hoàn phí</a>
-                                    <a href="contract.jsp" class="dropdown-item">Hợp đồng mẫu</a>
-                                    <a href="class-status.jsp" class="dropdown-item">Kiểm tra tình trạng lớp</a>
-                                    <a href="note-receive-class.jsp" class="dropdown-item">Tạo note nhận lớp</a>
-                                    <a href="debt-policy.jsp" class="dropdown-item">Chính sách nợ phí</a>
-                                    <a href="class-admission-fee.jsp" class="dropdown-item">Tính lại phí nhận lớp </a>
+                                    <a href="${pageContext.request.contextPath}/overview" class="dropdown-item">Tổng quan</a>
+                                    <a href="${pageContext.request.contextPath}/new-class-list" class="dropdown-item">Danh sách lớp mới</a>
+                                    <a href="${pageContext.request.contextPath}/receive-class" class="dropdown-item">Cách thức nhận lớp</a>
+                                    <a href="${pageContext.request.contextPath}/refund-policy" class="dropdown-item">Chính sách hoàn phí</a>
+                                    <a href="${pageContext.request.contextPath}/contract" class="dropdown-item">Hợp đồng mẫu</a>
+                                    <a href="${pageContext.request.contextPath}/class-status" class="dropdown-item">Kiểm tra tình trạng lớp</a>
+                                    <a href="${pageContext.request.contextPath}/note-receive-class" class="dropdown-item">Tạo note nhận lớp</a>
+                                    <a href="${pageContext.request.contextPath}/debt-policy" class="dropdown-item">Chính sách nợ phí</a>
+                                    <a href="${pageContext.request.contextPath}/class-admission-fee" class="dropdown-item">Tính lại phí nhận lớp </a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="blog-customer.jsp" class="dropdown-item">Blog khách hàng</a>
-                                    <a href="blog-tutor.jsp" class="dropdown-item">Blog gia sư</a>
+                                    <a href="${pageContext.request.contextPath}/blog-customer" class="dropdown-item">Blog khách hàng</a>
+                                    <a href="${pageContext.request.contextPath}/blog-tutor" class="dropdown-item">Blog gia sư</a>
                                 </div>
                             </div>
-                            <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
+                            <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="login.jsp">Đăng nhập tài khoản</a>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="register.jsp">Đăng ký làm gia sư</a>
+
                     </div>
                 </nav>
             </div>
