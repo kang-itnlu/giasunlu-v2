@@ -118,7 +118,16 @@
                             </div>
                             <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
+                        <c:choose>
+                            <c:when test="${sessionScope.account.id==null}">
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/login">Đăng nhập tài khoản</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
+                            </c:otherwise>
+                        </c:choose>
 
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
                     </div>
                 </nav>
             </div>
