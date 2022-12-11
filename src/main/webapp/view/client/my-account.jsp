@@ -23,6 +23,10 @@
 
   <!-- Customized Bootstrap Stylesheet -->
   <link href="css/style.css" rel="stylesheet">
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -157,6 +161,7 @@
         <h5 class="mt-3 pl-1">Mã gia sư: <span class="text-success">GD3669</span></h5>
 
         <h5 class="pl-1">Số dư: <span class="text-primary">0 ₫</span></h5>
+        <a href="coin.jsp" class="btn btn-primary">Nạp xu</a>
 
         <!-- -->
 

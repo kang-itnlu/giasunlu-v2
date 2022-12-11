@@ -16,11 +16,14 @@
 <!-- Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
 
+<!-- Customized Bootstrap Stylesheet -->
+<link href="${url}css/style.css" rel="stylesheet">
+
 <!-- Libraries Stylesheet -->
 <link href="${url}lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
-<!-- Customized Bootstrap Stylesheet -->
-<link href="${url}css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <header>
     <div class="container-fluid d-none d-lg-block">
         <div class="row align-items-center py-4 px-xl-5">
@@ -115,21 +118,7 @@
                             </div>
                             <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
-                        <c:choose>
-                            <c:when test="${sessionScope.account.id==null}">
-                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/login">Đăng nhập tài khoản</a>
-                            </c:when>
-                            <c:otherwise>
-                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
-                            </c:otherwise>
-                        </c:choose>
 
-
-
-
-
-
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
                     </div>
                 </nav>
             </div>
