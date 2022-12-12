@@ -15,6 +15,9 @@ public interface TutorPortfolioDao {
     @SqlQuery("select * from teacher_portfolio where id = :id")
     TutorPortfolio getTutorPortfolioById(@Bind("id") int id);
 
+    @SqlQuery("select * from teacher_portfolio where user_id=:userId")
+    TutorPortfolio getTutorPortfolioByUserId(@Bind("userid") int userId);
+
     @SqlQuery("select * from teacher_portfolio")
     List<TutorPortfolio> getTutorPortfolios();
 
