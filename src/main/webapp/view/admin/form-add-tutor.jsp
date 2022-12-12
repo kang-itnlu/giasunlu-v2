@@ -144,6 +144,10 @@
               </select>
             </div>
 
+
+      
+
+
             <div class="form-group  col-md-3">
               <label for="exampleSelect1" class="control-label">Công việc</label>
               <select class="form-control" id="exampleSelect1">
@@ -189,6 +193,11 @@
       </div>
 
     </div>
+    <button class="btn btn-save" type="button">Lưu lại</button>
+    <a class="btn btn-cancel" href="./table-data-tutor.jsp">Hủy bỏ</a>
+  </div>
+
+
   </div>
 </main>
 

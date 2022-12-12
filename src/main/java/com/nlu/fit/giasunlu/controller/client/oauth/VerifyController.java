@@ -2,6 +2,7 @@ package com.nlu.fit.giasunlu.controller.client.oauth;
 
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
+import com.nlu.fit.giasunlu.service.serviceImpl.UserServiceImpl;
 import com.nlu.fit.giasunlu.utils.Constant;
 import com.nlu.fit.giasunlu.utils.SecurityUtils;
 import com.nlu.fit.giasunlu.utils.SendMail;
@@ -18,7 +19,7 @@ import java.util.Base64;
 
 @WebServlet(name = "VerifyController", value = "/verify")
 public class VerifyController extends HttpServlet {
-    UserService userService;
+    UserService userService = new UserServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

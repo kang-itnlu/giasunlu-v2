@@ -35,8 +35,11 @@
                                 </div>
                             </a>
 
-                            <div class="fb-login-button mt-3" data-width="" data-size="large" data-button-type="continue_with" data-layout="default"  data-auto-logout-link="false" data-use-continue-as="false"></div>
-
+                            <a href="https://www.facebook.com/dialog/oauth?client_id=696959065072284&redirect_uri=http://localhost:8080/giasunlu/login-facebook"
+                               class="auth-form__socials--facebook btn btn--size-s btn--with-icon">
+                                <i class="auth-form__socials-icon fab fa-facebook-square"></i>
+                                <span class="auth-form__socials-title">Đăng nhập với Facebook</span>
+                            </a>
                         </div>
                         <div class="divider-login mt-2">
                             <span>hay</span>

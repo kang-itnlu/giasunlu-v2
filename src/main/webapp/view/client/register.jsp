@@ -155,7 +155,7 @@
   </style>
 
   <script src="https://connect.facebook.net/en_US/bundle/sdk.js/" async="" crossorigin="anonymous"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/Km9gKuG06He-isPsP6saG8cn/recaptcha__vi.js" crossorigin="anonymous" integrity="sha384-zM9CT1KiI1bfCXv/ZnNXhcfWU4ye3ImwtxGBe9civqoVjwQKHQprKBk0e4g5nOxI"></script><script src="https://www.google.com/recaptcha/api.js" async="" defer=""></script>
-
+  <script src="https://www.google.com/recaptcha/api.js"></script>
 </main>
 
 <jsp:include page="footer.jsp"/>

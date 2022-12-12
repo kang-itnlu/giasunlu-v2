@@ -162,9 +162,15 @@ MODAL
           </div>
         </div>
         <BR>
+
 <%--        <a href="#" style="    float: right;--%>
 <%--        font-weight: 600;--%>
 <%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
+
+        <%--        <a href="#" style="    float: right;--%>
+        <%--        font-weight: 600;--%>
+        <%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
+
 
         <button class="btn btn-save" type="button">Lưu lại</button>
         <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
@@ -303,7 +309,6 @@ MODAL
 
 
 </script>
-=======
 
 </body>
 

@@ -6,6 +6,7 @@ import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.service.serviceImpl.UserServiceImpl;
 import com.nlu.fit.giasunlu.utils.Constant;
 import com.nlu.fit.giasunlu.utils.GoogleUtils;
+import org.json.simple.parser.ParseException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -29,11 +30,16 @@ public class LoginWithGoogleController extends HttpServlet {
             RequestDispatcher dis = request.getRequestDispatcher(Constant.Path.LOGIN);
             dis.forward(request, response);
         } else {
-            String accessToken = GoogleUtils.getToken(code);
+            String accessToken = null;
+            try {
+                accessToken = GoogleUtils.getToken(code);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             GooglePojo googlePojo = GoogleUtils.getUserInfo(accessToken);
             User u = new User();
             u.setLastName(googlePojo.getName() + "");
-            u.setEmail(googlePojo.getEmail());
+            u.setEmail(googlePojo.getEmail()+ "");
             u.setFirstName(googlePojo.getName() + "");
             u.setAvatar(googlePojo.getPicture());
             u.setPassword("MDAwMA==");
