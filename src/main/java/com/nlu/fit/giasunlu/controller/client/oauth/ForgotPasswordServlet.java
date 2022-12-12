@@ -2,8 +2,12 @@ package com.nlu.fit.giasunlu.controller.client.oauth;
 
 
 
+import com.nlu.fit.giasunlu.dao.NewUserDao;
+import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
+import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.utils.SendMail;
+import org.jdbi.v3.core.Jdbi;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,13 +30,14 @@ public class ForgotPasswordServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         String email = request.getParameter("email");
-
-        String password = userService.getPassword(email);
+        User user;
+        Jdbi jdbi= JDBIConnection.get();
+        user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUserByEmail(email));
         String alertMsg;
-        if (password != null) {
+        if (user != null) {
             alertMsg = "Mật khẩu đã được gửi vào email của bạn";
             request.setAttribute("alert", alertMsg);
-            SendMail.sendMail(email, "GIASUNLU of forgot password", "Welcome to GIASUNLU. Here is your password: " + Base64.getDecoder().decode(password) + ".Thanks!");
+            SendMail.sendMail(email, "GIASUNLU of forgot password", "Welcome to GIASUNLU. Here is your password: " + Base64.getDecoder().decode(user.getPassword()) + ".Thanks!");
 
         } else {
             alertMsg = "Không tìm thấy tài khoản với email đã nhập!";

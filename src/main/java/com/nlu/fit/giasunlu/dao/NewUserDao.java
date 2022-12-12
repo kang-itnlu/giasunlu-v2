@@ -40,7 +40,7 @@ public interface NewUserDao {
     @SqlUpdate("update user set password = :password where id = :id")
     void changePassword(@Bind("id") int id, @Bind("password") String password);
 
-    @SqlQuery("select * from user where email = :email and password = MD5(:password)")
+    @SqlQuery("select * from user where email = :email and password = :password")
     User checkLogin(@Bind("email") String email, @Bind("password") String password);
 
     @SqlQuery("select * from user where email = :email and verify_code = :verifyCode")
