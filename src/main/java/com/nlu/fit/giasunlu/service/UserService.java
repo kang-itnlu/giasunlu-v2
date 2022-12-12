@@ -17,7 +17,9 @@ public interface UserService {
 
     User getUser(int id);
 
-    User login(String username, String password);
+    User getUserWithAccessToken(String username, String password);
+
+    User getUserWithAccessToken(String accessToken);
 
     User loginAdmin(String email, String password);
 
@@ -31,4 +33,6 @@ public interface UserService {
     void changePassword(int id, String password);
     boolean checkExistUsername(String username);
     String getPassword(String email);
+
+
 }

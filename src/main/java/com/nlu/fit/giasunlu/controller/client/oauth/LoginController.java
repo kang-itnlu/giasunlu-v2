@@ -72,6 +72,9 @@ public class LoginController extends HttpServlet {
         Jdbi jdbi= JDBIConnection.get();
         user = jdbi.withExtension(NewUserDao.class, dao -> dao.checkLogin(email, SecurityUtils.encodePassword(password)));
 
+
+        User user = service.getUserWithAccessToken(email, password);
+
 //        if (user != null && verify) {
 
             if (user != null) {

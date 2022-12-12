@@ -72,4 +72,10 @@ public interface NewUserDao {
 
     @SqlUpdate("update user set status=:status where id = :id")
     void changeUserStatus(@Bind("id") int id, @Bind("status") int status);
+
+    @SqlUpdate("insert into user (email, password, firstname, lastname) values (:email, MD5(:password), :firstname, :lastname)")
+    Boolean register(@Bind("email") String email,@Bind("password") String password,@Bind("firstName") String firstName,@Bind("lastName") String lastName);
+
+    @SqlQuery("select password from user where email = :email")
+    String getPassword(@Bind("email") String email);
 }

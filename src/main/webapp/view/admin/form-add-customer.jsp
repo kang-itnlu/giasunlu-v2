@@ -3,7 +3,9 @@
 <html lang="en">
 
 <head>
+
   <jsp:include page="header.jsp"></jsp:include>
+
 </head>
 
 <body onload="time()" class="app sidebar-mini rtl"></body>
