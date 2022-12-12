@@ -1,6 +1,7 @@
 package com.nlu.fit.giasunlu.controller.client.oauth;
 
 import com.nlu.fit.giasunlu.dao.NewUserDao;
+import com.nlu.fit.giasunlu.dao.UserDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
@@ -72,8 +73,6 @@ public class LoginController extends HttpServlet {
         Jdbi jdbi= JDBIConnection.get();
         user = jdbi.withExtension(NewUserDao.class, dao -> dao.checkLogin(email, SecurityUtils.encodePassword(password)));
 
-
-        User user = service.getUserWithAccessToken(email, password);
 
 //        if (user != null && verify) {
 
