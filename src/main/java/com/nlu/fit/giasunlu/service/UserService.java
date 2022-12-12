@@ -30,9 +30,14 @@ public interface UserService {
     List<User> search(String keyword);
 
     boolean checkExistEmail(String email);
+
     void changePassword(int id, String password);
+
     boolean checkExistUsername(String username);
+
     String getPassword(String email);
 
+    Integer countCustomer();
 
+    Integer countTeacher();
 }

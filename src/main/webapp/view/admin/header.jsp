@@ -28,13 +28,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
     </head>
     <!-- Navbar-->
-    <header class="app-header">
-        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"
-                                        aria-label="Hide Sidebar"></a>
-        <!-- Navbar Right Menu-->
-        <ul class="app-nav">
-        </ul>
-    </header>
+<%--    <header class="app-header">--%>
+<%--        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"--%>
+<%--                                        aria-label="Hide Sidebar"></a>--%>
+<%--        <!-- Navbar Right Menu-->--%>
+<%--        <ul class="app-nav">--%>
+<%--        </ul>--%>
+<%--    </header>--%>
     <!-- Sidebar menu-->
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <aside class="app-sidebar">

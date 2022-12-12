@@ -107,5 +107,15 @@ public class UserServiceImpl implements UserService {
         return userDao.getPassword(email);
     }
 
+    @Override
+    public Integer countCustomer() {
+        return null;
+    }
+
+    @Override
+    public Integer countTeacher() {
+        return null;
+    }
+
 }
 

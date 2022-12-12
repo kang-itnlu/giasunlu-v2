@@ -45,9 +45,11 @@ public class NewUserServiceImp implements UserService {
     public User getUserWithAccessToken(String username, String password) {
         return jdbi.withExtension(NewUserDao.class, dao -> dao.checkLogin(username, password));
     }
+
     public User getUserWithAccessToken(String accessToken) {
         return jdbi.withExtension(NewUserDao.class, dao -> dao.getUserByAccessToken(accessToken));
     }
+
     @Override
     public User loginAdmin(String email, String password) {
         return jdbi.withExtension(NewUserDao.class, dao -> dao.checkLogin(email, password));
@@ -86,5 +88,15 @@ public class NewUserServiceImp implements UserService {
     @Override
     public String getPassword(String email) {
         return jdbi.withExtension(NewUserDao.class, dao -> dao.getPassword(email));
+    }
+
+    @Override
+    public Integer countCustomer() {
+        return jdbi.withExtension(NewUserDao.class, NewUserDao::countCustomer);
+    }
+
+    @Override
+    public Integer countTeacher() {
+        return jdbi.withExtension(NewUserDao.class, NewUserDao::countTeacher);
     }
 }
