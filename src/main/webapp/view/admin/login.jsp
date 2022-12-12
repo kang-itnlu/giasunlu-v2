@@ -1,6 +1,4 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:url value="/view/admin/" var="url"/>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -8,13 +6,13 @@
     <title>Đăng nhập quản trị | Website quản trị v2.0</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="${url}/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="${url}/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="${url}/vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="${url}/vendor/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="${url}/vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="${url}/css/util.css">
-    <link rel="stylesheet" type="text/css" href="${url}/css/mainlogin.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/mainlogin.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -29,13 +27,12 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="${url}/images/team.jpg" alt="IMG">
-
+                    <img src="images/team.jpg" alt="IMG">
                 </div>
                 <!--=====TIÊU ĐỀ======-->
                 <form class="login100-form validate-form">
                     <span class="login100-form-title">
-                        <b>ĐĂNG NHẬP </b>
+                        <b>ĐĂNG NHẬP HỆ THỐNG POS</b>
                     </span>
                     <!--=====FORM INPUT TÀI KHOẢN VÀ PASSWORD======-->
                     <form action="">
@@ -59,8 +56,8 @@
 
                         <!--=====ĐĂNG NHẬP======-->
                         <div class="container-login100-form-btn">
-                            <input type="button" value="Đăng nhập" id="submit" onclick="validate()"  />
-
+                     
+                            <input type="button" value="Đăng nhập" id="submit" onclick="validate()" />
                         </div>
                         <!--=====LINK TÌM MẬT KHẨU======-->
                         <div class="text-right p-t-12">
@@ -75,16 +72,16 @@
         </div>
     </div>
     <!--Javascript-->
-    <script src="${url}/js/main.js"></script>
+    <script src="/js/main.js"></script>
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
-    <script src="${url}/vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="${url}/vendor/bootstrap/js/popper.js"></script>
-    <script src="${url}/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="${url}/vendor/select2/select2.min.js"></script>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="vendor/select2/select2.min.js"></script>
     <script type="text/javascript">
         //show - hide mật khẩu
         function myFunction() {
-            let x = document.getElementById("myInput");
+            var x = document.getElementById("myInput");
             if (x.type === "password") {
                 x.type = "text"
             } else {
@@ -93,8 +90,8 @@
         }
         $(".click-eye").click(function () {
             $(this).toggleClass("bx-show bx-hide");
-            let input = $($(this).attr("toggle"));
-            if (input.attr("type") === "password") {
+            var input = $($(this).attr("toggle"));
+            if (input.attr("type") == "password") {
                 input.attr("type", "text");
             } else {
                 input.attr("type", "password");
