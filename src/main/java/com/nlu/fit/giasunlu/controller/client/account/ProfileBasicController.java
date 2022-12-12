@@ -1,4 +1,4 @@
-package com.nlu.fit.giasunlu.controller.client;
+package com.nlu.fit.giasunlu.controller.client.account;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
 //        System.out.println(verify);
         UserService service = new UserServiceImpl();
 
-        User user = service.login(email, password);
+        User user = service.getUserWithAccessToken(email, password);
 //        if (user != null && verify) {
 
             if (user != null) {
