@@ -37,7 +37,7 @@ public class UserDaoImpl implements UserDao {
             ps.setString(1, user.getEmail());
             ps.setString(2, user.getFirstName());
             ps.setString(3, user.getLastName());
-            ps.setDate(4, user.getDateOfBirth());
+            ps.setDate(4, (Date) user.getDateOfBirth());
             ps.setString(5, user.getPassword());
             ps.setString(6, user.getAvatar());
             ps.setString(7, "");
@@ -53,8 +53,8 @@ public class UserDaoImpl implements UserDao {
                 roleId = 2;
             }
             ps.setInt(9, roleId);
-            ps.setDate(10, (Date) user.getCreateAt());
-            ps.setDate(11, (Date) user.getUpdateAt());
+//            ps.setDate(10,  user.getCreateAt());
+//            ps.setDate(11,  user.getUpdateAt());
             ps.executeUpdate();
             con.close();
         } catch (SQLException e) {
