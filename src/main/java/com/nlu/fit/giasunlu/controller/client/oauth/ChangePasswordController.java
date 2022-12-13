@@ -1,8 +1,14 @@
 package com.nlu.fit.giasunlu.controller.client.oauth;
 
+import com.nlu.fit.giasunlu.dao.BlogDao;
+import com.nlu.fit.giasunlu.dao.NewUserDao;
+import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
+import com.nlu.fit.giasunlu.model.Blog;
+import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.service.serviceImpl.UserServiceImpl;
 import com.nlu.fit.giasunlu.utils.SecurityUtils;
+import org.jdbi.v3.core.Jdbi;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,9 +34,12 @@ public class ChangePasswordController extends HttpServlet {
         String rePass = request.getParameter("reNewPassword");
         int id = Integer.parseInt(request.getParameter("id"));
         String alert = "";
-        if (userService.getUser(id).getPassword().equals(SecurityUtils.encodePassword(oldPassword))) {
+        User user;
+        Jdbi jdbi= JDBIConnection.get();
+        user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUser(id));
+        if (user.getPassword().equals(SecurityUtils.encodePassword(oldPassword))) {
             if (newPassword.equals(rePass)) {
-                userService.changePassword(id, SecurityUtils.encodePassword(newPassword));
+                jdbi.useExtension(NewUserDao.class, dao -> dao.changePassword(id, SecurityUtils.encodePassword(newPassword)));
                 alert = "Change password success";
             } else {
                 alert = "New password and re-new password not match";

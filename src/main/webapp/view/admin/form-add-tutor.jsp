@@ -33,10 +33,25 @@
         color: white;
     }
 
+
     #uploadfile,
     .removeimg {
         display: none;
     }
+
+
+      
+
+
+            <div class="form-group  col-md-3">
+              <label for="exampleSelect1" class="control-label">Công việc</label>
+              <select class="form-control" id="exampleSelect1">
+                <option>-- Công việc --</option>
+                <option>Sinh viên</option>
+                <option>Giáo viên</option>
+                <option>Giáo viên đã về hưu</option>
+                <option>Giảng viên</option>
+
 
     #thumbbox {
         position: relative;
@@ -193,6 +208,14 @@
 
         </div>
     </div>
+
+    <button class="btn btn-save" type="button">Lưu lại</button>
+    <a class="btn btn-cancel" href="./table-data-tutor.jsp">Hủy bỏ</a>
+  </div>
+
+
+  </div>
+
 </main>
 
 

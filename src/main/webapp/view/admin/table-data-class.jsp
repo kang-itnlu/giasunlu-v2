@@ -103,6 +103,10 @@
             </tbody>
           </table>
         </div>
+        <!--
+          MODAL
+        -->
+        </div>
       </div>
     </div>
   </div>
@@ -188,6 +192,7 @@
     }
     if (mm < 10) {
       mm = '0' + mm
+
     }
     today = day + ', ' + dd + '/' + mm + '/' + yyyy;
     tmp = '<span class="date"> ' + today + ' - ' + nowTime +
@@ -212,6 +217,7 @@
       win.print();
     }
   }
+
 </script>
 </body>
 

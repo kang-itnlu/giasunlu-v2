@@ -23,6 +23,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -439,7 +442,8 @@
                 </ul>
 
                 <h5 class="mt-4">Số dư tài khoản</h5>
-                <h5 class="text-primary">0 ₫</h5>
+                <h5 class="text-primary">0 xu</h5>
+                <a href="coin.jsp" class="btn btn-primary">Nạp xu</a>
 
                 <div class="mt-4 pt-2 h5">
                     <a href="/myaccount/mynote"><span>Note nhận lớp</span></a>

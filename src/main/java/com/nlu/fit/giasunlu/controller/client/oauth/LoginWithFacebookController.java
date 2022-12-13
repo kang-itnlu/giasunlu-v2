@@ -1,10 +1,15 @@
 package com.nlu.fit.giasunlu.controller.client.oauth;
 
+import com.nlu.fit.giasunlu.dao.NewUserDao;
+import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.service.serviceImpl.UserServiceImpl;
 import com.nlu.fit.giasunlu.utils.Constant;
 import com.nlu.fit.giasunlu.utils.RestFB;
+import com.nlu.fit.giasunlu.utils.SecurityUtils;
 import com.restfb.types.User;
+import org.jdbi.v3.core.Jdbi;
+import org.json.simple.parser.ParseException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,16 +27,22 @@ public class LoginWithFacebookController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String code = request.getParameter("code");
-
+        Jdbi jdbi= JDBIConnection.get();
         if (code == null || code.isEmpty()) {
             RequestDispatcher dis = request.getRequestDispatcher(Constant.Path.LOGIN);
             dis.forward(request, response);
         } else {
-            String accessToken = RestFB.getToken(code);
+            System.out.println("code: " + code);
+            String accessToken = null;
+            try {
+                accessToken = RestFB.getToken(code);
+            } catch (ParseException e) {
+                throw new RuntimeException(e);
+            }
             User user = RestFB.getUserInfo(accessToken);
             com.nlu.fit.giasunlu.model.User u = new com.nlu.fit.giasunlu.model.User();
             u.setFirstName(user.getName() + " " );
-            u.setEmail(user.getEmail());
+            u.setEmail(user.getEmail()+"");
             u.setLastName(user.getName() + "");
             u.setAvatar(user.getPicture().getUrl());
             u.setPassword("MDAwMA==");
@@ -39,7 +50,7 @@ public class LoginWithFacebookController extends HttpServlet {
             u.setRoleId(2);
             HttpSession session = request.getSession(true);
             session.setAttribute("account", u);
-            userService.saveUser(u);
+            jdbi.useExtension(NewUserDao.class, dao -> dao.insertUser(u));
             response.sendRedirect(request.getContextPath() + "/waiting");
         }
     }

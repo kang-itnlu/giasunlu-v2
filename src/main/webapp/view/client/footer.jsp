@@ -20,6 +20,16 @@
 <!-- Customized Bootstrap Stylesheet -->
 <link href="${url}css/style.css" rel="stylesheet">
 
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+
+<meta property="fb:app_id" content="707516127168532"/>
+<meta property="fb:admins" content="100005868942037"/>
+<%--<div id="fb-root"></div>--%>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=707516127168532&autoLogAppEvents=1"
+        nonce="EknEoy7g"></script>
+
 <footer>
     <div class="container-fluid bg-dark text-white py-5 px-sm-3 px-lg-5" style="margin-top: 10px;">
         <div class="row pt-5">
@@ -78,14 +88,55 @@
 
         </div>
     </div>
+
+    <div class="fb-livechat">
+        <div class="ctrlq fb-overlay"></div>
+        <div class="fb-widget">
+            <div class="ctrlq fb-close"></div>
+            <div class="fb-page" data-href="https://www.facebook.com/C%C3%A9line-115143804533811" data-tabs="messages"
+                 data-width="360" data-height="400" data-small-header="true" data-hide-cover="true"
+                 data-show-facepile="false">
+            </div>
+            <div class="fb-credit"><a href="https://chanhtuoi.com" target="_blank">Powered by Chanhtuoi</a></div>
+            <div id="fb-root"></div>
+        </div>
+        <a href="https://www.facebook.com/C%C3%A9line-115143804533811" title="Gửi tin nhắn cho chúng tôi qua Facebook"
+           class="ctrlq fb-button">
+            <div class="bubble">1</div>
+            <div class="bubble-msg">Bạn cần hỗ trợ?</div>
+        </a>
+    </div>
     <!-- Footer End -->
 
-
+<%--    <div class="wrapper">--%>
+<%--        <div id="main-div">--%>
+<%--            <div id="main-button" class="wave open">--%>
+<%--                <i class="fas fa-comments fa-times"></i>--%>
+<%--            </div>--%>
+<%--            <button><i class="fas fa-phone-alt"></i> Free Consultation</button>--%>
+<%--            <a href="#" class="messenger-color"><i class="fab fa-facebook-messenger"></i></a>--%>
+<%--            <a href="#" class="whatsapp-color"><i class="fab fa-whatsapp"></i></a>--%>
+<%--&lt;%&ndash;            <a href="#" class="telegram-color"><i class="fab fa-telegram-plane"></i></a>&ndash;%&gt;--%>
+<%--        </div>--%>
+<%--    </div>--%>
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
 </footer>
+<div class="call">
+    <a href="Tel: 0342499381"><i class="fas fa-phone-alt"></i></a>
+</div>
 <!-- JavaScript Libraries -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script>
+    var t = { delay: 125, overlay: $(".fb-overlay"), widget: $(".fb-widget"), button: $(".fb-button") };
+    setTimeout(function () { $("div.fb-livechat").fadeIn() }, 8 * t.delay);
+    $(".ctrlq").on("click", function (e) { e.preventDefault(), t.overlay.is(":visible") ? (t.overlay.fadeOut(t.delay),
+        t.widget.stop().animate({ bottom: 0, opacity: 0 }, 2 * t.delay,
+            function () { $(this).hide("slow"), t.button.show() })) : t.button.fadeOut("medium",
+        function () { t.widget.stop().show().animate({ bottom: "30px", opacity: 1 }, 2 * t.delay), t.overlay.fadeIn(t.delay) })});
+</script>
+
+<%--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>--%>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 <script src="${url}lib/easing/easing.min.js"></script>
 <script src="${url}lib/owlcarousel/owl.carousel.min.js"></script>
