@@ -10,7 +10,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Main CSS-->
-  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="${url}/css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
   <!-- or -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -214,18 +214,18 @@
 
     
   </main>
-  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="${url}/js/jquery-3.2.1.min.js"></script>
   <!--===============================================================================================-->
-  <script src="js/popper.min.js"></script>
+  <script src="${url}/js/popper.min.js"></script>
   <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
   <!--===============================================================================================-->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="${url}/js/bootstrap.min.js"></script>
   <!--===============================================================================================-->
-  <script src="js/main.js"></script>
+  <script src="${url}/js/main.js"></script>
   <!--===============================================================================================-->
-  <script src="js/plugins/pace.min.js"></script>
+  <script src="${url}/js/plugins/pace.min.js"></script>
   <!--===============================================================================================-->
-  <script type="text/javascript" src="js/plugins/chart.js"></script>
+  <script type="text/javascript" src="${url}/js/plugins/chart.js"></script>
   <!--===============================================================================================-->
   <script type="text/javascript">
     var data = {

@@ -3,17 +3,19 @@ package com.nlu.fit.giasunlu.model;
 public class Turnover extends BaseEntity{
     int id;
     long coin;
+    long cost;
     int userId;
-    int postId;
+
 
     public Turnover() {
     }
 
-    public Turnover(int id, long coin, int userId, int postId) {
+    public Turnover(int id, long coin, long cost, int userId) {
         this.id = id;
         this.coin = coin;
+        this.cost = cost;
         this.userId = userId;
-        this.postId = postId;
+
     }
 
     public int getId() {
@@ -32,19 +34,19 @@ public class Turnover extends BaseEntity{
         this.coin = coin;
     }
 
+    public long getCost() {
+        return cost;
+    }
+
+    public void setCost(long cost) {
+        this.cost = cost;
+    }
+
     public int getUserId() {
         return userId;
     }
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public int getPostId() {
-        return postId;
-    }
-
-    public void setPostId(int postId) {
-        this.postId = postId;
     }
 }

@@ -31,6 +31,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
 </head>
 
+
+        <!-- Font-icon css-->
+        <link rel="stylesheet" type="text/css"
+              href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    </head>
+    <!-- Navbar-->
+<%--    <header class="app-header">--%>
+<%--        <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar"--%>
+<%--                                        aria-label="Hide Sidebar"></a>--%>
+<%--        <!-- Navbar Right Menu-->--%>
+<%--        <ul class="app-nav">--%>
+<%--        </ul>--%>
+<%--    </header>--%>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://i.pinimg.com/564x/f1/39/32/f13932f4ad04c5652aa8357ba33721ff.jpg" width="50px"
+                                            alt="User Image">
+            <div>
+                <p class="app-sidebar__user-name"><b>Thanh Huệ</b></p>
+                <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+            </div>
+
 <body onload="time()" class="app sidebar-mini rtl">
 <!-- Navbar-->
 <header class="app-header">
@@ -48,6 +74,7 @@
         <div>
             <p class="app-sidebar__user-name"><b>Thanh Huệ</b></p>
             <p class="app-sidebar__user-designation">Chào mừng bạn trở lại</p>
+
         </div>
     </div>
     <hr>
