@@ -1,7 +1,9 @@
 package com.nlu.fit.giasunlu.controller.client;
 
+import com.nlu.fit.giasunlu.dao.CoinHistoryDao;
 import com.nlu.fit.giasunlu.dao.NewUserDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
+import com.nlu.fit.giasunlu.model.CoinHistory;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.utils.PaymentServices;
 import com.paypal.api.payments.PayerInfo;
@@ -14,6 +16,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.Date;
 
 @WebServlet(name = "ExecutePaymentController", value = "/execute-payment")
 public class ExecutePaymentController extends HttpServlet {
@@ -42,6 +45,8 @@ public class ExecutePaymentController extends HttpServlet {
             Jdbi jdbi= JDBIConnection.get();
             User user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUser(Integer.parseInt(userId)));
             jdbi.useExtension(NewUserDao.class, dao -> dao.updateCoin(user.getId(), (long) (user.getCoin() + coin)));
+            CoinHistory coinHistory = new CoinHistory(user.getId(), String.format("Nạp %s xu vào tài khoản", coin), coin, "Paypal", new Date(), 0);
+            jdbi.useExtension(CoinHistoryDao.class, dao -> dao.insert(coinHistory));
             request.getRequestDispatcher("/view/client/receipt-detail.jsp").forward(request, response);
 
         } catch (PayPalRESTException ex) {
