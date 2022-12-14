@@ -152,9 +152,9 @@
                 <option>Giáo viên</option>
                 <option>Giáo viên đã về hưu</option>
                 <option>Giảng viên</option>
+
               </select>
             </div>
-
             <div class="form-group col-md-3">
               <label class="control-label">Trinh độ</label>
               <select class="form-control" id="exampleSelect3">
@@ -166,6 +166,7 @@
                 <option>Không bằng cấp</option>
               </select>
             </div>
+
 
             <div class="form-group col-md-12">
               <label class="control-label">Ảnh 3x4 nhân viên</label>
@@ -182,11 +183,10 @@
               </div>
 
             </div>
-          </form>
         </div>
+      </div>
 
-
-
+    </div>
     <button class="btn btn-save" type="button">Lưu lại</button>
     <a class="btn btn-cancel" href="./table-data-tutor.jsp">Hủy bỏ</a>
   </div>
