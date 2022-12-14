@@ -98,54 +98,60 @@ MODAL
               <span class="thong-tin-thanh-toan">
                 <h5>Chỉnh sửa thông tin gia sư</h5>
               </span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Mã gia sư</label>
-                        <input class="form-control" type="text" required value="#CD2187" disabled>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Họ và tên</label>
-                        <input class="form-control" type="text" required value="Võ Trường">
-                    </div>
-                    <div class="form-group  col-md-6">
-                        <label class="control-label">Số điện thoại</label>
-                        <input class="form-control" type="number" required value="09267312388">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Địa chỉ email</label>
-                        <input class="form-control" type="text" required value="truong.vd2000@gmail.com">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Ngày sinh</label>
-                        <input class="form-control" type="date" value="15/03/2000">
-                    </div>
-                    <div class="form-group  col-md-6">
-                        <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trình
-                        độ</label>
-                        <select class="form-control" id="exampleSelect3">
-                            <option>-- Chọn trình độ --</option>
-                            <option>Tốt nghiệp Đại Học</option>
-                            <option>Tốt nghiệp Cao Đẳng</option>
-                            <option>Tốt nghiệp Phổ Thông</option>
-                            <option>Chưa tốt nghiệp</option>
-                            <option>Không bằng cấp</option>
-                        </select>
-                    </div>
-                </div>
-                <BR>
-                <%--        <a href="#" style="    float: right;--%>
-                <%--        font-weight: 600;--%>
-                <%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
 
-                <button class="btn btn-save" type="button">Lưu lại</button>
-                <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-                <BR>
-            </div>
-            <div class="modal-footer">
-            </div>
+          </div>
         </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label class="control-label">Mã gia sư</label>
+            <input class="form-control" type="text" required value="#CD2187" disabled>
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Họ và tên</label>
+            <input class="form-control" type="text" required value="Võ Trường">
+          </div>
+          <div class="form-group  col-md-6">
+            <label class="control-label">Số điện thoại</label>
+            <input class="form-control" type="number" required value="09267312388">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Địa chỉ email</label>
+            <input class="form-control" type="text" required value="truong.vd2000@gmail.com">
+          </div>
+          <div class="form-group col-md-6">
+            <label class="control-label">Ngày sinh</label>
+            <input class="form-control" type="date" value="15/03/2000">
+          </div>
+          <div class="form-group  col-md-6">
+            <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trình độ</label>
+            <select class="form-control" id="exampleSelect3">
+              <option>-- Chọn trình độ --</option>
+              <option>Tốt nghiệp Đại Học</option>
+              <option>Tốt nghiệp Cao Đẳng</option>
+              <option>Tốt nghiệp Phổ Thông</option>
+              <option>Chưa tốt nghiệp</option>
+              <option>Không bằng cấp</option>
+            </select>
+          </div>
+        </div>
+        <BR>
+
+<%--        <a href="#" style="    float: right;--%>
+<%--        font-weight: 600;--%>
+<%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
+
+        <%--        <a href="#" style="    float: right;--%>
+        <%--        font-weight: 600;--%>
+        <%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
+
+
+        <button class="btn btn-save" type="button">Lưu lại</button>
+        <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+        <BR>
+      </div>
+      <div class="modal-footer">
+      </div>
+
     </div>
 </div>
 <!--
@@ -276,7 +282,6 @@ MODAL
 
 
 </script>
-=======
 
 </body>
 

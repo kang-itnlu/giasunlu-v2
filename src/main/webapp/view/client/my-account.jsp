@@ -23,6 +23,11 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -156,8 +161,9 @@
 <!-- Navbar End -->
 
 <main role="main">
-    <div class="container alert-group">
-    </div>
+
+  <div class="container alert-group">
+  </div>
 
 
     <div class="container">
