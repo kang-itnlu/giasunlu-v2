@@ -50,8 +50,8 @@
                 <h4>Transaction Details</h4>
                 <table>
                     <input type="hidden" name="paymentId" value="${param.paymentId}" />
-<%--                    <input type="hidden" name="user_id" value="${sessionScope.account.id}" />--%>
-                    <input type="hidden" name="user_id" value="1" />
+                    <input type="hidden" name="user_id" value="${sessionScope.account.id}" />
+<%--                    <input type="hidden" name="user_id" value="1" />--%>
                     <input type="hidden" name="PayerID" value="${param.PayerID}" />
                     <tbody>
                     <tr>
