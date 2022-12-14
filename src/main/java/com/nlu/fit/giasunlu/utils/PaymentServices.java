@@ -69,7 +69,8 @@ public class PaymentServices {
 
         Transaction transaction = new Transaction();
         transaction.setAmount(amount);
-        transaction.setDescription(topUp.getUserName() + " " + topUp.getPaymentMethod());
+        transaction.setCustom(topUp.getCoin());
+        transaction.setDescription(topUp.getUserName()+ " thanh toán phí nạp xu bằng" + " " + topUp.getPaymentMethod() +" với số xu :"+ topUp.getCoin());
 
         ItemList itemList = new ItemList();
         List<Item> items = new ArrayList<>();
