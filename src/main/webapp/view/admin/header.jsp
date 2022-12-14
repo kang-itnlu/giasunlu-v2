@@ -60,10 +60,14 @@
         <li><a class="app-menu__item" href="./table-data-customer.jsp"><i class='app-menu__icon bx bx-user-voice'></i><span
                 class="app-menu__label">Quản lý khách hàng</span></a></li>
 
-        <li><a class="app-menu__item" href="./table-data-class.jsp"><i class='app-menu__icon bx bx-task'></i><span
+        <li><a class="app-menu__item" href="./table-data-class.jsp"><i class='app-menu__icon bx bx-tachometer'></i><span
                 class="app-menu__label">Quản lý lớp học</span></a></li>
 
-        <li><a class="app-menu__item" href="./login.jsp"><i class='app-menu__icon bx bx-cog'></i><span class="app-menu__label">Đăng xuất</span></a></li>
+        <li><a class="app-menu__item" href="./table-data-report.jsp"><i class='app-menu__icon bx bx-task'></i><span
+                class="app-menu__label">Quản lý bài viết</span></a></li>
+
+        <li><a class="app-menu__item" href="./login.jsp"><i class='app-menu__icon bx bx-cog'></i><span
+                class="app-menu__label">Đăng xuất</span></a></li>
     </ul>
 </aside>
 </body>
