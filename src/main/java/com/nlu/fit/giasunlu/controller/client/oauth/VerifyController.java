@@ -33,11 +33,11 @@ public class VerifyController extends HttpServlet {
 
         String code = request.getParameter("code");
         if (code.equals(user.getVerifyCode())) {
-            userService.register(user.getEmail(),SecurityUtils.encodePassword(user.getPassword()), user.getFirstName(), user.getLastName());
+            userService.register(user.getEmail(),SecurityUtils.encodePassword(user.getPassword()), user.getFirstname(), user.getLastname());
             JSONObject obj = new JSONObject();
             obj.put("email", user.getEmail());
-            obj.put("first_name", user.getFirstName());
-            obj.put("last_name", user.getLastName());
+            obj.put("first_name", user.getFirstname());
+            obj.put("last_name", user.getLastname());
             user.setAccessToken(Base64.getEncoder().encodeToString(obj.toString().getBytes()));
             SendMail.sendMail(user.getEmail(), "GIASUNLU-Welcome", "Welcome to GIASUNLU. Your account has been verified!");
 

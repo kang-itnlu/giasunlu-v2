@@ -25,4 +25,13 @@ public interface ClassDao {
 
     @SqlUpdate("delete from class where id = :id")
     void deleteClass(@Bind("id") int id);
+
+    @SqlQuery("select * from class")
+    List<Class> getClasses();
+
+    @SqlQuery("select * from class where status = :status")
+    List<Class> getClassesByStatus(int status);
+
+    @SqlQuery("select * from class :query")
+    List<Class> getClassesByStatusWithQuery(int status, String query);
 }

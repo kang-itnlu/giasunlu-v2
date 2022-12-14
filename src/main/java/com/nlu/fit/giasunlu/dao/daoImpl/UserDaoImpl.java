@@ -35,9 +35,9 @@ public class UserDaoImpl implements UserDao {
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, user.getEmail());
-            ps.setString(2, user.getFirstName());
-            ps.setString(3, user.getLastName());
-            ps.setDate(4, user.getDateOfBirth());
+            ps.setString(2, user.getFirstname());
+            ps.setString(3, user.getLastname());
+            ps.setDate(4, new Date(user.getDateOfBirth().getTime()));
             ps.setString(5, user.getPassword());
             ps.setString(6, user.getAvatar());
             ps.setString(7, "");
@@ -65,6 +65,7 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * Update User
+     *
      * @param user
      */
     public void updateUser(User user) {
@@ -86,6 +87,7 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * Delete User
+     *
      * @param id
      */
     public void deleteUser(int id) {
@@ -114,6 +116,7 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * Get User By ID
+     *
      * @param id
      * @return
      */
@@ -139,13 +142,14 @@ public class UserDaoImpl implements UserDao {
 
     /**
      * Get all Users
+     *
      * @return
      */
     @SuppressWarnings("unchecked")
-    public List< User > getAllUser() {
+    public List<User> getAllUser() {
 
         Transaction transaction = null;
-        List < User > listOfUser = null;
+        List<User> listOfUser = null;
         try (Session session = HibernateUtils.getSessionFactory().openSession()) {
             // start a transaction
             transaction = session.beginTransaction();
@@ -199,7 +203,6 @@ public class UserDaoImpl implements UserDao {
         }
         return null;
     }
-
 
 
     @Override

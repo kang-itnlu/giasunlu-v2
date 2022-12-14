@@ -30,9 +30,9 @@ public class LoginWithFacebookController extends HttpServlet {
             String accessToken = RestFB.getToken(code);
             User user = RestFB.getUserInfo(accessToken);
             com.nlu.fit.giasunlu.model.User u = new com.nlu.fit.giasunlu.model.User();
-            u.setFirstName(user.getName() + " " );
+            u.setFirstname(user.getName() + " " );
             u.setEmail(user.getEmail());
-            u.setLastName(user.getName() + "");
+            u.setLastname(user.getName() + "");
             u.setAvatar(user.getPicture().getUrl());
             u.setPassword("MDAwMA==");
             u.setDateOfBirth(new Date(1999,1,1));

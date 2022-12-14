@@ -29,6 +29,10 @@ public interface UserService {
 
     List<User> search(String keyword);
 
+    List<User> getAllCustomer();
+
+    List<User> getAllTeacher();
+
     boolean checkExistEmail(String email);
 
     void changePassword(int id, String password);

@@ -18,6 +18,9 @@ public interface ReportDao {
     @SqlQuery("select  * from report where status=:status")
     List<Report> getReportWithStatus(@Bind("status") int status);
 
+    @SqlQuery("select * from report order by id desc")
+    List<Report> getReports();
+
     @SqlQuery("select * from report where post_id=:postId")
     List<Report> getReportFromPost(@Bind("postId") int postId);
 

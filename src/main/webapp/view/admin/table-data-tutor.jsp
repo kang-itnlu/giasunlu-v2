@@ -48,73 +48,34 @@
                             <th width="150">Họ và tên</th>
                             <th width="20">Ảnh thẻ</th>
                             <th width="250">Địa chỉ</th>
+                            <th>Email</th>
                             <th>Ngày sinh</th>
                             <th>Giới tính</th>
                             <th>SĐT</th>
-                            <th>Trình độ</th>
                             <th width="100">Tính năng</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td width="10"><input type="checkbox" name="check2" value="2"></td>
-                            <td>#SX22837</td>
-                            <td>Trần Khả Ái</td>
-                            <td><img class="img-card-person" src="/img-anhthe/2.jpg" alt=""></td>
-                            <td>6 Nguyễn Lương Bằng, Tân Phú, Quận 7, Hồ Chí Minh</td>
-                            <td>22/12/1999</td>
-                            <td>Nữ</td>
-                            <td>0931342432</td>
-                            <td>Tốt nghiệp đại học</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                        onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
-                                </button>
-                                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                                        data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="10"><input type="checkbox"></td>
-                            <td>#SR28746</td>
-                            <td>Trần Anh Khoa</td>
-                            <td><img class="img-card-person" src="/img-anhthe/4.jpg" alt=""></td>
-                            <td>19 Đường Nguyễn Hữu Thọ, Tân Hưng, Quận 7, Hồ Chí Minh</td>
-                            <td>18/02/1995</td>
-                            <td>Nam</td>
-                            <td>0916706633</td>
-                            <td>Tốt nghiệp đại học</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                        onclick="myFunction()"><i
-                                        class="fas fa-trash-alt"></i>
-                                </button>
-                                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                                        data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td width="10"><input type="checkbox"></td>
-                            <td>#KJS276</td>
-                            <td>Nguyễn Thành Nhân</td>
-                            <td><img class="img-card-person" src="/img-anhthe/5.jpg" alt=""></td>
-                            <td>Số 13, Tân Thuận Đông, Quận 7, Hồ Chí Minh</td>
-                            <td>10/03/1996</td>
-                            <td>Nam</td>
-                            <td>0971038066</td>
-                            <td>Tốt nghiệp đại học</td>
-                            <td>
-                                <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                        onclick="myFunction()"><i
-                                        class="fas fa-trash-alt"></i>
-                                </button>
-                                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                                        data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                                </button>
-                            </td>
-                        </tr>
+
+                        <c:forEach items="${users}" var="user">
+                            <tr>
+                                <td><input type="checkbox" class="checkbox" name="id" value="${user.getId()}"></td>
+                                <td>${user.getId()}</td>
+                                <td>${user.getLastname()} ${user.getFirstname()}</td>
+                                <td><img src="${user.getAvatar()}" width="100" height="100"></td>
+                                <td>${user.getAddress()}</td>
+                                <td>${user.getEmail()}</td>
+                                <td>${user.getDateOfBirth()}</td>
+                                <td>${user.getGender()}</td>
+                                <td>${user.getPhone()}</td>
+                                <td>
+                                    <a class="btn btn-edit btn-sm" href="/admin/tutor/add?id=${user.getId()}"
+                                       title="Sửa"><i class="fas fa-edit"></i></a>
+                                    <a class="btn btn-delete btn-sm" href="/admin/tutor/delete?id=${user.getId()}"
+                                       title="Xóa"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>

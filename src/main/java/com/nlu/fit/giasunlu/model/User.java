@@ -1,12 +1,12 @@
 package com.nlu.fit.giasunlu.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class User extends BaseEntity {
 
     private int id;
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private String password;
     private String email;
     private String phoneNumber;
@@ -25,8 +25,8 @@ public class User extends BaseEntity {
 
     public User(int id, String firstName, String lastName, String password, String email, String phoneNumber, String gender, String phone, String address, String avatar, int roleId, String profileImage, Date dateOfBirth, int coin, String verifyCode, int isVerify, String accessToken, int status) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
         this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
@@ -50,16 +50,16 @@ public class User extends BaseEntity {
     public User(String email, String password, String firstName, String lastName) {
         this.email = email;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
     }
 
     public User(String email, String code, String password, String firstName, String lastName) {
         this.email = email;
         this.verifyCode = code;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstname = firstName;
+        this.lastname = lastName;
     }
 
     public int getId() {
@@ -70,20 +70,20 @@ public class User extends BaseEntity {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
     public String getPassword() {
@@ -210,8 +210,8 @@ public class User extends BaseEntity {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", firstName='" + firstname + '\'' +
+                ", lastName='" + lastname + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +

@@ -32,9 +32,9 @@ public class LoginWithGoogleController extends HttpServlet {
             String accessToken = GoogleUtils.getToken(code);
             GooglePojo googlePojo = GoogleUtils.getUserInfo(accessToken);
             User u = new User();
-            u.setLastName(googlePojo.getName() + "");
+            u.setLastname(googlePojo.getName() + "");
             u.setEmail(googlePojo.getEmail());
-            u.setFirstName(googlePojo.getName() + "");
+            u.setFirstname(googlePojo.getName() + "");
             u.setAvatar(googlePojo.getPicture());
             u.setPassword("MDAwMA==");
             u.setDateOfBirth(new Date(1999,1,1));

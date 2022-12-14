@@ -19,7 +19,7 @@ public class WaitingController extends HttpServlet {
         HttpSession session = request.getSession();
         if (session != null && session.getAttribute("account") != null) {
             User u = (User) session.getAttribute("account");
-            request.setAttribute("username", u.getFirstName() + u.getLastName());
+            request.setAttribute("username", u.getFirstname() + u.getLastname());
             if (u.getRoleId() == 1) {
                 response.sendRedirect(request.getContextPath() + "/Admin/home");
             } else {

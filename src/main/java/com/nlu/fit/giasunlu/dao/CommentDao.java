@@ -21,6 +21,9 @@ public interface CommentDao {
     @SqlQuery("select * from comment where post_id = :id order by update_at desc")
     List<Comment> getCommentByPostId(@Bind("id") int id);
 
+    @SqlQuery("select * from comment where reply_id = :id order by update_at desc")
+    List<Comment> getCommentByParentId(@Bind("id") int id);
+
     @SqlQuery("select * from comment")
     List<Comment> getComment();
 
