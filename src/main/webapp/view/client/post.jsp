@@ -231,6 +231,5 @@
 
     var editor = CKEDITOR.replace( 'comment' );
     CKFinder.setupCKEditor(editor , '/libraries/ckfinder/');
-
 </script>
 </html>

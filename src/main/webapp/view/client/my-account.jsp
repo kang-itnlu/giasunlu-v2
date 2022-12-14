@@ -160,8 +160,9 @@
 
         <h5 class="mt-3 pl-1">Mã gia sư: <span class="text-success">GD3669</span></h5>
 
-        <h5 class="pl-1">Số dư: <span class="text-primary">0 ₫</span></h5>
-        <a href="coin.jsp" class="btn btn-primary">Nạp xu</a>
+        <h5 class="pl-1">Số dư: <span class="text-primary">0 xu</span></h5>
+        <a href="coin.jsp" class="btn btn-primary mb-2">Nạp xu</a><br>
+        <a href="coin-history.jsp">Lịch sử biến động</a>
 
         <!-- -->
 
