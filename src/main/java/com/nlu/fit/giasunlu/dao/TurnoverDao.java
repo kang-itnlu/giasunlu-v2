@@ -27,7 +27,7 @@ public interface TurnoverDao {
     @SqlQuery("SELECT * FROM turnover where month(create_at) = :month and year(create_at) = :year")
     List<Turnover> getTurnoverByMonth(@Bind("month") int month, @Bind("year") int year);
 
-    @SqlUpdate("INSERT INTO turnover (id,coin, cost, user_id, create_at, update_at) VALUES (:id, :coin, :cost, :userId, :createAt, :updateAt)")
+    @SqlUpdate("INSERT INTO turnover (coin, cost, user_id, create_at, update_at) VALUES (:coin, :cost, :userId, :createAt, :updateAt)")
     void insertTurnover(@BindBean Turnover turnover);
 
     @SqlUpdate("UPDATE turnover SET coin = :coin, cost = :cost, user_id = :userId, create_at = :createAt, update_at = :updateAt WHERE id = :id")

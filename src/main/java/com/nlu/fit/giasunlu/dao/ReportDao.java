@@ -27,7 +27,7 @@ public interface ReportDao {
     @SqlQuery("select * from report where post_id=:postId and status=:status")
     List<Report> getReportFromPostWithStatus(@Bind("postId") int postId, @Bind("status") int status);
 
-    @SqlUpdate("insert into report (id,post_id, user_id, content, status) values (:id,:postId, :userId, :content, :status)")
+    @SqlUpdate("insert into report (post_id, user_id, content, status) values (:postId, :userId, :content, :status)")
     void insert(@BindBean Report report);
 
     @SqlUpdate("update report set status=:status,content=:content where id=:id")

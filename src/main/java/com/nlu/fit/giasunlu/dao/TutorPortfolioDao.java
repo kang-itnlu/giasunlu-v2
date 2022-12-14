@@ -21,7 +21,7 @@ public interface TutorPortfolioDao {
     @SqlQuery("select * from teacher_portfolio")
     List<TutorPortfolio> getTutorPortfolios();
 
-    @SqlUpdate("insert into teacher_portfolio (id, user_id, teaching_since, teaching_experience, profile_image, brief_desc, create_at, update_at) values (:id, :userId, :teachingSince, :teachingExperience, :profileImage, :briefDesc, :createAt, :updateAt)")
+    @SqlUpdate("insert into teacher_portfolio (user_id, teaching_since, teaching_experience, profile_image, brief_desc, create_at, update_at) values (:userId, :teachingSince, :teachingExperience, :profileImage, :briefDesc, :createAt, :updateAt)")
     void insertTutorPortfolio(@BindBean TutorPortfolio tutorPortfolio);
 
     @SqlUpdate("update teacher_portfolio set user_id = :userId, teaching_since = :teachingSince, teaching_experience = :teachingExperience, profile_image = :profileImage, brief_desc = :briefDesc, create_at = :createAt, update_at = :updateAt where id = :id")

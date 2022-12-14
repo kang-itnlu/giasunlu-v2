@@ -1,39 +1,33 @@
 package com.nlu.fit.giasunlu.model;
 
-import java.util.Date;
-
 public class Class extends BaseEntity {
 
     private int id;
-    private Long userHost;
-    private int maxStudent;
+    private Long userCreate;
     private String className;
-    private Long cost;
 
-    private int status;
-    private String subject;
+    private int idSubject;
+    private int level;
+    private int cost;
     private String address;
-
-    private Date startAt;
-    private Date endAt;
     private String briefDesc;
+    private int maxStudent;
+    private String status;
 
     public Class() {
     }
 
-    public Class(int id, Long userHost, int maxStudent, String className, Long cost, int status, String subject,
-                 String address, Date startAt, Date endAt, String briefDesc) {
+    public Class(int id, Long userCreate, String className, int subjectId, int level, int cost, String address, String briefDesc, int maxStudent, String status) {
         this.id = id;
-        this.userHost = userHost;
-        this.maxStudent = maxStudent;
+        this.userCreate = userCreate;
         this.className = className;
+        this.idSubject = subjectId;
+        this.level = level;
         this.cost = cost;
-        this.status = status;
-        this.subject = subject;
         this.address = address;
-        this.startAt = startAt;
-        this.endAt = endAt;
         this.briefDesc = briefDesc;
+        this.maxStudent = maxStudent;
+        this.status = status;
     }
 
     public int getId() {
@@ -44,20 +38,12 @@ public class Class extends BaseEntity {
         this.id = id;
     }
 
-    public Long getUserHost() {
-        return userHost;
+    public Long getUserCreate() {
+        return userCreate;
     }
 
-    public void setUserHost(Long userHost) {
-        this.userHost = userHost;
-    }
-
-    public int getMaxStudent() {
-        return maxStudent;
-    }
-
-    public void setMaxStudent(int maxStudent) {
-        this.maxStudent = maxStudent;
+    public void setUserCreate(Long userCreate) {
+        this.userCreate = userCreate;
     }
 
     public String getClassName() {
@@ -68,28 +54,28 @@ public class Class extends BaseEntity {
         this.className = className;
     }
 
-    public Long getCost() {
+    public int getIdSubject() {
+        return idSubject;
+    }
+
+    public void setIdSubject(int idSubject) {
+        this.idSubject = idSubject;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getCost() {
         return cost;
     }
 
-    public void setCost(Long cost) {
+    public void setCost(int cost) {
         this.cost = cost;
-    }
-
-    public int getStatus() {
-        return status;
-    }
-
-    public void setStatus(int status) {
-        this.status = status;
-    }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getAddress() {
@@ -100,22 +86,6 @@ public class Class extends BaseEntity {
         this.address = address;
     }
 
-    public Date getStartAt() {
-        return startAt;
-    }
-
-    public void setStartAt(Date startAt) {
-        this.startAt = startAt;
-    }
-
-    public Date getEndAt() {
-        return endAt;
-    }
-
-    public void setEndAt(Date endAt) {
-        this.endAt = endAt;
-    }
-
     public String getBriefDesc() {
         return briefDesc;
     }
@@ -124,20 +94,35 @@ public class Class extends BaseEntity {
         this.briefDesc = briefDesc;
     }
 
+    public int getMaxStudent() {
+        return maxStudent;
+    }
+
+    public void setMaxStudent(int maxStudent) {
+        this.maxStudent = maxStudent;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "Class{" +
                 "id=" + id +
-                ", userHost=" + userHost +
-                ", maxStudent=" + maxStudent +
+                ", userCreate=" + userCreate +
                 ", className='" + className + '\'' +
+                ", subjectId=" + idSubject +
+                ", level=" + level +
                 ", cost=" + cost +
-                ", status=" + status +
-                ", subject='" + subject + '\'' +
                 ", address='" + address + '\'' +
-                ", startAt=" + startAt +
-                ", endAt=" + endAt +
                 ", briefDesc='" + briefDesc + '\'' +
+                ", maxStudent=" + maxStudent +
+                ", status='" + status + '\'' +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
                 '}';

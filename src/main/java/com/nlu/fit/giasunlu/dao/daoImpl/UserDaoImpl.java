@@ -235,7 +235,6 @@ public class UserDaoImpl implements UserDao {
             }
 
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

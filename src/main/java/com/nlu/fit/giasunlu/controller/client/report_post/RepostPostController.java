@@ -29,8 +29,9 @@ public class RepostPostController extends HttpServlet {
             BeanUtils.populate(report, request.getParameterMap());
             reportService.insertReportPost(report);
             out.println("success");
-            // todo return success
+
         } catch (IllegalAccessException | InvocationTargetException e) {
+            response.setStatus(404);
             out.println("error");
         }
         out.close();

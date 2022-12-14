@@ -1,8 +1,10 @@
 package com.nlu.fit.giasunlu.service.serviceImpl;
 
 import com.nlu.fit.giasunlu.dao.ClassDao;
+import com.nlu.fit.giasunlu.dao.SubjectDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.Class;
+import com.nlu.fit.giasunlu.model.Subject;
 import com.nlu.fit.giasunlu.service.ClassService;
 import org.jdbi.v3.core.Jdbi;
 
@@ -27,8 +29,8 @@ public class ClassServiceImpl implements ClassService {
     }
 
     @Override
-    public List<Class> getClassesByStatusWithQuery(int status, String query) {
-        return jdbi.withExtension(ClassDao.class, dao -> dao.getClassesByStatusWithQuery(status, query));
+    public List<Class> getClassesByStatusWithQuery(String keyWord, int cost, int idSubject, int level) {
+        return jdbi.withExtension(ClassDao.class, dao -> dao.getClassesByStatusWithQuery(keyWord, cost, idSubject, level));
     }
 
     @Override
@@ -44,5 +46,10 @@ public class ClassServiceImpl implements ClassService {
     @Override
     public void deleteClass(int id) {
         jdbi.useExtension(ClassDao.class, dao -> dao.deleteClass(id));
+    }
+
+    @Override
+    public List<Subject> getAllSubject() {
+        return jdbi.withExtension(SubjectDao.class, SubjectDao::getAllSubject);
     }
 }

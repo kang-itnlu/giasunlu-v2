@@ -20,7 +20,7 @@ public interface QADao {
     @SqlQuery("select * from q_a where class_id = :id order by update_at desc")
     List<QA> getQAsByClassId(@Bind("id") int id);
 
-    @SqlUpdate("insert into q_a (id, user_q_a, class_id, content, quest_image, create_at, update_at) values (:id, :userQA, :classId, :content, :questImage, :createAt, :updateAt)")
+    @SqlUpdate("insert into q_a (user_q_a, class_id, content, quest_image, create_at, update_at) values (:userQA, :classId, :content, :questImage, :createAt, :updateAt)")
     void insertQA(@BindBean QA q_a);
 
     @SqlUpdate("update q_a set user_q_a = :userQA, class_id = :classId, content = :content, quest_image = :questImage, create_at = :createAt, update_at = :updateAt where id = :id")

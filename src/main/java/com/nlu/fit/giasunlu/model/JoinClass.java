@@ -1,24 +1,37 @@
 package com.nlu.fit.giasunlu.model;
 
 
-public class JoinClass {
-    private int classId;
+public class JoinClass extends BaseEntity {
+    private int id;
+    private int idClass;
     private int userId;
+
+    private int role;
 
     public JoinClass() {
     }
 
-    public JoinClass(int classId, int userId) {
-        this.classId = classId;
+    public JoinClass(int id, int classId, int userId, int role) {
+        this.id = id;
+        this.idClass = classId;
         this.userId = userId;
+        this.role = role;
     }
 
-    public int getClassId() {
-        return classId;
+    public int getId() {
+        return id;
     }
 
-    public void setClassId(int classId) {
-        this.classId = classId;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getIdClass() {
+        return idClass;
+    }
+
+    public void setIdClass(int idClass) {
+        this.idClass = idClass;
     }
 
     public int getUserId() {
@@ -29,12 +42,12 @@ public class JoinClass {
         this.userId = userId;
     }
 
-    @Override
-    public String toString() {
-        return "JoinClass{" +
-                "classId=" + classId +
-                ", userId=" + userId +
-                '}';
+    public int getRole() {
+        return role;
+    }
+
+    public void setRole(int role) {
+        this.role = role;
     }
 }
 
