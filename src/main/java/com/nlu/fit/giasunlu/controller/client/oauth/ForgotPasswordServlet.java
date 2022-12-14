@@ -6,6 +6,7 @@ import com.nlu.fit.giasunlu.dao.NewUserDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
+import com.nlu.fit.giasunlu.utils.SecurityUtils;
 import com.nlu.fit.giasunlu.utils.SendMail;
 import org.jdbi.v3.core.Jdbi;
 
@@ -37,7 +38,7 @@ public class ForgotPasswordServlet extends HttpServlet {
         if (user != null) {
             alertMsg = "Mật khẩu đã được gửi vào email của bạn";
             request.setAttribute("alert", alertMsg);
-            SendMail.sendMail(email, "GIASUNLU of forgot password", "Welcome to GIASUNLU. Here is your password: " + Base64.getDecoder().decode(user.getPassword()) + ".Thanks!");
+            SendMail.sendMail(email, "GIASUNLU of forgot password", "Welcome to GIASUNLU. Here is your password: " + SecurityUtils.decodePassword(user.getPassword()) + ".Thanks!");
 
         } else {
             alertMsg = "Không tìm thấy tài khoản với email đã nhập!";

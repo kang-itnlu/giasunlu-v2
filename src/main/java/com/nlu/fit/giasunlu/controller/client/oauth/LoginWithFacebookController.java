@@ -47,6 +47,9 @@ public class LoginWithFacebookController extends HttpServlet {
             u.setAvatar(user.getPicture().getUrl());
             u.setPassword("MDAwMA==");
             u.setDateOfBirth(new Date(1999,1,1));
+            u.setVerify(1);
+            u.setStatus(1);
+            u.setPhoneNumber("123456789");
             u.setRoleId(2);
             HttpSession session = request.getSession(true);
             session.setAttribute("account", u);

@@ -34,10 +34,13 @@ public class VerifyController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("authcode");
+        user.setPhoneNumber("123456789");
+        user.setRoleId(2);
         Jdbi jdbi= JDBIConnection.get();
         String code = request.getParameter("code");
+        User existsUser = jdbi.withExtension(NewUserDao.class, dao -> dao.checkExistEmail(user.getEmail()));
         if (code.equals(user.getVerifyCode())) {
-            if ((jdbi.withExtension(NewUserDao.class, dao -> dao.checkExistEmail(user.getEmail())) != null)) {
+            if ( existsUser == null) {
                 user.setPassword(SecurityUtils.encodePassword(user.getPassword()));
                 jdbi.useExtension(NewUserDao.class, dao -> dao.insertUser(user));
             }

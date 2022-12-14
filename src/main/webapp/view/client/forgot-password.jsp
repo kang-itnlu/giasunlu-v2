@@ -157,7 +157,7 @@
 
         <div class="pt-3"></div>
 
-        <form method="POST" action="https://tutor.giasunlu.edu.vn/password/email" class="check_validation was-validated">
+        <form method="POST" action="${pageContext.request.contextPath}/forgot-password" class="check_validation was-validated">
           <input type="hidden" name="_token" value="OBOZOzzZ27a1013ymexJYUcDoGRpMGOeM49BkGw5">
           <div class="form-group">
 
@@ -197,7 +197,8 @@
           </a>
         </div>
 
-        <p class="mt-4">Hoặc sao chép link: <a href="/google-redirect">https://tutor.giasunlu.edu.vn/google-redirect</a> và dán vào trình duyệt Chrome hoặc Safari.</p>
+        <p class="mt-4">Hoặc sao chép link: <a href="https://accounts.google.com/o/oauth2/auth?scope=email&redirect_uri=http://localhost:8080/giasunlu/login-google&response_type=code
+    &client_id=698498991064-09hlkni1c35t49i852epq68ri0o4p08o.apps.googleusercontent.com&approval_prompt=force">https://tutor.giasunlu.edu.vn/google-redirect</a> và dán vào trình duyệt Chrome hoặc Safari.</p>
 
         <div class="pt-3"></div>
 
