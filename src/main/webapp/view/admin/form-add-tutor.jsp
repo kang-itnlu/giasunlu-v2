@@ -143,7 +143,6 @@
                 <option>Nữ</option>
               </select>
             </div>
-
             <div class="form-group  col-md-3">
               <label for="exampleSelect1" class="control-label">Công việc</label>
               <select class="form-control" id="exampleSelect1">
@@ -166,8 +165,6 @@
                 <option>Không bằng cấp</option>
               </select>
             </div>
-
-
             <div class="form-group col-md-12">
               <label class="control-label">Ảnh 3x4 nhân viên</label>
               <div id="myfileupload">
@@ -183,12 +180,15 @@
               </div>
 
             </div>
+          </form>
         </div>
-      </div>
 
-    </div>
+
+
     <button class="btn btn-save" type="button">Lưu lại</button>
     <a class="btn btn-cancel" href="./table-data-tutor.jsp">Hủy bỏ</a>
+      </div>
+    </div>
   </div>
 
   </div>
