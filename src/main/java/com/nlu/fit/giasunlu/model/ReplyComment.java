@@ -1,29 +1,28 @@
 package com.nlu.fit.giasunlu.model;
 
-
-public class JoinClass extends BaseEntity {
+public class ReplyComment {
     private int id;
-    private int idClass;
+    private int commentId;
     private int userId;
-    private int role;
+    private String content;
 
     private User user;
 
-    public JoinClass() {
+    public ReplyComment() {
     }
 
-    public JoinClass(int id, int classId, int userId, int role) {
+    public ReplyComment(int id, int commentId, int userId, String content) {
         this.id = id;
-        this.idClass = classId;
+        this.commentId = commentId;
         this.userId = userId;
-        this.role = role;
+        this.content = content;
     }
 
-    public JoinClass(int id, int classId, int userId, int role, User user) {
+    public ReplyComment(int id, int commentId, int userId, String content, User user) {
         this.id = id;
-        this.idClass = classId;
+        this.commentId = commentId;
         this.userId = userId;
-        this.role = role;
+        this.content = content;
         this.user = user;
     }
 
@@ -35,12 +34,12 @@ public class JoinClass extends BaseEntity {
         this.id = id;
     }
 
-    public int getIdClass() {
-        return idClass;
+    public int getCommentId() {
+        return commentId;
     }
 
-    public void setIdClass(int idClass) {
-        this.idClass = idClass;
+    public void setCommentId(int commentId) {
+        this.commentId = commentId;
     }
 
     public int getUserId() {
@@ -51,12 +50,12 @@ public class JoinClass extends BaseEntity {
         this.userId = userId;
     }
 
-    public int getRole() {
-        return role;
+    public String getContent() {
+        return content;
     }
 
-    public void setRole(int role) {
-        this.role = role;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public User getUser() {
@@ -69,15 +68,12 @@ public class JoinClass extends BaseEntity {
 
     @Override
     public String toString() {
-        return "JoinClass{" +
+        return "ReplyComment{" +
                 "id=" + id +
-                ", idClass=" + idClass +
+                ", commentId=" + commentId +
                 ", userId=" + userId +
-                ", role=" + role +
+                ", content='" + content + '\'' +
                 ", user=" + user +
-                ", createAt=" + createAt +
-                ", updateAt=" + updateAt +
                 '}';
     }
 }
-

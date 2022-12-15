@@ -13,10 +13,10 @@ import java.util.List;
 public interface NewUserDao {
 
 
-    @SqlUpdate("insert into user (id, firstname, lastname, password, email, phone_number, gender, address, role_id, profile_image, date_of_birth, coin, status, create_at, update_at, verify_code,  access_token, avatar, phone) " + "values (:id, :firstName, :lastName, :password, :email, :phoneNumber, :gender, :address, :roleId, :profileImage, :dateOfBirth, :coin, :status, :createAt, :updateAt, :verifyCode, :accessToken, :avatar, :phone)")
+    @SqlUpdate("insert into user (firstname, lastname, password, email, phone_number, gender, address, role_id, profile_image, date_of_birth, coin, status, create_at, update_at, verify_code, is_verify, access_token, avatar, phone) " + "values ( :firstname, :lastname, :password, :email, :phoneNumber, :gender, :address, :roleId, :profileImage, :dateOfBirth, :coin, :status, :createAt, :updateAt, :verifyCode, :isVerify, :accessToken, :avatar, :phone)")
     void insertUser(@BindBean User user);
 
-    @SqlUpdate("update user set user.id=:id, user.firstname=:firstname, user.lastname=:lastname, user.password=:password, user.email=:email, user.phone_number=:phoneNumber,user.gender=:grender," + "user.address=:address,user.role_id=:roleId,user.profile_image=:profileImage, user.date_of_birth=:dateOfBirth, user.coin=:coin, user.status=:status,user.update_at=now(),user.verify_code=:verifyCode,user.access_token=:accessToken,user.avatar=:avatar,user.phone=:phone  where user.id=:id")
+    @SqlUpdate("update user set user.id=:id, user.firstname=:firstname, user.lastname=:lastname, user.password=MD5(:password), user.email=:email, user.phone_number=:phoneNumber,user.gender=:grender," + "user.address=:address,user.role_id=:roleId,user.profile_image=:profileImage, user.date_of_birth=:dateOfBirth, user.coin=:coin, user.status=:status,user.update_at=now(),user.verify_code=:verifyCode,user.access_token=:accessToken,user.avatar=:avatar,user.phone=:phone  where user.id=:id")
     void updateUser(@BindBean User user);
 
     @SqlUpdate("delete from user where id = :id")
@@ -40,7 +40,7 @@ public interface NewUserDao {
     @SqlUpdate("update user set password = :password where id = :id")
     void changePassword(@Bind("id") int id, @Bind("password") String password);
 
-    @SqlQuery("select * from user where email = :email and password = :password")
+    @SqlQuery("select * from user where email = :email and password = MD5(:password)")
     User checkLogin(@Bind("email") String email, @Bind("password") String password);
 
     @SqlQuery("select * from user where email = :email and verify_code = :verifyCode")
@@ -84,4 +84,10 @@ public interface NewUserDao {
 
     @SqlQuery("select count(*) from user where role_id = 3")
     Integer countTeacher();
+
+    @SqlQuery("select * from user where role_id = 2")
+    List<User> getAllCustomer();
+
+    @SqlQuery("select * from user where role_id = 3")
+    List<User> getAllTeacher();
 }

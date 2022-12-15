@@ -42,7 +42,7 @@ public interface ReceiptDao {
     @SqlQuery("select * from receipt where id = :id and status = :status")
     Receipt getReceiptByIdAndStatus(@Bind("id") int id, @Bind("status") int status);
 
-    @SqlUpdate("insert into receipt (id, class_id, student_id, status, start_at, end_at, teacher, total_price, `desc`, create_at, update_at) values (:id, :classId, :studentId, :status, :startAt, :endAt, :teacher, :totalPrice, :desc, :createAt, :updateAt)")
+    @SqlUpdate("insert into receipt (class_id, student_id, status, start_at, end_at, teacher, total_price, `desc`, create_at, update_at) values (:classId, :studentId, :status, :startAt, :endAt, :teacher, :totalPrice, :desc, :createAt, :updateAt)")
     void insertReceipt(@BindBean Receipt receipt);
 
     @SqlUpdate("update receipt set class_id = :classId, student_id = :studentId, status = :status, start_at = :startAt, end_at = :endAt, teacher = :teacher, total_price = :totalPrice, `desc` = :desc, create_at = :createAt, update_at = :updateAt where id = :id")

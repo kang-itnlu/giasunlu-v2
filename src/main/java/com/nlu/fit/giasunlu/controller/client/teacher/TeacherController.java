@@ -1,4 +1,4 @@
-package com.nlu.fit.giasunlu.controller.client;
+package com.nlu.fit.giasunlu.controller.client.teacher;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -7,11 +7,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "NewClassListController", value = "/new-class-list")
-public class NewClassListController extends HttpServlet {
+@WebServlet(name = "TeacherController", value = "/teacher")
+public class TeacherController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/view/client/new-class-list.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/client/teacher.jsp").forward(request, response);
     }
 
     @Override

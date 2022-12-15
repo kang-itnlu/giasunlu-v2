@@ -55,6 +55,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public List<User> getAllCustomer() {
+        return null;
+    }
+
+    @Override
+    public List<User> getAllTeacher() {
+        return null;
+    }
+
+    @Override
     public User getUserWithAccessToken(String email, String password) {
         User user = this.get(email);
         if (user != null && SecurityUtils.encodePassword(password).equals(user.getPassword())) {

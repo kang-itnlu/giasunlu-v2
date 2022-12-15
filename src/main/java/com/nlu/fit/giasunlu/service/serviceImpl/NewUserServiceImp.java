@@ -71,6 +71,16 @@ public class NewUserServiceImp implements UserService {
     }
 
     @Override
+    public List<User> getAllCustomer() {
+        return jdbi.withExtension(NewUserDao.class, NewUserDao::getAllCustomer);
+    }
+
+    @Override
+    public List<User> getAllTeacher() {
+        return jdbi.withExtension(NewUserDao.class, NewUserDao::getAllTeacher);
+    }
+
+    @Override
     public boolean checkExistEmail(String email) {
         return jdbi.withExtension(NewUserDao.class, dao -> dao.checkExistEmail(email)) != null;
     }
