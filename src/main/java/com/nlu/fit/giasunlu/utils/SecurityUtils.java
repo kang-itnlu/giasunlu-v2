@@ -10,8 +10,11 @@ public class SecurityUtils {
         return Base64.getEncoder().encodeToString(pass.getBytes(StandardCharsets.UTF_8));
     }
 
-    private static String decodePassword(String pass) {
-        return Base64.getDecoder().decode(pass.getBytes()).toString();
+    public static String decodePassword(String pass) {
+        byte[] decodedBytes = Base64.getDecoder().decode(pass);
+        String decodedString = new String(decodedBytes);
+
+        return decodedString;
     }
 
 }

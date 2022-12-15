@@ -21,7 +21,7 @@ public interface PostDao {
     @SqlQuery("select * from post where user_post = :id order by update_at desc")
     List<Post> getPostByUserIdDesc(@Bind("id") int id);
 
-    @SqlUpdate("insert into post (id, user_post, status, content, image, price, subject, phone, address, grade, create_at, update_at) values (:id, :userPost, :status, :content, :image, :price, :subject, :phone, :address, :grade, :createAt, :updateAt)")
+    @SqlUpdate("insert into post (user_post, status, content, image, price, subject, phone, address, grade, create_at, update_at) values ( :userPost, :status, :content, :image, :price, :subject, :phone, :address, :grade, :createAt, :updateAt)")
     void insertPost(@BindBean Post post);
 
     @SqlUpdate("update post set user_post = :userPost, status = :status, content = :content, image = :image, price = :price, subject = :subject, phone = :phone, address = :address, grade = :grade, create_at = :createAt, update_at = :updateAt where id = :id")

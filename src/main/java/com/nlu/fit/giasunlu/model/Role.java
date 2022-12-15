@@ -1,8 +1,6 @@
 package com.nlu.fit.giasunlu.model;
 
 
-import javax.persistence.*;
-
 public class Role extends BaseEntity {
     private int id;
     private String name;

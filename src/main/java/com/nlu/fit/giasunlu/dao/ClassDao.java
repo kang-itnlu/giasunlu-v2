@@ -17,12 +17,21 @@ public interface ClassDao {
     @SqlQuery("select * from class")
     List<Class> getAllClass();
 
-    @SqlUpdate("insert into class (id, user_host, max_student, class_name, subject, cost, status, address, start_at, end_at, brief_desc, create_at, update_at) values (:id, :userHost, :maxStudent, :className, :subject, :cost, :status, :address, :startAt, :endAt, :briefDesc, now(), now())")
+    @SqlUpdate("insert into class (user_create, class_name, id_subject, level, cost, address, brief_desc, max_student, status, create_at, update_at) values (:userCreate, :className, :subjectId, :level, :cost, :address, :briefDesc, :maxStudent, :status, :createAt, :updateAt)")
     void insertClass(@BindBean Class theClass);
 
-    @SqlUpdate("update class set user_host = :userHost, max_student = :maxStudent, class_name = :className, subject = :subject, cost = :cost, status = :status, address = :address, start_at = :startAt, end_at = :endAt, brief_desc = :briefDesc, update_at = now() where id = :id")
+    @SqlUpdate("update class set user_create = :userCreate, class_name = :className, id_subject = :subjectId, level = :level, cost = :cost, address = :address, brief_desc = :briefDesc, max_student = :maxStudent, status = :status, create_at = :createAt, update_at = :updateAt where id = :id")
     void updateClass(@BindBean Class theClass);
 
     @SqlUpdate("delete from class where id = :id")
     void deleteClass(@Bind("id") int id);
+
+    @SqlQuery("select * from class")
+    List<Class> getClasses();
+
+    @SqlQuery("select * from class where status = :status")
+    List<Class> getClassesByStatus(int status);
+
+    @SqlQuery("select * from class where status = :status and class_name like concat('%', :keyWord, '%') and cost <= :cost and id_subject = :idSubject and level = :level")
+    List<Class> getClassesByStatusWithQuery(String keyWord, int cost, int idSubject, int level);
 }

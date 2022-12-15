@@ -3,7 +3,7 @@ package com.nlu.fit.giasunlu.utils;
 import com.nlu.fit.giasunlu.model.TopUp;
 import com.nlu.fit.giasunlu.model.User;
 import com.paypal.api.payments.*;
-import com.paypal.base.rest.APIContext;
+import com.paypal.base.rest.*;
 import com.paypal.base.rest.PayPalRESTException;
 
 import java.util.ArrayList;
@@ -11,8 +11,8 @@ import java.util.List;
 
 public class PaymentServices {
 
-    private static final String CLIENT_ID = "AcIXaxn7yfAm2cZLUzLN3ZzQVofwdBxqgSeknqZR8ACdSgT5foVqMoAdmELz6r3j5Cll7O8vJSo9FGuO";
-    private static final String CLIENT_SECRET = "EG3vKylf-nLhUNyhDtP7cNc65E8RsmjQ4ew0btmPCzswV7kujNtTbq5E742JiSLZ9NRjuRns-Q3GT9A-";
+    private static final String CLIENT_ID = "ATMDJ596FsHtTEZEpBEOntdH4N-8Z-OCHZnMbeBI_Xea0n74_sLmUTdi2Bg9GVxIyrnl1aHYYD9FKgDk";
+    private static final String CLIENT_SECRET = "EHZ8JoJ0ZnRtoRpuMs30ohwyvTpKnKLmxIX3JvFfUhE6fy0epL5n0pwtw-mHclB3WyFdScC8Php61WCK";
     private static final String MODE = "sandbox";
 
     public String authorizePayment(TopUp topUp, User user)
@@ -29,10 +29,9 @@ public class PaymentServices {
         requestPayment.setIntent("authorize");
 
         APIContext apiContext = new APIContext(CLIENT_ID, CLIENT_SECRET, MODE);
+        Payment payment =  requestPayment.create(apiContext);
 
-        Payment approvedPayment = requestPayment.create(apiContext);
-
-        return getApprovalLink(approvedPayment);
+        return getApprovalLink(payment);
 
     }
 
@@ -59,18 +58,19 @@ public class PaymentServices {
 
     private List<Transaction> getTransactionInformation(TopUp topUp) {
         Details details = new Details();
-        details.setSubtotal(String.valueOf(topUp.getAmount()));
+        details.setSubtotal(topUp.getAmount());
         details.setShipping("0");
         details.setTax("0");
 
         Amount amount = new Amount();
         amount.setCurrency("USD");
-        amount.setTotal(String.valueOf(topUp.getAmount()));
+        amount.setTotal(topUp.getTotal());
         amount.setDetails(details);
 
         Transaction transaction = new Transaction();
         transaction.setAmount(amount);
-        transaction.setDescription(topUp.getUserName() + " " + topUp.getPaymentMethod());
+        transaction.setCustom(topUp.getCoin());
+        transaction.setDescription(topUp.getUserName()+ " thanh toán phí nạp xu bằng" + " " + topUp.getPaymentMethod() +" với số xu :"+ topUp.getCoin());
 
         ItemList itemList = new ItemList();
         List<Item> items = new ArrayList<>();
@@ -78,9 +78,9 @@ public class PaymentServices {
         Item item = new Item();
         item.setCurrency("USD");
         item.setName(topUp.getCoin() + " coins");
-        item.setPrice(String.valueOf(topUp.getAmount()));
+        item.setPrice(topUp.getAmount());
         item.setTax("0");
-        item.setQuantity(String.valueOf(topUp.getCoin()));
+        item.setQuantity("1");
 
         items.add(item);
         itemList.setItems(items);

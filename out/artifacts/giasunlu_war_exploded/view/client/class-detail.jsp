@@ -32,9 +32,6 @@
                     <p class="mb-4 text-muted">
                         <span>Tình trạng:</span> <span class="text-success">Đang còn <i class="far fa-check-circle"></i></span>
                     </p>
-
-
-
                     <p class="p-icon mb-2">
                         <i class="fas fa-book text-muted text-small"></i>
                         <b>Tiếng Anh - Lớp 9</b>

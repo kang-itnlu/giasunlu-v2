@@ -10,7 +10,7 @@ public class JDBIConnection {
     private static final String db = "giasunlu"; //giasunlu
     private static final String host = "localhost";
     private static final String user = "root";
-    private static final String pass = "123456";
+    private static final String pass = "";
     private static final String url = "jdbc:mysql://" + host + "/" + db;
     private static Jdbi jdbi;
 

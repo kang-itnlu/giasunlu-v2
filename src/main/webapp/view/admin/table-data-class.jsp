@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:url value="/view/admin/" var="url"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -72,10 +74,7 @@
               <td>1.600.000 đ</td>
               <td><span class="badge bg-success">Đã giao</span></td>
               <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
-                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                        data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                </button>
-              </td>
+                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
             </tr>
             <tr>
             <tr>
@@ -99,73 +98,10 @@
               <td>2.500.000 đ</td>
               <td><span class="badge bg-danger">Đang còn</span></td>
               <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"><i class="fas fa-trash-alt"></i> </button>
-                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                        data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                </button>
-              </td>
+                <button class="btn btn-primary btn-sm edit" type="button" title="Sửa"><i class="fa fa-edit"></i></button></td>
             </tr>
             </tbody>
           </table>
-          <!--
-          MODAL
-        -->
-          <div class="modal fade" id="ModalUP" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static"
-               data-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="form-group  col-md-12">
-              <span class="thong-tin-thanh-toan">
-                <h5>Chỉnh sửa thông tin lớp học</h5>
-              </span>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="form-group col-md-6">
-                      <label class="control-label">Mã Lớp</label>
-                      <input class="form-control" type="text" required value="L369" disabled>
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="control-label">Mã KH</label>
-                      <input class="form-control" type="text" required value="Hồ Thị Thanh Ngân">
-                    </div>
-                    <div class="form-group  col-md-6">
-                      <label class="control-label">Thông tin lớp</label>
-                      <input class="form-control" type="text" required value="46 Phan Văn Trị, p.14, quận Gò Vấp,tp.HCM">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="control-label">Yêu cầu</label>
-                      <input class="form-control" type="text" required value="nganho@gmail.com">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="control-label">Thời gian có thể học</label>
-                      <input class="form-control" type="text" value="Chiều ">
-                    </div>
-                    <div class="form-group col-md-6">
-                      <label class="control-label">Tổng tiền</label>
-                      <input class="form-control" type="number"value="nữ">
-                    </div>
-                    <div class="form-group  col-md-6">
-                      <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trình độ</label>
-                      <select class="form-control" id="exampleSelect3">
-                        <option>-- Chọn trạng thái --</option>
-                        <option>Đã giao</option>
-                        <option>Dang còn</option>
-                      </select>
-                    </div>
-                  </div>
-                  <BR>
-                  <button class="btn btn-save" type="button" >Lưu lại</button>
-                  <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-                  <BR>
-                </div>
-                <div class="modal-footer">
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         <!--
           MODAL
@@ -176,19 +112,19 @@
   </div>
 </main>
 <!-- Essential javascripts for application to work-->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="src/jquery.table2excel.js"></script>
-<script src="js/main.js"></script>
+<script src="${url}/js/jquery-3.2.1.min.js"></script>
+<script src="${url}/js/popper.min.js"></script>
+<script src="${url}/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="${url}/src/jquery.table2excel.js"></script>
+<script src="${url}/js/main.js"></script>
 <!-- The javascript plugin to display page loading on top-->
-<script src="js/plugins/pace.min.js"></script>
+<script src="${url}/js/plugins/pace.min.js"></script>
 <!-- Page specific javascripts-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
 <!-- Data table plugin-->
-<script type="text/javascript" src="js/plugins/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="js/plugins/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="${url}/js/plugins/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="${url}/js/plugins/dataTables.bootstrap.min.js"></script>
 <script type="text/javascript">$('#sampleTable').DataTable();</script>
 <script>
   function deleteRow(r) {
@@ -256,6 +192,7 @@
     }
     if (mm < 10) {
       mm = '0' + mm
+
     }
     today = day + ', ' + dd + '/' + mm + '/' + yyyy;
     tmp = '<span class="date"> ' + today + ' - ' + nowTime +
@@ -280,6 +217,7 @@
       win.print();
     }
   }
+
 </script>
 </body>
 
