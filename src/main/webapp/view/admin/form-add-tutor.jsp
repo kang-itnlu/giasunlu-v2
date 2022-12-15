@@ -34,6 +34,58 @@
     }
 
 
+        <h3 class="tile-title">Tạo mới gia sư</h3>
+        <div class="tile-body">
+          <form class="row">
+            <div class="form-group col-md-4">
+              <label class="control-label">Mã gia sư</label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label">Họ và tên</label>
+              <input class="form-control" type="text" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label">Địa chỉ email</label>
+              <input class="form-control" type="text" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label">Địa chỉ thường trú</label>
+              <input class="form-control" type="text" required>
+            </div>
+            <div class="form-group  col-md-4">
+              <label class="control-label">Số điện thoại</label>
+              <input class="form-control" type="number" required>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="control-label">Ngày sinh</label>
+              <input class="form-control" type="date">
+            </div>
+            <div class="form-group  col-md-3">
+              <label class="control-label">Nơi sinh</label>
+              <input class="form-control" type="text" required>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="control-label">Số CMND</label>
+              <input class="form-control" type="number" required>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="control-label">Ngày cấp</label>
+              <input class="form-control" type="date" required>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="control-label">Nơi cấp</label>
+              <input class="form-control" type="text" required>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="control-label">Giới tính</label>
+              <select class="form-control" id="exampleSelect2" required>
+                <option>-- Chọn giới tính --</option>
+                <option>Nam</option>
+                <option>Nữ</option>
+              </select>
+            </div>
+
     #uploadfile,
     .removeimg {
         display: none;
@@ -41,6 +93,7 @@
 
 
       
+
 
 
             <div class="form-group  col-md-3">
@@ -51,6 +104,34 @@
                 <option>Giáo viên</option>
                 <option>Giáo viên đã về hưu</option>
                 <option>Giảng viên</option>
+
+
+              </select>
+            </div>
+            <div class="form-group col-md-3">
+              <label class="control-label">Trinh độ</label>
+              <select class="form-control" id="exampleSelect3">
+                <option>-- Chọn trình độ --</option>
+                <option>Tốt nghiệp Đại Học</option>
+                <option>Tốt nghiệp Cao Đẳng</option>
+                <option>Tốt nghiệp Phổ Thông</option>
+                <option>Chưa tốt nghiệp</option>
+                <option>Không bằng cấp</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12">
+              <label class="control-label">Ảnh 3x4 nhân viên</label>
+              <div id="myfileupload">
+                <input type="file" id="uploadfile" name="ImageUpload" onchange="readURL(this);" />
+              </div>
+              <div id="thumbbox">
+                <img height="300" width="300" alt="Thumb image" id="thumbimage" style="display: none" />
+                <a class="removeimg" href="javascript:"></a>
+              </div>
+              <div id="boxchoice">
+                <a href="javascript:" class="Choicefile"><i class='bx bx-upload'></i></a>
+                <p style="clear:both"></p>
+              </div>
 
 
     #thumbbox {
@@ -185,6 +266,7 @@
                         </div>
 
 
+
                         <div class="form-group col-md-12">
                             <label class="control-label">Ảnh 3x4 nhân viên</label>
                             <div id="myfileupload">
@@ -206,11 +288,20 @@
                 <a class="btn btn-cancel" href="./table-data-tutor.jsp">Hủy bỏ</a>
             </div>
 
+          </form>
+        </div>
+
+
+
+
         </div>
     </div>
 
+
     <button class="btn btn-save" type="button">Lưu lại</button>
     <a class="btn btn-cancel" href="./table-data-tutor.jsp">Hủy bỏ</a>
+      </div>
+    </div>
   </div>
 
 
