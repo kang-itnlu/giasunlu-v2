@@ -40,8 +40,8 @@ public class PaymentServices {
         payer.setPaymentMethod("paypal");
 
         PayerInfo payerInfo = new PayerInfo();
-        payerInfo.setFirstName(user.getFirstname())
-                .setLastName(user.getLastname())
+        payerInfo.setFirstName(user.getFirstName())
+                .setLastName(user.getLastName())
                 .setEmail(user.getEmail());
 
         payer.setPayerInfo(payerInfo);

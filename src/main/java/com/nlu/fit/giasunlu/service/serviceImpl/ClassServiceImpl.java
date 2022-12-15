@@ -1,9 +1,11 @@
 package com.nlu.fit.giasunlu.service.serviceImpl;
 
 import com.nlu.fit.giasunlu.dao.ClassDao;
+import com.nlu.fit.giasunlu.dao.JoinClassDao;
 import com.nlu.fit.giasunlu.dao.SubjectDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.Class;
+import com.nlu.fit.giasunlu.model.JoinClass;
 import com.nlu.fit.giasunlu.model.Subject;
 import com.nlu.fit.giasunlu.service.ClassService;
 import org.jdbi.v3.core.Jdbi;
@@ -20,7 +22,11 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public List<Class> getClasses() {
-        return jdbi.withExtension(ClassDao.class, ClassDao::getClasses);
+        List<Class> classes = jdbi.withExtension(ClassDao.class, ClassDao::getClasses);
+        for (Class aClass : classes) {
+            aClass.setSubject(jdbi.withExtension(SubjectDao.class, dao -> dao.getSubjectNameById(aClass.getIdSubject())));
+        }
+        return classes;
     }
 
     @Override
@@ -52,4 +58,10 @@ public class ClassServiceImpl implements ClassService {
     public List<Subject> getAllSubject() {
         return jdbi.withExtension(SubjectDao.class, SubjectDao::getAllSubject);
     }
+
+    @Override
+    public void insertJoinClass(JoinClass joinClass) {
+        jdbi.useExtension(JoinClassDao.class, dao -> dao.insertJoinClass(joinClass));
+    }
+
 }

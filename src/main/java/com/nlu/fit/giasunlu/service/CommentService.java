@@ -1,13 +1,12 @@
 package com.nlu.fit.giasunlu.service;
 
 import com.nlu.fit.giasunlu.model.Comment;
+import com.nlu.fit.giasunlu.model.ReplyComment;
 
 import java.util.List;
 
 public interface CommentService {
     List<Comment> getCommetByPostId(int postId);
-
-    List<Comment> getCommentByParentCommet(int commentId);
 
     void insertComment(Comment comment);
 
@@ -15,5 +14,9 @@ public interface CommentService {
 
     void updateComment(Comment comment);
 
-    void replyComment(Comment comment, long parentId);
+    void insertReplyComment(ReplyComment replyComment);
+
+    void updateReplyComment(ReplyComment replyComment);
+
+    void deleteReplyComment(int id);
 }
