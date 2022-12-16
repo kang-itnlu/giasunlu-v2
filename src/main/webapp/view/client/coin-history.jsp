@@ -110,41 +110,25 @@
           </tr>
           </thead>
           <tbody id="transData">
+
+
+            <c:forEach items="${list}" var="item" varStatus="myIndex" >
+
           <tr>
-            <td class="stt">1</td>
-            <td class="date">01/12/2022</td>
-            <td class="total">+200</td>
-            <td class="description">Nạp xu</td>
-            <td class="method">PayPal</td>
+            <td class="stt"><c:out value="${myIndex.index+1}"/></td>
+            <td class="date"><c:out value="${item.date}"/></td>
+            <c:choose>
+              <c:when test="${item.type < 1}">
+                <td class="total" style="color: green">+<c:out value="${item.coin}"/></td>
+              </c:when>
+              <c:otherwise>
+                <td class="total" style="color: red">-<c:out value="${item.coin}"/></td>
+              </c:otherwise>
+            </c:choose>
+            <td class="description"><c:out value="${item.content}"/></td>
+            <td class="method"><c:out value="${item.paymentMethod}"/></td>
           </tr>
-          <tr>
-            <td class="stt">2</td>
-            <td class="date">05/12/2022</td>
-            <td class="total">+500</td>
-            <td class="description">Nạp xu</td>
-            <td class="method">PayPal</td>
-          </tr>
-          <tr>
-            <td class="stt">3</td>
-            <td class="date">10/12/2022</td>
-            <td class="total">-400</td>
-            <td class="description">Đăng ký dạy</td>
-            <td class="method">PayPal</td>
-          </tr>
-          <tr>
-            <td class="stt">4</td>
-            <td class="date">13/12/2022</td>
-            <td class="total">+200</td>
-            <td class="description">Nạp xu</td>
-            <td class="method">PayPal</td>
-          </tr>
-          <tr>
-            <td class="stt">5</td>
-            <td class="date">14/12/2022</td>
-            <td class="total">-100</td>
-            <td class="description">Đăng bài</td>
-            <td class="method">PayPal</td>
-          </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>

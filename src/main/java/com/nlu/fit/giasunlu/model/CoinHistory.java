@@ -5,11 +5,12 @@ import java.util.Date;
 public class CoinHistory extends BaseEntity{
     private int id;
     private int userId;
-    private String content;
     private float coin;
-    private String paymentMethod;
     private Date date;
+    private String content;
     private int type;
+    private String paymentMethod;
+
 
     public CoinHistory() {
     }
@@ -21,6 +22,16 @@ public class CoinHistory extends BaseEntity{
         this.paymentMethod = paymentMethod;
         this.date = date;
         this.type = type;
+    }
+
+    public CoinHistory(int id, int userId, float coin, Date date, String content, int type, String paymentMethod) {
+        this.id = id;
+        this.userId = userId;
+        this.coin = coin;
+        this.date = date;
+        this.content = content;
+        this.type = type;
+        this.paymentMethod = paymentMethod;
     }
 
     public int getId() {
@@ -77,5 +88,18 @@ public class CoinHistory extends BaseEntity{
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    @Override
+    public String toString() {
+        return "CoinHistory{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", coin=" + coin +
+                ", date=" + date +
+                ", content='" + content + '\'' +
+                ", type=" + type +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                '}';
     }
 }
