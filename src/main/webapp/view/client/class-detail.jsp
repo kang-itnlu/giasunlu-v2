@@ -86,8 +86,110 @@
                 </div>
                 <p class="text-muted mt-4 mb-0">Lưu ý: bản đồ thể hiện địa chỉ lớp gia sư một cách tương đối.</p>
             </div><!-- End Col -->
-
         </div>
+        <!-- Strat comment  -->
+
+        <div class="row mt-3">
+            <h3> Bình luận </h3>
+        </div>
+        <div class="row mt-3">
+
+            <div class="comment-thread">
+                <!-- Comment 1 start -->
+                <details open class="comment" id="comment-1">
+                    <a href="#comment-1" class="comment-border-link">
+                        <span class="sr-only">Jump to comment-1</span>
+                    </a>
+                    <summary>
+                        <div class="comment-heading">
+                            <div class="comment-voting">
+                                <button type="button">
+                                    <span aria-hidden="true">&#9650;</span>
+                                    <span class="sr-only">Vote up</span>
+                                </button>
+                                <button type="button">
+                                    <span aria-hidden="true">&#9660;</span>
+                                    <span class="sr-only">Vote down</span>
+                                </button>
+                            </div>
+                            <div class="comment-info">
+                                <a href="#" class="comment-author">someguy14</a>
+                                <p class="m-0">
+
+                                    4 ngày trước
+                                </p>
+                            </div>
+                        </div>
+                    </summary>
+
+                    <div class="comment-body">
+                        <p>
+                            Tôi cần tìm 1 gia sư tiếng Anh là sinh viên ngoại ngữ ( Dạy bán thời gian). Cần học tiếng Anh giao
+                            tiếp.
+                        </p>
+                        <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Phản hồi</button>
+
+                        <!-- Reply form start -->
+                        <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
+                            <textarea placeholder="Trả lời bình luận" rows="4"></textarea>
+                            <button type="submit">Đăng</button>
+                            <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Huỷ</button>
+                        </form>
+                        <!-- Reply form end -->
+                    </div>
+
+                    <div class="replies">
+                        <!-- Comment 2 start -->
+                        <details open class="comment" id="comment-2">
+                            <a href="#comment-2" class="comment-border-link">
+                                <span class="sr-only">Jump to comment-2</span>
+                            </a>
+                            <summary>
+                                <div class="comment-heading">
+                                    <div class="comment-voting">
+                                        <button type="button">
+                                            <span aria-hidden="true">&#9650;</span>
+                                            <span class="sr-only">Vote up</span>
+                                        </button>
+                                        <button type="button">
+                                            <span aria-hidden="true">&#9660;</span>
+                                            <span class="sr-only">Vote down</span>
+                                        </button>
+                                    </div>
+                                    <div class="comment-info">
+                                        <a href="#" class="comment-author">Ngọc Nguyễn</a>
+                                        <p class="m-0">
+                                            3 ngày trước
+                                        </p>
+                                    </div>
+                                </div>
+                            </summary>
+
+                            <div class="comment-body">
+                                <p>
+                                    Cám ơn bạn đã để lại thông tin trên website.
+                                </p>
+                                <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Phản hồi </button>
+
+                                <!-- Reply form start -->
+                                <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
+                                    <textarea placeholder="Trả lời bình luận" rows="4"></textarea>
+                                    <button type="submit">Đăng</button>
+                                    <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Huỷ
+                                    </button>
+                                </form>
+                                <!-- Reply form end -->
+                            </div>
+                        </details>
+                        <!-- Comment 2 end -->
+
+                        <a href="#load-more">Tải thêm câu trả lời</a>
+                    </div>
+                </details>
+                <!-- Comment 1 end -->
+            </div>
+        </div>
+        <!-- End comment -->
 <hr>
 
 <div class="container my-5 related_myclass_field">
