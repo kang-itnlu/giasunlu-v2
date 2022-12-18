@@ -23,7 +23,6 @@ public class LoadCommentController extends HttpServlet {
         if (commetId == null)
             return;
         List<Comment> comments = commentService.getCommetByPostId(Integer.parseInt(commetId));
-        System.out.println(comments);
         String html = handleHtml(comments);
         PrintWriter out = response.getWriter();
         out.print(html);

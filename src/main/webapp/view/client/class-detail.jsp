@@ -181,133 +181,57 @@
         <div class="container my-5 related_myclass_field">
             <h2 class="h3 mb-4">Các lớp tương tự:</h2>
             <div class="row">
-
-                <div class="col-lg-3">
-                    <div class="myclass-item text-small">
-                        <div class="myclass-item-head d-flex">
-                            <a href="/lop-gia-su/C9155" class="mr-auto" rel="nofollow">
-                                <span class="font-weight-bold">C9155</span>
-                            </a>
-                        </div>
-                        <div class="myclass-item-body">
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-book text-muted text-small"></i>
-                                <b>Tiếng Anh - Lớp 8</b>
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-map-marker-alt text-muted text-small"></i>
-                                Vũ Xuân Thiểu, Phúc Lợi, Long Biên, Hà Nội </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-dollar-sign text-muted text-small"></i>
-                                180.000 ₫/buổi, 2 buổi/tuần
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="far fa-bookmark text-muted text-small"></i>
-                                Yêu cầu: Sinh Viên nữ </p>
-                            <div class="text-right mt-3">
-                                <a href="/lop-gia-su/C9155" class="btn btn-success" rel="nofollow">Xem chi tiết</a>
+                <c:forEach items="${suggest}" var="i">
+                    <div class="col-lg-3">
+                        <div class="myclass-item text-small">
+                            <div class="myclass-item-head d-flex">
+                                <a href="/class-detail?id=${i.getId()}" class="mr-auto" rel="nofollow">
+                                    <span class="font-weight-bold">${i.getId()}</span>
+                                </a>
+                            </div>
+                            <div class="myclass-item-body">
+                                <p class="p-icon mb-2">
+                                    <i class="fas fa-book text-muted text-small"></i>
+                                    <b>${i.getClassName()}</b>
+                                </p>
+                                <p class="p-icon mb-2">
+                                    <i class="fas fa-book text-muted text-small"></i>
+                                    <b>${i.getSubject().getName()}</b>
+                                </p>
+                                <p class="p-icon mb-2">
+                                    <i class="fas fa-map-marker-alt text-muted text-small"></i>${i.getAddress()}</p>
+                                <p class="p-icon mb-2">
+                                    <i class="fas fa-bookmark text-muted text-small"></i>
+                                    <c:if test="${i.getLevel()==0}">
+                                        Mẫu giáo
+                                    </c:if>
+                                    <c:if test="${i.getLevel()==1}">
+                                        Cấp 1
+                                    </c:if>
+                                    <c:if test="${i.getLevel()==2}">
+                                        Cấp 2
+                                    </c:if>
+                                    <c:if test="${i.getLevel()==3}">
+                                        Cấp 3
+                                    </c:if>
+                                    <c:if test="${i.getLevel()==4}">
+                                        Cấp 4
+                                    </c:if>
+                                </p>
+                                <p class="p-icon mb-2">
+                                    <i class="fas fa-dollar-sign text-muted text-small"></i>
+                                        ${i.getCost()} ₫/buổi, 1 buổi/tuần
+                                </p>
+                                <div class="text-right mt-3">
+                                    <a href="/class-detail?id=${i.getId()}" class="btn btn-success" rel="nofollow">Xem
+                                        chi tiết<i
+                                                class="fas fa-arrow-right ml-2"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="myclass-item text-small">
-                        <div class="myclass-item-head d-flex">
-                            <a href="/lop-gia-su/C9127" class="mr-auto" rel="nofollow">
-                                <span class="font-weight-bold">C9127</span>
-                            </a>
-                        </div>
-                        <div class="myclass-item-body">
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-book text-muted text-small"></i>
-                                <b>Tiếng Anh - Lớp 8</b>
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-map-marker-alt text-muted text-small"></i>
-                                Ngõ 595 Lĩnh Nam, Hoàng Mai, Hà Nội </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-dollar-sign text-muted text-small"></i>
-                                150.000 ₫/buổi, 2 buổi/tuần
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="far fa-bookmark text-muted text-small"></i>
-                                Yêu cầu: Sinh Viên </p>
-                            <div class="text-right mt-3">
-                                <a href="/lop-gia-su/C9127" class="btn btn-success" rel="nofollow">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="myclass-item text-small">
-                        <div class="myclass-item-head d-flex">
-                            <a href="/lop-gia-su/C9030" class="mr-auto" rel="nofollow">
-                                <span class="font-weight-bold">C9030</span>
-                            </a>
-                        </div>
-                        <div class="myclass-item-body">
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-book text-muted text-small"></i>
-                                <b>Tiếng Anh - Lớp 6</b>
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-map-marker-alt text-muted text-small"></i>
-                                Tây Nam Linh Đàm, Hoàng Mai, Hà Nội </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-dollar-sign text-muted text-small"></i>
-                                150.000 ₫/buổi, 2 buổi/tuần
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="far fa-bookmark text-muted text-small"></i>
-                                Yêu cầu: Sinh Viên nam </p>
-                            <div class="text-right mt-3">
-                                <a href="/lop-gia-su/C9030" class="btn btn-success" rel="nofollow">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3">
-                    <div class="myclass-item text-small">
-                        <div class="myclass-item-head d-flex">
-                            <a href="/lop-gia-su/C8991" class="mr-auto" rel="nofollow">
-                                <span class="font-weight-bold">C8991</span>
-                            </a>
-                        </div>
-                        <div class="myclass-item-body">
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-book text-muted text-small"></i>
-                                <b>Tiếng Anh - Lớp 9</b>
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-map-marker-alt text-muted text-small"></i>
-                                Ngõ 171 Nguyễn Xiển, Thanh Xuân, Hà Nội </p>
-                            <p class="p-icon mb-2">
-                                <i class="fas fa-dollar-sign text-muted text-small"></i>
-                                150.000 ₫/buổi, 2 buổi/tuần
-                            </p>
-                            <p class="p-icon mb-2">
-                                <i class="far fa-bookmark text-muted text-small"></i>
-                                Yêu cầu: Sinh Viên </p>
-                            <div class="text-right mt-3">
-                                <a href="/lop-gia-su/C8991" class="btn btn-success" rel="nofollow">Xem chi tiết</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </c:forEach>
             </div>
-
-
-            <div class="mt-2 pb-4 text-center related_myclass_btn">
-                <a href="#" class="btn btn-default px-4" onclick="load_related_myclass('C9160',4);return false">Xem
-                    thêm</a>
-                <div class="none loader-wap">
-                    <div class="loader d-inline-block"></div>
-                </div>
-            </div>
-        </div>
     </section>
 </main>
 <jsp:include page="footer.jsp"/>
