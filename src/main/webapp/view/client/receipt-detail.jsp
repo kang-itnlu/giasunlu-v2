@@ -53,27 +53,27 @@
         <tbody>
         <tr>
           <td>Merchant</td>
-          <td>Company ABC Ltd</td>
+          <td>GIASUNLU</td>
         </tr>
         <tr>
           <td>Payer</td>
-          <td>Nam Ha Minh</td>
+          <td>${payer.firstName} ${payer.lastName}</td>
         </tr>
         <tr>
           <td>Description</td>
-          <td>Next iPhone</td>
+          <td>${transaction.description}</td>
         </tr>
         <tr>
           <td>Subtotal</td>
-          <td>100.00 USD</td>
+          <td>${transaction.amount.details.subtotal} USD</td>
         </tr>
         <tr>
           <td>Tax</td>
-          <td>10.00 USD</td>
+          <td>${transaction.amount.details.tax} USD</td>
         </tr>
         <tr>
           <td>Total</td>
-          <td>120.00 USD</td>
+          <td>${transaction.amount.total} USD</td>
         </tr>
         </tbody>
       </table>

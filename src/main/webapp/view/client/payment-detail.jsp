@@ -43,31 +43,36 @@
 <body>
     <jsp:include page="header.jsp"/>
     <main role="main">
+        <form action="${pageContext.request.contextPath}/execute-payment" method="post">
         <div class="container text-center">
             <h2>Please Review Before Paying</h2>
             <div class="transaction mt-5">
                 <h4>Transaction Details</h4>
                 <table>
+                    <input type="hidden" name="paymentId" value="${param.paymentId}" />
+                    <input type="hidden" name="user_id" value="${sessionScope.account.id}" />
+<%--                    <input type="hidden" name="user_id" value="1" />--%>
+                    <input type="hidden" name="PayerID" value="${param.PayerID}" />
                     <tbody>
                     <tr>
                         <td>Description</td>
-                        <td>Next iPhone</td>
+                        <td>${transaction.description}</td>
                     </tr>
                     <tr>
                         <td>Subtotal</td>
-                        <td>100.00 USD</td>
+                        <td>${transaction.amount.details.subtotal} USD</td>
                     </tr>
                     <tr>
                         <td>Shipping</td>
-                        <td>10.00 USD</td>
+                        <td>${transaction.amount.details.shipping} USD</td>
                     </tr>
                     <tr>
                         <td>Tax</td>
-                        <td>10.00 USD</td>
+                        <td>${transaction.amount.details.tax} USD</td>
                     </tr>
                     <tr>
                         <td>Total</td>
-                        <td>120.00 USD</td>
+                        <td>${transaction.amount.total} USD</td>
                     </tr>
                     </tbody>
                 </table>
@@ -79,21 +84,22 @@
                     <tbody>
                     <tr>
                         <td>First Name</td>
-                        <td>Nam</td>
+                        <td>${payer.firstName}</td>
                     </tr>
                     <tr>
                         <td>Last Name</td>
-                        <td>Ha Minh</td>
+                        <td>${payer.lastName}</td>
                     </tr>
                     <tr>
                         <td>Email</td>
-                        <td>nam@codejava.net</td>
+                        <td>${payer.email}</td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <a href="" class="btn btn-primary mt-3">Pay Now</a>
+            <input type="submit" class="btn btn-primary mt-3" value="Pay Now">
         </div>
+        </form>
     </main>
     <jsp:include page="footer.jsp"/>
 </body>

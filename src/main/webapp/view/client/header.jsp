@@ -67,20 +67,6 @@
     <!-- Navbar Start -->
     <div class="container-fluid hr-header">
         <div class="row border-top px-xl-5">
-            <div class="col-lg-2 d-none d-lg-block">
-                <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
-                    <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Cấp bậc</h5>
-                    <i class="fa fa-angle-down text-primary"></i>
-                </a>
-                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
-                    <div class="navbar-nav w-100">
-                        <a href="" class="nav-item nav-link">Cấp 1</a>
-                        <a href="" class="nav-item nav-link">Cấp 2</a>
-                        <a href="" class="nav-item nav-link">Cấp 3</a>
-                        <a href="" class="nav-item nav-link">Đại học</a>
-                    </div>
-                </nav>
-            </div>
             <div class="col-lg-10">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
@@ -93,7 +79,7 @@
                         <div class="navbar-nav py-0">
                             <a href="${pageContext.request.contextPath}/home" class="nav-item nav-link">Trang chủ</a>
                             <a href="${pageContext.request.contextPath}/about" class="nav-item nav-link">Giới thiệu</a>
-                            <a href="${pageContext.request.contextPath}/service" class="nav-item nav-link">Dịch vụ</a>
+                            <a href="${pageContext.request.contextPath}/class" class="nav-item nav-link">Lớp học</a>
                             <a href="${pageContext.request.contextPath}/teacher" class="nav-item nav-link">Gia sư</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dành cho gia sư</a>
@@ -118,7 +104,15 @@
                             </div>
                             <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
-
+                        <c:choose>
+                            <c:when test="${sessionScope.account.id==null}">
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/login">Đăng nhập tài khoản</a>
+                            </c:when>
+                            <c:otherwise>
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
+                            </c:otherwise>
+                        </c:choose>
+                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
                     </div>
                 </nav>
             </div>

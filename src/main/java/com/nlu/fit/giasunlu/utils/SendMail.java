@@ -9,8 +9,8 @@ import java.util.Properties;
 import java.util.Random;
 
 public class SendMail {
-    private final static String username = "";
-    private final static String password = "";
+    private final static String username = "19130096@st.hcmuaf.edu.vn";
+    private final static String password = "Khang3301@";
 
     public String getRandom() {
         //tạo code đăng ký
@@ -37,7 +37,7 @@ public class SendMail {
             message.setHeader("Content-Type", "text/plain; charset=UTF-8");
             message.addHeader("format", "flowed");
             message.addHeader("Content-Transfer-Encoding", "8bit");
-            message.setFrom(new InternetAddress(username, "Giasunlu"));
+            message.setFrom(new InternetAddress(username, "GIASUNLU"));
             InternetAddress[] toAdd = {new InternetAddress(to)};
             message.setSubject(subject);
             message.setText(text);

@@ -11,7 +11,7 @@ import java.util.List;
 
 @RegisterBeanMapper(JoinClass.class)
 public interface JoinClassDao {
-    @SqlQuery("select * from join_class where class_id = :id")
+    @SqlQuery("select * from join_class where id_class = :id")
     JoinClass getJoinClassById(@Bind("id") int id);
 
     @SqlQuery("select * from join_class where user_id = :id")

@@ -1,6 +1,8 @@
 package com.nlu.fit.giasunlu.model;
 
 
+import java.util.List;
+
 public class Comment extends BaseEntity {
 
     private int id;
@@ -13,6 +15,10 @@ public class Comment extends BaseEntity {
 
     private String content;
 
+    private User user;
+
+    private List<ReplyComment> replyComments;
+
     public Comment() {
     }
 
@@ -22,6 +28,25 @@ public class Comment extends BaseEntity {
         this.postId = postId;
         this.userId = userId;
         this.content = content;
+    }
+
+    public Comment(int id, Long replyId, Long postId, Long userId, String content, User user) {
+        this.id = id;
+        this.replyId = replyId;
+        this.postId = postId;
+        this.userId = userId;
+        this.content = content;
+        this.user = user;
+    }
+
+    public Comment(int id, Long replyId, Long postId, Long userId, String content, User user, List<ReplyComment> replyComments) {
+        this.id = id;
+        this.replyId = replyId;
+        this.postId = postId;
+        this.userId = userId;
+        this.content = content;
+        this.user = user;
+        this.replyComments = replyComments;
     }
 
     public int getId() {
@@ -64,6 +89,22 @@ public class Comment extends BaseEntity {
         this.content = content;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<ReplyComment> getReplyComments() {
+        return replyComments;
+    }
+
+    public void setReplyComments(List<ReplyComment> replyComments) {
+        this.replyComments = replyComments;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
@@ -72,6 +113,8 @@ public class Comment extends BaseEntity {
                 ", postId=" + postId +
                 ", userId=" + userId +
                 ", content='" + content + '\'' +
+                ", user=" + user +
+                ", replyComments=" + replyComments +
                 ", createAt=" + createAt +
                 ", updateAt=" + updateAt +
                 '}';

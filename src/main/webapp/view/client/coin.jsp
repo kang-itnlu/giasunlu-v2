@@ -162,6 +162,9 @@
             </div>
             <div class="middle_payment"></div>
             <div class="payment_details">
+                <form method="post" action="${pageContext.request.contextPath}/authorize-payment">
+<%--                    <input type = "hidden" name = "user_id" value = "${sessionScope.account.id}">--%>
+                    <input type = "hidden" name = "user_id" value = "1">
                 <div class="payment_detail">
                     <div class="payment_detail_title">Chi tiết giao dịch</div>
                     <div class="payment_info mb-1">
@@ -172,7 +175,7 @@
                                     <div class="payment_info_2_value1">
                                         <div>
                                             <img src="img/coin-794.png" alt="" class="payment_info_2_img">
-                                            <span class="coin_s">Xu × 25</span>
+                                            x<input class="coin_s" value="25" name="coin" type="text">Xu
                                         </div>
                                     </div>
                                 </div>
@@ -183,7 +186,7 @@
                                 <div class="payment_info_2_title">Giá</div>
                                 <div class="payment_info_2_value">
                                     <div class="payment_info_2_value1">
-                                        <span class="price_s">1 $</span>
+                                        <input class="price_s" value="1" name="amount" type="text" >$
                                     </div>
                                 </div>
                             </div>
@@ -192,7 +195,7 @@
                             <div class="payment_info_2">
                                 <div class="payment_info_2_title">Phương thức thanh toán</div>
                                 <div class="payment_info_2_value">
-                                    <div class="payment_info_2_value1">PayPal</div>
+                                    <input class="payment_info_2_value1" value="PayPal" name="payment_method" type="text" >
                                 </div>
                             </div>
                         </div>
@@ -200,13 +203,14 @@
                             <div class="payment_info_2">
                                 <div class="payment_info_2_title">Tên tài khoản</div>
                                 <div class="payment_info_2_value">
-                                    <div class="payment_info_2_value1">Thân Trọng Trường Giang</div>
+                                    <input class="payment_info_2_value1" value="Thân Trọng Trường Giang" name="user_name" type="text" >
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-primary mt-4 font-weight-bold">Xử lý thanh toán</a>
+                    <input type="submit" value="Xử lý thanh toán" class="btn btn-primary mt-4 font-weight-bold">
                 </div>
+                </form>>
             </div>
         </div>
     </div>

@@ -1,4 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:url value="/view/admin/" var="url"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,13 +8,13 @@
     <title>Khôi phục mật khẩu | Website quản trị v2.0</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="css/util.css">
-    <link rel="stylesheet" type="text/css" href="css/mainlogin.css">
+    <link rel="stylesheet" type="text/css" href="${url}/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="${url}/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="${url}/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="${url}/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="${url}/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="${url}/css/util.css">
+    <link rel="stylesheet" type="text/css" href="${url}/css/mainlogin.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
@@ -60,15 +62,15 @@
         </div>
     </div>
    <!--===============================================================================================-->
-   <script src="/js/main.js"></script>
+   <script src="${url}/js/main.js"></script>
    <!--===============================================================================================-->
-   <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+   <script src="${url}/vendor/jquery/jquery-3.2.1.min.js"></script>
    <!--===============================================================================================-->
-   <script src="vendor/bootstrap/js/popper.js"></script>
+   <script src="${url}/vendor/bootstrap/js/popper.js"></script>
    <!--===============================================================================================-->
-   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+   <script src="${url}/vendor/bootstrap/js/bootstrap.min.js"></script>
    <!--===============================================================================================-->
-   <script src="vendor/select2/select2.min.js"></script>
+   <script src="${url}/vendor/select2/select2.min.js"></script>
    <!--===============================================================================================-->
    
 </body>

@@ -1,10 +1,14 @@
 package com.nlu.fit.giasunlu.controller.client.oauth;
 
+import com.nlu.fit.giasunlu.dao.NewUserDao;
+import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.service.serviceImpl.UserServiceImpl;
 import com.nlu.fit.giasunlu.utils.Constant;
+import com.nlu.fit.giasunlu.utils.SecurityUtils;
 import com.nlu.fit.giasunlu.utils.SendMail;
+import org.jdbi.v3.core.Jdbi;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,7 +58,8 @@ public class RegisterController extends HttpServlet {
             req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
             return;
         }
-        if (service.checkExistEmail(email)) {
+        Jdbi jdbi= JDBIConnection.get();
+        if (jdbi.withExtension(NewUserDao.class, dao -> dao.checkExistEmail(email)) != null) {
             alertMsg = "Email đã tồn tại!";
             req.setAttribute("alert", alertMsg);
             req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);

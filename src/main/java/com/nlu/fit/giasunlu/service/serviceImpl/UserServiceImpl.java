@@ -1,7 +1,9 @@
 package com.nlu.fit.giasunlu.service.serviceImpl;
 
+import com.nlu.fit.giasunlu.dao.TutorPortfolioDao;
 import com.nlu.fit.giasunlu.dao.UserDao;
 import com.nlu.fit.giasunlu.dao.daoImpl.UserDaoImpl;
+import com.nlu.fit.giasunlu.model.TutorPortfolio;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.utils.SecurityUtils;
@@ -53,12 +55,27 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User login(String email, String password) {
+    public List<User> getAllCustomer() {
+        return null;
+    }
+
+    @Override
+    public List<User> getAllTeacher() {
+        return null;
+    }
+
+    @Override
+    public User getUserWithAccessToken(String email, String password) {
         User user = this.get(email);
         if (user != null && SecurityUtils.encodePassword(password).equals(user.getPassword())) {
             return user;
         }
 
+        return null;
+    }
+
+    @Override
+    public User getUserWithAccessToken(String accessToken) {
         return null;
     }
 
@@ -98,6 +115,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public String getPassword(String email) {
         return userDao.getPassword(email);
+    }
+
+    @Override
+    public Integer countCustomer() {
+        return null;
+    }
+
+    @Override
+    public Integer countTeacher() {
+        return null;
     }
 
 }

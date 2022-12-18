@@ -11,7 +11,7 @@ import java.io.IOException;
 public class Redirect extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/view/client/view/verify.jsp").forward(request, response);
+        request.getRequestDispatcher("/view/client/verify.jsp").forward(request, response);
     }
 
     @Override

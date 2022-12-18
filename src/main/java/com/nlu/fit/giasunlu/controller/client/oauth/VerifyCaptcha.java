@@ -1,6 +1,9 @@
 package com.nlu.fit.giasunlu.controller.client.oauth;
 
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
@@ -46,10 +49,13 @@ public class VerifyCaptcha {
             // print result
             System.out.println(response.toString());
             //parse JSON response and return 'success' value
-            JsonReader jsonReader = Json.createReader(new StringReader(response.toString()));
-            JsonObject jsonObject = jsonReader.readObject();
-            jsonReader.close();
-            return jsonObject.getBoolean("success");
+//            JsonReader jsonReader = Json.createReader(new StringReader(response.toString()));
+//            JsonObject jsonObject = jsonReader.readObject();
+//            jsonReader.close();
+            JSONParser parser = new JSONParser();
+            JSONObject json = (JSONObject) parser.parse(response.toString());
+            return (boolean) json.get("success");
+//            return jsonObject.getBoolean("success");
         }catch(Exception e){
             e.printStackTrace();
             return false;
