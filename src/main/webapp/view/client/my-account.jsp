@@ -186,9 +186,9 @@
 
                 <h5 class="pl-1">Số dư:<span class="text-primary">0 coin</span></h5>
 
-                <a href="coin.jsp" class="btn btn-primary mb-2">Nạp xu</a><br>
+                <a href="${pageContext.request.contextPath}/my-account/top-up-coin" class="btn btn-primary mb-2">Nạp xu</a><br>
 
-                <a href="coin-history.jsp">Lịch sử biến động</a>
+                <a href="${pageContext.request.contextPath}/my-account/coin-history">Lịch sử biến động</a>
 
                 <!-- -->
 
