@@ -25,6 +25,7 @@ public class ClassDetailController extends HttpServlet {
         } else {
             response.sendRedirect("/class");
         }
+
     }
 
     @Override

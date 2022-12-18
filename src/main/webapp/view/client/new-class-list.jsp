@@ -8,6 +8,7 @@
 <head>
     <title>Danh sách lớp mới</title>
     <link rel="shortcut icon" type="image/png" href="${url}img/logo.png"/>
+    <link href="${url}css/bootstrap.css" rel="stylesheet">
 </head>
 
 
@@ -185,7 +186,7 @@
                             </div>
                         </div>
                         <div class="mt-3 mt-lg-0 col-lg-2 filter-parent">
-                            <select class="form-select " name="cost" aria-label="Default select example">
+                            <select class="form-select" name="cost" aria-label="Default select example">
                                 <% String cost = request.getParameter("cost");
                                     String[] costs = {"150000", "250000", "500000"};
                                     out.print("<option value=\"all\"");
