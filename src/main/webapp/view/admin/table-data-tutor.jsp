@@ -46,33 +46,48 @@
                             <th width="10"><input type="checkbox" id="all"></th>
                             <th>Mã gia sư</th>
                             <th width="150">Họ và tên</th>
-                            <th width="20">Ảnh thẻ</th>
                             <th width="250">Địa chỉ</th>
-                            <th>Email</th>
                             <th>Ngày sinh</th>
                             <th>Giới tính</th>
                             <th>SĐT</th>
+                            <th>Trạng Thái</th>
                             <th width="100">Tính năng</th>
                         </tr>
                         </thead>
                         <tbody>
-
-                        <c:forEach items="${users}" var="user">
+                        <c:forEach var="u" items="${users}">
                             <tr>
-                                <td><input type="checkbox" class="checkbox" name="id" value="${user.getId()}"></td>
-                                <td>${user.getId()}</td>
-                                <td>${user.getLastname()} ${user.getFirstname()}</td>
-                                <td><img src="${user.getAvatar()}" width="100" height="100"></td>
-                                <td>${user.getAddress()}</td>
-                                <td>${user.getEmail()}</td>
-                                <td>${user.getDateOfBirth()}</td>
-                                <td>${user.getGender()}</td>
-                                <td>${user.getPhone()}</td>
+                                <td width="10"><input type="checkbox" name="check2" value="2"></td>
+                                <td>${u.getId()}</td>
+                                <td> ${u.getLastName()} ${u.getFirstName()}</td>
+                                <td>${u.getAddress()}</td>
+                                <td>${u.getDateOfBirth()}</td>
                                 <td>
-                                    <a class="btn btn-edit btn-sm" href="/admin/tutor/add?id=${user.getId()}"
-                                       title="Sửa"><i class="fas fa-edit"></i></a>
-                                    <a class="btn btn-delete btn-sm" href="/admin/tutor/delete?id=${user.getId()}"
-                                       title="Xóa"><i class="fas fa-trash"></i></a>
+                                    <c:if test="${u.getGender() == 'male'}">
+                                        <span>Nam</span>
+                                    </c:if>
+                                    <c:if test="${u.getGender()=='female'}">
+                                        <span>Nữ</span>
+                                    </c:if>
+                                </td>
+                                <td>
+                                        ${u.getPhone()}
+                                </td>
+                                <td>
+                                    <c:if test="${u.getStatus() == 1}">
+                                        <span>Đang hoạt động</span>
+                                    </c:if>
+                                    <c:if test="${u.getStatus() == 0}">
+                                        <span>Đã khóa</span>
+                                    </c:if>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
+                                            data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                                    </button>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -98,60 +113,54 @@ MODAL
               <span class="thong-tin-thanh-toan">
                 <h5>Chỉnh sửa thông tin gia sư</h5>
               </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Mã gia sư</label>
+                        <input class="form-control" type="text" required value="#CD2187" disabled>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Họ và tên</label>
+                        <input class="form-control" type="text" required value="Võ Trường">
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Số điện thoại</label>
+                        <input class="form-control" type="number" required value="09267312388">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Địa chỉ email</label>
+                        <input class="form-control" type="text" required value="truong.vd2000@gmail.com">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Ngày sinh</label>
+                        <input class="form-control" type="date" value="15/03/2000">
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trình
+                        độ</label>
+                        <select class="form-control" id="exampleSelect3">
+                            <option>-- Chọn trình độ --</option>
+                            <option>Tốt nghiệp Đại Học</option>
+                            <option>Tốt nghiệp Cao Đẳng</option>
+                            <option>Tốt nghiệp Phổ Thông</option>
+                            <option>Chưa tốt nghiệp</option>
+                            <option>Không bằng cấp</option>
+                        </select>
+                    </div>
+                </div>
+                <BR>
+                <%--        <a href="#" style="    float: right;--%>
+                <%--        font-weight: 600;--%>
+                <%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
 
-          </div>
+                <button class="btn btn-save" type="button">Lưu lại</button>
+                <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
+                <BR>
+            </div>
+            <div class="modal-footer">
+            </div>
         </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <label class="control-label">Mã gia sư</label>
-            <input class="form-control" type="text" required value="#CD2187" disabled>
-          </div>
-          <div class="form-group col-md-6">
-            <label class="control-label">Họ và tên</label>
-            <input class="form-control" type="text" required value="Võ Trường">
-          </div>
-          <div class="form-group  col-md-6">
-            <label class="control-label">Số điện thoại</label>
-            <input class="form-control" type="number" required value="09267312388">
-          </div>
-          <div class="form-group col-md-6">
-            <label class="control-label">Địa chỉ email</label>
-            <input class="form-control" type="text" required value="truong.vd2000@gmail.com">
-          </div>
-          <div class="form-group col-md-6">
-            <label class="control-label">Ngày sinh</label>
-            <input class="form-control" type="date" value="15/03/2000">
-          </div>
-          <div class="form-group  col-md-6">
-            <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trình độ</label>
-            <select class="form-control" id="exampleSelect3">
-              <option>-- Chọn trình độ --</option>
-              <option>Tốt nghiệp Đại Học</option>
-              <option>Tốt nghiệp Cao Đẳng</option>
-              <option>Tốt nghiệp Phổ Thông</option>
-              <option>Chưa tốt nghiệp</option>
-              <option>Không bằng cấp</option>
-            </select>
-          </div>
-        </div>
-        <BR>
-
-<%--        <a href="#" style="    float: right;--%>
-<%--        font-weight: 600;--%>
-<%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
-
-        <%--        <a href="#" style="    float: right;--%>
-        <%--        font-weight: 600;--%>
-        <%--        color: #ea0000;">Chỉnh sửa nâng cao</a>--%>
-
-
-        <button class="btn btn-save" type="button">Lưu lại</button>
-        <a class="btn btn-cancel" data-dismiss="modal" href="#">Hủy bỏ</a>
-        <BR>
-      </div>
-      <div class="modal-footer">
-      </div>
-
     </div>
 </div>
 <!--

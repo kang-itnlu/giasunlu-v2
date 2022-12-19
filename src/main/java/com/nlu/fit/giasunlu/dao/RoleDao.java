@@ -17,7 +17,7 @@ public interface RoleDao {
     @SqlQuery("select * from role")
     List<Role> getRoles();
 
-    @SqlUpdate("insert into role (id, name, create_at, update_at) values ( :name, :createAt, :updateAt)")
+    @SqlUpdate("insert into role ( name, create_at, update_at) values ( :name, :createAt, :updateAt)")
     void insertRole(@BindBean Role role);
 
     @SqlUpdate("update role set name = :name, create_at = :createAt, update_at = now() where id = :id")

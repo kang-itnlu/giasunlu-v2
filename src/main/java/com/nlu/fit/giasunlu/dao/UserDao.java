@@ -1,8 +1,10 @@
 package com.nlu.fit.giasunlu.dao;
 
 import com.nlu.fit.giasunlu.model.User;
+import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 
 import java.util.List;
+
 
 public interface UserDao {
     void saveUser(User user);

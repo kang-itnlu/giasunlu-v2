@@ -2,6 +2,7 @@ package com.nlu.fit.giasunlu.service;
 
 import com.nlu.fit.giasunlu.model.Class;
 import com.nlu.fit.giasunlu.model.JoinClass;
+import com.nlu.fit.giasunlu.model.Report;
 import com.nlu.fit.giasunlu.model.Subject;
 
 import java.util.List;
@@ -24,4 +25,6 @@ public interface ClassService {
     List<Subject> getAllSubject();
 
     void insertJoinClass(JoinClass joinClass);
+
+    void insertReport(Report report);
 }

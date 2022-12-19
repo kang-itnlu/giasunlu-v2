@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -24,52 +25,58 @@
                     <div class="row element-button">
                         <div class="col-sm-2">
 
-                            <a class="btn btn-add btn-sm" href="./form-add-report.jsp" title="Thêm"><i class="fas fa-plus"></i>
+                            <a class="btn btn-add btn-sm" href="./form-add-report.jsp" title="Thêm"><i
+                                    class="fas fa-plus"></i>
                                 Tạo mới bài viết</a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-delete btn-sm print-file" type="button" title="In" onclick="myApp.printTable()"><i
+                            <a class="btn btn-delete btn-sm print-file" type="button" title="In"
+                               onclick="myApp.printTable()"><i
                                     class="fas fa-print"></i> In dữ liệu</a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất Excel</a>
+                            <a class="btn btn-excel btn-sm" href="" title="In"><i class="fas fa-file-excel"></i> Xuất
+                                Excel</a>
                         </div>
                         <div class="col-sm-2">
-                            <a class="btn btn-delete btn-sm pdf-file" type="button" title="In" onclick="myFunction(this)"><i
+                            <a class="btn btn-delete btn-sm pdf-file" type="button" title="In"
+                               onclick="myFunction(this)"><i
                                     class="fas fa-file-pdf"></i> Xuất PDF</a>
                         </div>
                     </div>
-                    <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0" border="0"
+                    <table class="table table-hover table-bordered js-copytextarea" cellpadding="0" cellspacing="0"
+                           border="0"
                            id="sampleTable">
                         <thead>
                         <tr>
                             <th width="10"><input type="checkbox" id="all"></th>
-                            <th width="30" >STT</th>
-                            <th width="200" >Mã khách hàng</th>
-                            <th width="200" >Mã bài viết</th>
-                            <th width="200" >Trạng thái</th>
-                            <th width="400" >Nội dung</th>
-                            <th width="100" >Tính năng</th>
+                            <th width="30">STT</th>
+                            <th width="200">Mã khách hàng</th>
+                            <th width="200">Mã bài viết</th>
+                            <th width="200">Trạng thái</th>
+                            <th width="400">Nội dung</th>
+                            <th width="100">Tính năng</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td width="10"><input type="checkbox" name="check2" value="2"></td>
-                            <td>1</td>
-                            <td>KH123</td>
-                            <td>BV1</td>
-                            <td>trạng </td>
-                            <td>Nội dung nè</td>
-
-                            <td><button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
-                                        onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
-                            </button>
-                                <a class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp"
-                                   data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
-                                </a>
-                            </td>
-                        </tr>
-
+                        <c:forEach items="${reports}" var="r">
+                            <tr>
+                                <td width="10"><input type="checkbox" name="check2" value="2"></td>
+                                <td>${r.getId()}</td>
+                                <td>${r.getUserId()}</td>
+                                <td>${r.getPostId()}</td>
+                                <td>${r.getStatus()}</td>
+                                <td>${r.getContent()}</td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm trash" type="button" title="Xóa"
+                                            onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
+                                    </button>
+                                    <a class="btn btn-primary btn-sm edit" type="button" title="Sửa"
+                                       data-toggle="modal" data-target="#ModalUP"><i class="fas fa-edit"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -97,23 +104,24 @@ MODAL
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label class="control-label">Mã khách hàng</label>
-                        <input class="form-control" type="text" required value="KH123" >
+                        <input class="form-control" type="text" required value="KH123">
                     </div>
                     <div class="form-group col-md-6">
                         <label class="control-label">Mã bài viết</label>
                         <input class="form-control" type=text" required value="Bv1">
                     </div>
                     <div class="form-group  col-md-6">
-                        <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trạng thái</label>
+                        <%--@declare id="exampleselect1"--%><label for="exampleSelect1" class="control-label">Trạng
+                        thái</label>
                         <select class="form-control" id="exampleSelect3">
-                            <option>-- Chọn trạng thái  --</option>
+                            <option>-- Chọn trạng thái --</option>
                             <option>Trạng thái 1</option>
                             <option>Trạng thái 2</option>
                         </select>
                     </div>
                     <div class="form-group  col-md-6">
                         <label class="control-label">Nội dung</label>
-                        <textarea class="form-control" type="text" ></textarea>
+                        <textarea class="form-control" type="text"></textarea>
                     </div>
                 </div>
                 <BR>
@@ -150,6 +158,7 @@ MODAL
         var i = r.parentNode.parentNode.rowIndex;
         document.getElementById("myTable").deleteRow(i);
     }
+
     jQuery(function () {
         jQuery(".trash").click(function () {
             swal({
@@ -160,9 +169,7 @@ MODAL
             })
                 .then((willDelete) => {
                     if (willDelete) {
-                        swal("Đã xóa thành công.!", {
-
-                        });
+                        swal("Đã xóa thành công.!", {});
                     }
                 });
         });
@@ -225,6 +232,7 @@ MODAL
             return i;
         }
     }
+
     //In dữ liệu
     var myApp = new function () {
         this.printTable = function () {
