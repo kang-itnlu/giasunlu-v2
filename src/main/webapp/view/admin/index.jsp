@@ -189,24 +189,24 @@
         <!--Right-->
         <div class="col-md-12 col-lg-6">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-12 ">
                     <div class="tile">
-                        <h3 class="tile-title">Dữ liệu 6 tháng đầu vào</h3>
+                        <h3 class="tile-title">Thống kê 6 tháng doanh thu </h3>
                         <div class="embed-responsive embed-responsive-16by9">
                             <canvas class="embed-responsive-item" id="lineChartDemo"></canvas>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-12">
                     <div class="tile">
-                        <h3 class="tile-title">Thống kê 6 tháng doanh thu</h3>
+                        <h3 class="tile-title">Thống kê theo năm </h3>
                         <div class="embed-responsive embed-responsive-16by9">
-                            <canvas class="embed-responsive-item" id="barChartDemo"></canvas>
+                            <canvas width="450" height="450" class="embed-responsive-item "
+                                    id="doughnut-chart"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
         <!--END right-->
     </div>
@@ -224,49 +224,63 @@
 <!--===============================================================================================-->
 <script src="${url}/js/plugins/pace.min.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="${url}/js/plugins/chart.js"></script>
+<%--<script type="text/javascript" src="${url}/js/plugins/chart.js"></script>--%>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript">
+<!-- Biểu đồ 6 tháng  -->
+<script>
     var chartMonthData = ${chartMonth};
-    var data = {
-        labels: chartMonthData.labels,
-        datasets: [{
-            label: "Danh thu",
-            fillColor: "rgba(255, 213, 59, 0.767), 212, 59)",
-            strokeColor: "rgb(255, 212, 59)",
-            pointColor: "rgb(255, 212, 59)",
-            pointStrokeColor: "rgb(255, 212, 59)",
-            pointHighlightFill: "rgb(255, 212, 59)",
-            pointHighlightStroke: "rgb(255, 212, 59)",
-            data: chartMonthData.data
+    const ctx = document.getElementById('lineChartDemo');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: chartMonthData.labels,
+            datasets: [{
+                label: '$',
+                data: chartMonthData.data,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-        ],
-    };
-    var ctxl = $("#lineChartDemo").get(0).getContext("2d");
-    var lineChart = new Chart(ctxl).Line(data);
-    ;
-
-
+    });
 </script>
+
+<!-- Biểu đồ năm  -->
 <script>
     let chartYearData = ${chartYear};
-    var data = {
-        labels: chartYearData.labels,
-        datasets: [
-            {
-                label: "Năm",
-                fillColor: "rgba(9, 109, 239, 0.651)  ",
-                pointColor: "rgb(9, 109, 239)",
-                strokeColor: "rgb(9, 109, 239)",
-                pointStrokeColor: "rgb(9, 109, 239)",
-                pointHighlightFill: "rgb(9, 109, 239)",
-                pointHighlightStroke: "rgb(9, 109, 239)",
-                data: chartYearData.data
+
+    const ctxd = document.getElementById('doughnut-chart');
+
+    new Chart(ctxd, {
+        type: 'doughnut',
+        data: {
+            labels: chartYearData.labels,
+            datasets: [{
+                label: '$',
+                data: chartYearData.data,
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
-        ],
-    };
-    var ctxb = $("#barChartDemo").get(0).getContext("2d");
-    var barChart = new Chart(ctxb).Bar(data);
+        }
+    });
 </script>
 <script type="text/javascript">
     //Thời Gian

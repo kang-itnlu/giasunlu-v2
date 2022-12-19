@@ -31,10 +31,10 @@
                     <p class="mb-4 text-muted">
                         <span>Tình trạng:</span>
                         <c:if test="${theClass.getStatus() == 1}">
-                            <span class="text-success">Không nhận</span>
+                            <span class="text-success">Còn nhận</span>
                         </c:if>
                         <c:if test="${theClass.getStatus() == 0}">
-                            <span class="text-success">Còn nhận</span>
+                            <span class="text-success">Không nhận</span>
                         </c:if>
                         <c:if test="${theClass.getStatus() == 2}">
                             <span class="text-success">Kết thúc</span>
@@ -96,106 +96,6 @@
         </div>
         <!-- Strat comment  -->
 
-        <div class="row mt-3">
-            <h3> Bình luận </h3>
-        </div>
-        <div class="row mt-3">
-
-            <div class="comment-thread">
-                <!-- Comment 1 start -->
-                <details open class="comment" id="comment-1">
-                    <a href="#comment-1" class="comment-border-link">
-                        <span class="sr-only">Jump to comment-1</span>
-                    </a>
-                    <summary>
-                        <div class="comment-heading">
-                            <div class="comment-voting">
-                                <button type="button">
-                                    <span aria-hidden="true">&#9650;</span>
-                                    <span class="sr-only">Vote up</span>
-                                </button>
-                                <button type="button">
-                                    <span aria-hidden="true">&#9660;</span>
-                                    <span class="sr-only">Vote down</span>
-                                </button>
-                            </div>
-                            <div class="comment-info">
-                                <a href="#" class="comment-author">someguy14</a>
-                                <p class="m-0">
-
-                                    4 ngày trước
-                                </p>
-                            </div>
-                        </div>
-                    </summary>
-
-                    <div class="comment-body">
-                        <p>
-                            Tôi cần tìm 1 gia sư tiếng Anh là sinh viên ngoại ngữ ( Dạy bán thời gian). Cần học tiếng Anh giao
-                            tiếp.
-                        </p>
-                        <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Phản hồi</button>
-
-                        <!-- Reply form start -->
-                        <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
-                            <textarea placeholder="Trả lời bình luận" rows="4"></textarea>
-                            <button type="submit">Đăng</button>
-                            <button type="button" data-toggle="reply-form" data-target="comment-1-reply-form">Huỷ</button>
-                        </form>
-                        <!-- Reply form end -->
-                    </div>
-
-                    <div class="replies">
-                        <!-- Comment 2 start -->
-                        <details open class="comment" id="comment-2">
-                            <a href="#comment-2" class="comment-border-link">
-                                <span class="sr-only">Jump to comment-2</span>
-                            </a>
-                            <summary>
-                                <div class="comment-heading">
-                                    <div class="comment-voting">
-                                        <button type="button">
-                                            <span aria-hidden="true">&#9650;</span>
-                                            <span class="sr-only">Vote up</span>
-                                        </button>
-                                        <button type="button">
-                                            <span aria-hidden="true">&#9660;</span>
-                                            <span class="sr-only">Vote down</span>
-                                        </button>
-                                    </div>
-                                    <div class="comment-info">
-                                        <a href="#" class="comment-author">Ngọc Nguyễn</a>
-                                        <p class="m-0">
-                                            3 ngày trước
-                                        </p>
-                                    </div>
-                                </div>
-                            </summary>
-
-                            <div class="comment-body">
-                                <p>
-                                    Cám ơn bạn đã để lại thông tin trên website.
-                                </p>
-                                <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Phản hồi </button>
-
-                                <!-- Reply form start -->
-                                <form method="POST" class="reply-form d-none" id="comment-2-reply-form">
-                                    <textarea placeholder="Trả lời bình luận" rows="4"></textarea>
-                                    <button type="submit">Đăng</button>
-                                    <button type="button" data-toggle="reply-form" data-target="comment-2-reply-form">Huỷ
-                                    </button>
-                                </form>
-                                <!-- Reply form end -->
-                            </div>
-                        </details>
-                        <!-- Comment 2 end -->
-
-                        <a href="#load-more">Tải thêm câu trả lời</a>
-                    </div>
-                </details>
-                <!-- Comment 1 end -->
-            </div>
-        </div>
 
         <div class="row mt-3">
             <div class="h4 font-weight-bold"> Mô tả lớp học</div>
@@ -204,144 +104,148 @@
         <!-- Strat comment  -->
 
         <!-- End comment -->
-<hr>
-
-<div class="container my-5 related_myclass_field">
-
-    <h2 class="h3 mb-4">Các lớp tương tự:</h2>
-
-
-        <div class="row mt-3">
-
-        </div>
-        <div class="row mt-3">
-            <h3> Bình luận </h3>
-            <div class="row mt-3 w-100 mb-3">
-
-                <div class="form-outline mb-4 col-12">
-                    <textarea placeholder="Bình luận" class="form-control" id="comment" rows="3"></textarea>
-                </div>
-                <button type="button" onclick="comment()" class="btn btn-primary btn-block mb-4 p-2">Bình luận
-                </button>
-            </div>
-
-            <div id="comments" class="comment-thread w-100">
-                <!-- Comment 1 start -->
-                <details open class="comment" id="comment-1">
-                    <summary>
-                        <div class="comment-heading">
-
-                            <div class="comment-info">
-                                <a href="#" class="comment-author">someguy14</a>
-                            </div>
-                        </div>
-                    </summary>
-
-                    <div class="comment-body">
-                        <p>
-                            Tôi cần tìm 1 gia sư tiếng Anh là sinh viên ngoại ngữ ( Dạy bán thời gian). Cần học tiếng
-                            Anh giao
-                            tiếp.
-                        </p>
-                        <button class="btn success h6" style="color: orange;" type="button" data-toggle="reply-form"
-                                data-target="comment-1-reply-form">Phản hồi
-                        </button>
-                        <!-- Reply form start -->
-                        <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
-                            <textarea name="content" placeholder="Trả lời bình luận" rows="4"></textarea>
-                            <button class="btn success h6" style="color: orange;" type="submit">Đăng</button>
-                            <button class="btn success h6" style="color: orange;" type="button" data-toggle="reply-form"
-                                    data-target="comment-1-reply-form">Huỷ
-                            </button>
-                        </form>
-                        <!-- Reply form end -->
-                    </div>
-
-                    <div class="replies">
-                        <!-- Comment 2 start -->
-                        <details open class="comment" id="comment-2">
-                            <summary>
-                                <div class="comment-info">
-                                    <a href="#" class="comment-author">Ngọc Nguyễn</a>
-                                </div>
-
-                            </summary>
-
-                            <div class="comment-body">
-                                <p>
-                                    Cám ơn bạn đã để lại thông tin trên website.
-                                </p>
-                            </div>
-                        </details>
-                    </div>
-                </details>
-
-                <!-- Comment 1 end -->
-            </div>
-        </div>
-        <!-- End comment -->
-        <div class="row mt-3 w-100">
-            <div class="h4 font-weight-bold">Báo cáo bài viết</div>
-            <div class="form-outline mb-4 col-12">
-                <textarea class="form-control" id="textAreaExample6" rows="3"></textarea>
-            </div>
-            <button type="button" onclick="report()" class="btn btn-primary btn-block mb-4">Gửi báo cáo</button>
-        </div>
         <hr>
+
         <div class="container my-5 related_myclass_field">
+
             <h2 class="h3 mb-4">Các lớp tương tự:</h2>
-            <div class="row">
-                <c:forEach items="${suggest}" var="i">
-                    <div class="col-lg-3">
-                        <div class="myclass-item text-small">
-                            <div class="myclass-item-head d-flex">
-                                <a href="/class-detail?id=${i.getId()}" class="mr-auto" rel="nofollow">
-                                    <span class="font-weight-bold">${i.getId()}</span>
-                                </a>
+
+
+            <div class="row mt-3">
+
+            </div>
+            <div class="row mt-3">
+                <h3> Bình luận </h3>
+                <div class="row mt-3 w-100 mb-3">
+
+                    <div class="form-outline mb-4 col-12">
+                        <textarea placeholder="Bình luận" class="form-control" id="comment" rows="3"></textarea>
+                    </div>
+                    <button type="button" onclick="comment()" class="btn btn-primary btn-block mb-4 p-2">Bình luận
+                    </button>
+                </div>
+
+                <div id="comments" class="comment-thread w-100">
+                    <!-- Comment 1 start -->
+                    <details open class="comment" id="comment-1">
+                        <summary>
+                            <div class="comment-heading">
+
+                                <div class="comment-info">
+                                    <a href="#" class="comment-author">someguy14</a>
+                                </div>
                             </div>
-                            <div class="myclass-item-body">
-                                <p class="p-icon mb-2">
-                                    <i class="fas fa-book text-muted text-small"></i>
-                                    <b>${i.getClassName()}</b>
-                                </p>
-                                <p class="p-icon mb-2">
-                                    <i class="fas fa-book text-muted text-small"></i>
-                                    <b>${i.getSubject().getName()}</b>
-                                </p>
-                                <p class="p-icon mb-2">
-                                    <i class="fas fa-map-marker-alt text-muted text-small"></i>${i.getAddress()}</p>
-                                <p class="p-icon mb-2">
-                                    <i class="fas fa-bookmark text-muted text-small"></i>
-                                    <c:if test="${i.getLevel()==0}">
-                                        Mẫu giáo
-                                    </c:if>
-                                    <c:if test="${i.getLevel()==1}">
-                                        Cấp 1
-                                    </c:if>
-                                    <c:if test="${i.getLevel()==2}">
-                                        Cấp 2
-                                    </c:if>
-                                    <c:if test="${i.getLevel()==3}">
-                                        Cấp 3
-                                    </c:if>
-                                    <c:if test="${i.getLevel()==4}">
-                                        Cấp 4
-                                    </c:if>
-                                </p>
-                                <p class="p-icon mb-2">
-                                    <i class="fas fa-dollar-sign text-muted text-small"></i>
-                                        ${i.getCost()} ₫/buổi, 1 buổi/tuần
-                                </p>
-                                <div class="text-right mt-3">
-                                    <a href="/class-detail?id=${i.getId()}" class="btn btn-success" rel="nofollow">Xem
-                                        chi tiết<i
-                                                class="fas fa-arrow-right ml-2"></i></a>
+                        </summary>
+
+                        <div class="comment-body">
+                            <p>
+                                Tôi cần tìm 1 gia sư tiếng Anh là sinh viên ngoại ngữ ( Dạy bán thời gian). Cần học
+                                tiếng
+                                Anh giao
+                                tiếp.
+                            </p>
+                            <button class="btn success h6" style="color: orange;" type="button" data-toggle="reply-form"
+                                    data-target="comment-1-reply-form">Phản hồi
+                            </button>
+                            <!-- Reply form start -->
+                            <form method="POST" class="reply-form d-none" id="comment-1-reply-form">
+                                <textarea name="content" placeholder="Trả lời bình luận" rows="4"></textarea>
+                                <button class="btn success h6" style="color: orange;" type="submit">Đăng</button>
+                                <button class="btn success h6" style="color: orange;" type="button"
+                                        data-toggle="reply-form"
+                                        data-target="comment-1-reply-form">Huỷ
+                                </button>
+                            </form>
+                            <!-- Reply form end -->
+                        </div>
+
+                        <div class="replies">
+                            <!-- Comment 2 start -->
+                            <details open class="comment" id="comment-2">
+                                <summary>
+                                    <div class="comment-info">
+                                        <a href="#" class="comment-author">Ngọc Nguyễn</a>
+                                    </div>
+
+                                </summary>
+
+                                <div class="comment-body">
+                                    <p>
+                                        Cám ơn bạn đã để lại thông tin trên website.
+                                    </p>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <!-- Comment 1 end -->
+                </div>
+            </div>
+            <!-- End comment -->
+            <div class="row mt-3 w-100">
+                <div class="h4 font-weight-bold">Báo cáo bài viết</div>
+                <div class="form-outline mb-4 col-12">
+                    <textarea class="form-control" id="textAreaExample6" rows="3"></textarea>
+                </div>
+                <button type="button" onclick="report()" class="btn btn-primary btn-block mb-4">Gửi báo cáo</button>
+            </div>
+            <hr>
+            <div class="container my-5 related_myclass_field">
+                <h2 class="h3 mb-4">Các lớp tương tự:</h2>
+                <div class="row">
+                    <c:forEach items="${suggest}" var="i">
+                        <div class="col-lg-3">
+                            <div class="myclass-item text-small">
+                                <div class="myclass-item-head d-flex">
+                                    <a href="/class-detail?id=${i.getId()}" class="mr-auto" rel="nofollow">
+                                        <span class="font-weight-bold">${i.getId()}</span>
+                                    </a>
+                                </div>
+                                <div class="myclass-item-body">
+                                    <p class="p-icon mb-2">
+                                        <i class="fas fa-book text-muted text-small"></i>
+                                        <b>${i.getClassName()}</b>
+                                    </p>
+                                    <p class="p-icon mb-2">
+                                        <i class="fas fa-book text-muted text-small"></i>
+                                        <b>${i.getSubject().getName()}</b>
+                                    </p>
+                                    <p class="p-icon mb-2">
+                                        <i class="fas fa-map-marker-alt text-muted text-small"></i>${i.getAddress()}</p>
+                                    <p class="p-icon mb-2">
+                                        <i class="fas fa-bookmark text-muted text-small"></i>
+                                        <c:if test="${i.getLevel()==0}">
+                                            Mẫu giáo
+                                        </c:if>
+                                        <c:if test="${i.getLevel()==1}">
+                                            Cấp 1
+                                        </c:if>
+                                        <c:if test="${i.getLevel()==2}">
+                                            Cấp 2
+                                        </c:if>
+                                        <c:if test="${i.getLevel()==3}">
+                                            Cấp 3
+                                        </c:if>
+                                        <c:if test="${i.getLevel()==4}">
+                                            Cấp 4
+                                        </c:if>
+                                    </p>
+                                    <p class="p-icon mb-2">
+                                        <i class="fas fa-dollar-sign text-muted text-small"></i>
+                                            ${i.getCost()} ₫/buổi, 1 buổi/tuần
+                                    </p>
+                                    <div class="text-right mt-3">
+                                        <a href="/class-detail?id=${i.getId()}" class="btn btn-success" rel="nofollow">Xem
+                                            chi tiết<i
+                                                    class="fas fa-arrow-right ml-2"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </c:forEach>
+                    </c:forEach>
+                </div>
             </div>
+        </div>
     </section>
 </main>
 <jsp:include page="footer.jsp"/>
