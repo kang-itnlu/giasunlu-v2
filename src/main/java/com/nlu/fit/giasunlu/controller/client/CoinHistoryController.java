@@ -17,7 +17,12 @@ public class CoinHistoryController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        User user = (User) request.getSession().getAttribute("account");
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath()+"/login");
+            return;
+        }
         Jdbi jdbi= JDBIConnection.get();
         List<CoinHistory> coinHistories = jdbi.withExtension(CoinHistoryDao.class, dao -> dao.getAllClass(user.getId()));
 

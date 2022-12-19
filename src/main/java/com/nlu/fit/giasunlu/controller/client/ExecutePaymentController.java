@@ -5,6 +5,8 @@ import com.nlu.fit.giasunlu.dao.NewUserDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.CoinHistory;
 import com.nlu.fit.giasunlu.model.User;
+import com.nlu.fit.giasunlu.service.TurnoverService;
+import com.nlu.fit.giasunlu.service.serviceImpl.TurnoverServiceImpl;
 import com.nlu.fit.giasunlu.utils.PaymentServices;
 import com.paypal.api.payments.PayerInfo;
 import com.paypal.api.payments.Payment;
@@ -47,6 +49,9 @@ public class ExecutePaymentController extends HttpServlet {
             jdbi.useExtension(NewUserDao.class, dao -> dao.updateCoin(user.getId(), (long) (user.getCoin() + coin)));
             CoinHistory coinHistory = new CoinHistory(user.getId(), String.format("Nạp %s xu vào tài khoản", coin), coin, "Paypal", new Date(), 0);
             jdbi.useExtension(CoinHistoryDao.class, dao -> dao.insert(coinHistory));
+            TurnoverService turnoverService = new TurnoverServiceImpl();
+
+            turnoverService.insertTurnover(user.getId(), Long.parseLong(String.valueOf(coin)), Long.parseLong(transaction.getAmount().getTotal()));
             request.getRequestDispatcher("/view/client/receipt-detail.jsp").forward(request, response);
 
         } catch (PayPalRESTException ex) {

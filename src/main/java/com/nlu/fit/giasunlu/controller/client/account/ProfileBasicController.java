@@ -22,6 +22,10 @@ public class ProfileBasicController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath()+"/login");
+            return;
+        }
         Jdbi jdbi= JDBIConnection.get();
         Certificates certificates = jdbi.withExtension(CertificatesDao.class, dao -> dao.getCertificatesByUserId(user.getId()));
         request.setAttribute("certificates", certificates);
@@ -45,6 +49,7 @@ public class ProfileBasicController extends HttpServlet {
         String fromYear = request.getParameter("start_year");
         String toYear = request.getParameter("end_year");
         String image = request.getParameter("avatar");
+        System.out.println(image);
         Date fromDate = new Date(Integer.parseInt(fromYear), Integer.parseInt(fromMonth), 1);
         Date toDate = new Date(Integer.parseInt(toYear), Integer.parseInt(toMonth), 1);
 
@@ -54,6 +59,7 @@ public class ProfileBasicController extends HttpServlet {
         user.setPhone(phone);
         user.setGender(gender == 1 ? "Nam" : "Nữ");
         user.setDateOfBirth(new Date(Integer.parseInt(birthday)));
+        user.setAvatar(image);
 
         Jdbi jdbi= JDBIConnection.get();
         Certificates certificates1 = jdbi.withExtension(CertificatesDao.class, dao -> dao.getCertificatesByUserId(user.getId()));

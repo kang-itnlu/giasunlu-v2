@@ -26,7 +26,7 @@
 
             <div class="row">
                 <div class="col-lg-3 py-5 ">
-                    <img class="img-fluid" src="img/team-1.jpg" alt="">
+                    <img class="img-fluid" src="${url}img/team-1.jpg" alt="">
                     <a href="./teacher-detail.jsp"></a>
                 </div>
                 <div class="col-lg-8 mt-4 mt-lg-0 content-inf" >

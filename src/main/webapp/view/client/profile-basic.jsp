@@ -9,7 +9,7 @@
     <meta content="GiaSuNLU Templates" name="keywords">
     <meta content="GiaSuNLU Templates" name="description">
 
-    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+    <link rel="shortcut icon" type="image/png" href="${url}img/logo.png"/>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -378,7 +378,7 @@
                                 </div>
                                 <a href="javascript:upload_image('student_card')" id="student_card_btn" class="d-inline-block image-preview">
                                     <div id="student_card_preview">
-                                        <img src="img/placeholder-250.jpg">
+                                        <img src="${url}img/placeholder-250.jpg">
                                     </div>
                                     <div class="backdrop">
                                         <div class="loader"></div>

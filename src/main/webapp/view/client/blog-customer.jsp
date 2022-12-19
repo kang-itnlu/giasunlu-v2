@@ -91,7 +91,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/trung-tam-gia-su-uy-tin_400.jpg">
+                <img src="${url}img/blog/trung-tam-gia-su-uy-tin_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -109,7 +109,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-ha-noi-v1_400.jpg">
+                <img src="${url}img/blog/gia-su-ha-noi-v1_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -127,7 +127,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-day-dan-tai-nha_400.jpg">
+                <img src="${url}img/blog/gia-su-day-dan-tai-nha_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -145,7 +145,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/ielts-preparation-books_400.jpg">
+                <img src="${url}img/blog/ielts-preparation-books_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -163,7 +163,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/hoc-gia-su-toiec-ielts_400.jpg">
+                <img src="${url}img/blog/hoc-gia-su-toiec-ielts_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -181,7 +181,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-online_400.jpg">
+                <img src="${url}img/blog/gia-su-online_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -199,7 +199,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-mon-dia-ly_400.jpg">
+                <img src="${url}img/blog/gia-su-mon-dia-ly_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -217,7 +217,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-mon-lich-su_400.jpg">
+                <img src="${url}img/blog/gia-su-mon-lich-su_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -235,7 +235,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-mon-sinh-hoc_400.jpg">
+                <img src="${url}img/blog/gia-su-mon-sinh-hoc_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -253,7 +253,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-luyen-chu-dep_400.jpg">
+                <img src="${url}img/blog/gia-su-luyen-chu-dep_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -271,7 +271,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-tieu-hoc_400.jpg">
+                <img src="${url}img/blog/gia-su-tieu-hoc_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">
@@ -289,7 +289,7 @@
           <div class="blog-item">
             <div class="blog-item-image">
               <a href="blog-detail.html">
-                <img src="img/blog/gia-su-tieng-anh_400.jpg">
+                <img src="${url}img/blog/gia-su-tieng-anh_400.jpg">
               </a>
             </div>
             <div class="blog-item-text">

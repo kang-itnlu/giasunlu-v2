@@ -48,7 +48,7 @@
                     <p>Bên cạnh thế mạnh của mỗi công ty, Trung tâm GiaSuNLU còn có đội ngũ nhân viên được đào tạo bài bản, có đầy đủ kiến thức và kỹ năng tuyển chọn nhân sự trong ngành giáo dục.</p>
 
                     <div class="my-4 py-2">
-                        <img src="img/trung-tam-gia-su.jpg" alt="Giới thiệu về GiaSuNLU">
+                        <img src="${url}img/trung-tam-gia-su.jpg" alt="Giới thiệu về GiaSuNLU">
                     </div>
 
                     <p>Hiện tại, GiaSuNLU là trung tâm gia sư chất lượng, chuyên nghiệp và có hệ thống quản lý gia sư hiện đại số 1 tại Hà Nội và Việt Nam.</p>
@@ -94,7 +94,7 @@
                     <p>Hiện tại, Trung tâm gia sư GiaSuNLU mới chỉ hoạt động tại khu vực Thành phố Thủ Đức. Kế hoạch hoạt động tại toàn bộ Việt Nam đang được xây dựng và sẽ sớm được thực hiện trong tương lai.</p>
 
                     <div class="my-4 py-2">
-                        <img src="img/tam-nhin-va-phat-trien-growgreen.jpg" alt="Tầm nhìn và phát triển GiaSuNLU">
+                        <img src="${url}img/tam-nhin-va-phat-trien-growgreen.jpg" alt="Tầm nhìn và phát triển GiaSuNLU">
                     </div>
 
                     <p class="mt-4">Bạn cần tìm hiểu thêm về GiaSuNLU, đừng ngại ngần. Hãy liên hệ với GiaSuNLU và nhận sự hỗ trợ tốt nhất.</p>

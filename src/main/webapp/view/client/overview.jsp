@@ -31,7 +31,7 @@
         <div class="row">
 
             <div class="col-lg-6 pr-lg-5">
-                <img src="img/homepage/kien-thuc-gia-su-2020.jpg" alt="Kiến thức gia sư">
+                <img src="${url}img/homepage/kien-thuc-gia-su-2020.jpg" alt="Kiến thức gia sư">
             </div>
 
             <div class="col-lg-6 mt-5 mt-lg-0 d-flex align-items-center justify-content-center">
@@ -105,7 +105,7 @@
 
             <div class="col-lg-4 media_block">
 
-                <img class="media_block-img" src="img/homepage/an-tam-nhan-lop_0515.png" alt="An tâm nhận lớp">
+                <img class="media_block-img" src="${url}img/homepage/an-tam-nhan-lop_0515.png" alt="An tâm nhận lớp">
 
                 <div class="media_block-body">
                     <h3 class="h4 mb-3">An tâm để nhận lớp</h3>
@@ -117,7 +117,7 @@
 
             <div class="col-lg-4 media_block">
 
-                <img class="media_block-img" src="img/homepage/da-dang-lua-chon_0515.png" alt="Có nhiều lựa chọn">
+                <img class="media_block-img" src="${url}img/homepage/da-dang-lua-chon_0515.png" alt="Có nhiều lựa chọn">
 
                 <div class="media_block-body">
                     <h3 class="h4 mb-3">Có nhiều sự lựa chọn</h3>
@@ -129,7 +129,7 @@
 
             <div class="col-lg-4 media_block">
 
-                <img class="media_block-img" src="img/homepage/ho-tro-tot-nhat_0515.png" alt="Hỗ trợ tốt nhất">
+                <img class="media_block-img" src="${url}img/homepage/ho-tro-tot-nhat_0515.png" alt="Hỗ trợ tốt nhất">
 
                 <div class="media_block-body">
                     <h3 class="h4 mb-3">Hỗ trợ tốt nhất</h3>
@@ -149,7 +149,7 @@
         <div class="row">
 
             <div class="col-lg-6 order-lg-2 pl-lg-5">
-                <img src="img/homepage/gia-su-khong-bi-lang-quen-fff.jpg" alt="Gia sư không bị lãng quên">
+                <img src="${url}img/homepage/gia-su-khong-bi-lang-quen-fff.jpg" alt="Gia sư không bị lãng quên">
             </div>
 
             <div class="col-lg-6 order-lg-1 mt-5 mt-lg-0 d-flex align-items-center">
@@ -172,7 +172,7 @@
         <div class="row">
 
             <div class="col-lg-6 pt-lg-4 pl-lg-5">
-                <img src="img/homepage/chon-gia-su-growgreen.png" alt="Chọn gia sư GiaSuNLU">
+                <img src="${url}img/homepage/chon-gia-su-growgreen.png" alt="Chọn gia sư GiaSuNLU">
             </div>
 
             <div class="col-lg-5 offset-lg-1 mt-5 mt-lg-0">

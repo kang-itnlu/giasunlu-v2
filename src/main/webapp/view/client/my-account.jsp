@@ -11,7 +11,7 @@
     <meta content="GiaSuNLU Templates" name="keywords">
     <meta content="GiaSuNLU Templates" name="description">
 
-    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+    <link rel="shortcut icon" type="image/png" href="${url}img/logo.png"/>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">

@@ -41,7 +41,7 @@
         <p>Bạn có thể sử dụng thanh công cụ tìm kiếm tại <a href="new-class-list.jsp">Danh sách lớp mới</a> để tìm lớp phù hợp. Các thông tin bạn có thể tìm kiếm bao gồm: mã lớp, môn học, lớp học, cấp học, khu vực (quận/huyện), yêu cầu gia sư (sinh viên, giáo viên).</p>
 
         <div class="my-4">
-          <img src="img/page/receive-class/danh-sach-lop-moi.png" alt="Danh sách lớp mới">
+          <img src="${url}img/page/receive-class/danh-sach-lop-moi.png" alt="Danh sách lớp mới">
         </div>
 
         <p>Bên cạnh đó, sử dụng <b>bộ lọc</b> cũng giúp cho việc tìm kiếm lớp phù hợp trở nên dễ dàng hơn.</p>
@@ -53,7 +53,7 @@
         <p>Hãy lưu ý kỹ về các thông tin quan trọng như địa chỉ, đặc điểm học sinh (học viên), thời gian có thể học.</p>
 
         <div class="my-4">
-          <img src="img/page/receive-class/chi-tiet-lop.png" alt="Thông tin chi tiết lớp">
+          <img src="${url}img/page/receive-class/chi-tiet-lop.png" alt="Thông tin chi tiết lớp">
         </div>
 
         <p>Trong phần thời gian có thể học, GiaSuNLU sử dụng khung giờ phổ thông: buổi sáng từ 8h-12h, buổi chiều từ 13h-18h, buổi tối từ 18h-22h.</p>
@@ -65,7 +65,7 @@
         <p>Các yêu cầu bắt buộc bao gồm bạn phải cập nhật thông tin đầy đủ, đồng ý với điều khoản nhận lớp, làm một bài test ngắn và sau đó tạo <b>Note nhận lớp</b>.</p>
 
         <div class="my-4">
-          <img src="img/page/receive-class/dang-ky-nhan-lop.png" alt="Đăng ký nhận lớp">
+          <img src="${url}img/page/receive-class/dang-ky-nhan-lop.png" alt="Đăng ký nhận lớp">
         </div>
 
         <p>Có 2 hình thức mà bạn có thể nhận lớp: Online và Offline. Tuy nhiên, để nhận lớp Online, bạn cần đạt được một số tiêu chuẩn của GiaSuNLU.</p>
@@ -79,7 +79,7 @@
         <p>Bạn cũng có thể theo dõi tình trạng đăng ký nhận lớp của bạn tại <a href="/myaccount/mynote">Quản lý note nhận lớp</a></p>
 
         <div class="my-4">
-          <img src="img/page/receive-class/cho-phan-hoi.png" alt="Chờ đợi phản hồi">
+          <img src="${url}img/page/receive-class/cho-phan-hoi.png" alt="Chờ đợi phản hồi">
         </div>
 
         <p>Một số phản hồi sẽ lâu hơn bình thường, hãy kiên nhẫn chờ đợi sau khi bạn đã đăng ký nhận lớp.</p>
@@ -91,7 +91,7 @@
         <p>Và trên tất cả, vẫn đang còn những lớp khác. Hãy liên tục tìm kiếm lớp phù hợp với bạn tại trang <a href="new-class-list.jsp" class="text-underline">Danh sách lớp mới</a> của GiaSuNLU.</p>
 
         <div class="my-4">
-          <img src="img/page/receive-class/trang-tong-quan.png" alt="Trang tổng quan">
+          <img src="${url}img/page/receive-class/trang-tong-quan.png" alt="Trang tổng quan">
         </div>
 
         <p>Chúng tôi luôn có số lượng lớp đa dạng và mức học phí hấp dẫn, xứng đáng với kiến thức và kỹ năng giảng dạy của bạn.</p>

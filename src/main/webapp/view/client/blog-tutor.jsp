@@ -66,7 +66,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/luyen-giong-di-day-gia-su">
-                                    <img src="img/blog/luyen-giong-di-day-gia-su_400.jpg">
+                                    <img src="${url}img/blog/luyen-giong-di-day-gia-su_400.jpg">
                                 </a>
                             </div>
                             <div class="blog-item-text">
@@ -84,7 +84,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/tu-tin-khi-di-day-gia-su">
-                                    <img src="img/blog/tu-tin-di-day-gia-su_400.png">
+                                    <img src="${url}img/blog/tu-tin-di-day-gia-su_400.png">
                                 </a>
                             </div>
                             <div class="blog-item-text">
@@ -102,7 +102,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/cach-giang-day-hoc-sinh-luoi-hoc">
-                                    <img src="img/blog/cach-giang-day-hoc-sinh-luoi-hoc_400.png">
+                                    <img src="${url}img/blog/cach-giang-day-hoc-sinh-luoi-hoc_400.png">
                                 </a>
                             </div>
                             <div class="blog-item-text">
@@ -120,7 +120,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/lam-the-nao-hoc-sinh-nghe-loi">
-                                    <img src="img/blog/lam-the-nao-hoc-sinh-nghe-loi_400.png">
+                                    <img src="${url}img/blog/lam-the-nao-hoc-sinh-nghe-loi_400.png">
                                 </a>
                             </div>
                             <div class="blog-item-text">
@@ -138,7 +138,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/huong-dan-xu-ly-su-co-khi-di-day-gia-su">
-                                    <img src="img/blog/huong-dan-xu-ly-su-co-khi-di-day-gia-su_400.png">
+                                    <img src="${url}img/blog/huong-dan-xu-ly-su-co-khi-di-day-gia-su_400.png">
                                 </a>
                             </div>
                             <div class="blog-item-text">
@@ -156,7 +156,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/nhung-luu-y-cho-gia-su-day-buoi-dau">
-                                    <img src="img/blog/nhung-luu-y-cho-gia-su-day-buoi-dau_400.png">
+                                    <img src="${url}img/blog/nhung-luu-y-cho-gia-su-day-buoi-dau_400.png">
                                 </a>
                             </div>
                             <div class="blog-item-text">
@@ -174,7 +174,7 @@
                         <div class="blog-item">
                             <div class="blog-item-image">
                                 <a href="/blog/chon-lop-phu-hop-cho-gia-su">
-                                    <img src="img/blog/cach-chon-lop-gia-su-phu-hop_400.png">
+                                    <img src="${url}img/blog/cach-chon-lop-gia-su-phu-hop_400.png">
                                 </a>
                             </div>
                             <div class="blog-item-text">

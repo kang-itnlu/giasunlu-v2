@@ -10,23 +10,23 @@
 <!-- FACEBOOK CHAT WIDGET-->
 <!-- //banner -->
 <!--facebook live-->
-<meta property="fb:app_id" content="707516127168532"/>
+<meta property="fb:app_id" content="696959065072284"/>
 <meta property="fb:admins" content="100005868942037"/>
 <script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=707516127168532&autoLogAppEvents=1"
+        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v14.0&appId=696959065072284&autoLogAppEvents=1"
         nonce="EknEoy7g"></script>
 <div class="fb-livechat">
     <div class="ctrlq fb-overlay"></div>
     <div class="fb-widget">
         <div class="ctrlq fb-close"></div>
-        <div class="fb-page" data-href="https://www.facebook.com/C%C3%A9line-115143804533811" data-tabs="messages"
+        <div class="fb-page" data-href="https://www.facebook.com/Giasunlu-113575461602681" data-tabs="messages"
              data-width="360" data-height="400" data-small-header="true" data-hide-cover="true"
              data-show-facepile="false">
         </div>
-        <div class="fb-credit"><a href="https://chanhtuoi.com" target="_blank">Powered by Chanhtuoi</a></div>
+        <div class="fb-credit"><a href="https://chanhtuoi.com" target="_blank">Powered by Giasunlu</a></div>
         <div id="fb-root"></div>
     </div>
-    <a href="https://www.facebook.com/C%C3%A9line-115143804533811" title="Gửi tin nhắn cho chúng tôi qua Facebook"
+    <a href="https://www.facebook.com/Giasunlu-113575461602681" title="Gửi tin nhắn cho chúng tôi qua Facebook"
        class="ctrlq fb-button">
         <div class="bubble">1</div>
     </a></div>

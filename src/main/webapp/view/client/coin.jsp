@@ -18,7 +18,7 @@
     <jsp:include page="header.jsp"/>
     <div class="container mt-5">
         <div class="head-coin">
-            <img class="coin-img" src="img/coin-794.png" alt="">
+            <img class="coin-img" src="${url}img/coin-794.png" alt="">
             <div class="coin-title"> Nạp Xu </div>
             <div class="coin-hr"></div>
             <a class="refresh_1 refresh_2">
@@ -174,7 +174,7 @@
                                 <div class="payment_info_2_value">
                                     <div class="payment_info_2_value1">
                                         <div>
-                                            <img src="img/coin-794.png" alt="" class="payment_info_2_img">
+                                            <img src="${url}img/coin-794.png" alt="" class="payment_info_2_img">
                                             x<input class="coin_s" value="25" name="coin" type="text">Xu
                                         </div>
                                     </div>
@@ -203,7 +203,7 @@
                             <div class="payment_info_2">
                                 <div class="payment_info_2_title">Tên tài khoản</div>
                                 <div class="payment_info_2_value">
-                                    <input class="payment_info_2_value1" value="Thân Trọng Trường Giang" name="user_name" type="text" >
+                                    <input class="payment_info_2_value1" value="${sessionScope.account.firstName} ${sessionScope.account.lastName}" name="user_name" type="text" >
                                 </div>
                             </div>
                         </div>

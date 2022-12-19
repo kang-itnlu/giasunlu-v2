@@ -25,6 +25,10 @@ public class MyAccountController extends HttpServlet {
 
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("account");
+        if (user == null) {
+            response.sendRedirect(request.getContextPath()+"/login");
+            return;
+        }
 
         request.getRequestDispatcher("/view/client/my-account.jsp").forward(request, response);
     }
