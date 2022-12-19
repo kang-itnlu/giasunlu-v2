@@ -109,4 +109,8 @@ public class NewUserServiceImp implements UserService {
     public Integer countTeacher() {
         return jdbi.withExtension(NewUserDao.class, NewUserDao::countTeacher);
     }
+
+    public void subCoin(int id, int coin) {
+        jdbi.useExtension(NewUserDao.class, dao -> dao.subCoin(id, coin));
+    }
 }

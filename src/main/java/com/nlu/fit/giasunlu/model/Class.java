@@ -14,14 +14,14 @@ public class Class extends BaseEntity {
     private String address;
     private String briefDesc;
     private int maxStudent;
-    private String status;
+    private int status;
 
     private Subject subject;
 
     public Class() {
     }
 
-    public Class(int id, Long userCreate, String className, int subjectId, int level, int cost, String address, String briefDesc, int maxStudent, String status) {
+    public Class(int id, Long userCreate, String className, int subjectId, int level, int cost, String address, String briefDesc, int maxStudent, int status) {
         this.id = id;
         this.userCreate = userCreate;
         this.className = className;
@@ -34,7 +34,7 @@ public class Class extends BaseEntity {
         this.status = status;
     }
 
-    public Class(int id, Long userCreate, String className, int idSubject, int level, int cost, String address, String briefDesc, int maxStudent, String status, Subject subject) {
+    public Class(int id, Long userCreate, String className, int idSubject, int level, int cost, String address, String briefDesc, int maxStudent, int status, Subject subject) {
         this.id = id;
         this.userCreate = userCreate;
         this.className = className;
@@ -120,11 +120,11 @@ public class Class extends BaseEntity {
         this.maxStudent = maxStudent;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

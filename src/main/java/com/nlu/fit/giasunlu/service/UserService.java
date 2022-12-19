@@ -44,4 +44,6 @@ public interface UserService {
     Integer countCustomer();
 
     Integer countTeacher();
+
+    void subCoin(int id, int coin);
 }

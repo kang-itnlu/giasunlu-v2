@@ -32,6 +32,9 @@ public class LoadCommentController extends HttpServlet {
     private String handleHtml(List<Comment> comments) {
         StringBuilder html = new StringBuilder();
         String temp = "<div class=\"comment\" id=\"comment-:id\">\n" +
+                " <a href=\"#comment-1\" class=\"comment-border-link\">\n" +
+                "                        <span class=\"sr-only\">Jump to comment-1</span>\n" +
+                "                    </a>" +
                 "  <summary>\n" +
                 "    <div class=\"comment-heading\">\n" +
                 "      <div class=\"comment-info\">\n" +
@@ -88,6 +91,9 @@ public class LoadCommentController extends HttpServlet {
 
     private String handleReplyHtml(List<ReplyComment> replyComments) {
         String html = "<div class=\"replies\">" +
+                " <a href=\"#comment-1\" class=\"comment-border-link\">\n" +
+                "                        <span class=\"sr-only\">Jump to comment-1</span>\n" +
+                "                    </a>" +
                 "                        <details open class=\"comment\" id=\"comment-2\">\n" +
                 "                            <summary>\n" +
                 "                                <div class=\"comment-info\">\n" +
