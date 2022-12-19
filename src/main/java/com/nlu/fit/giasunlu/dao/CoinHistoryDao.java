@@ -16,8 +16,8 @@ public interface CoinHistoryDao {
     @SqlQuery("select * from coin_history where id = :id")
     CoinHistory getClassById(@Bind("id") int id);
 
-    @SqlQuery("select * from coin_history")
-    List<CoinHistory> getAllClass();
+    @SqlQuery("select * from coin_history where user_id = :id")
+    List<CoinHistory> getAllClass(@Bind("id") int id);
 
     @SqlUpdate("insert into coin_history (user_id ,coin  ,date  , content   ,type,payment_method   ,create_at , update_at) values ( :userId, :coin, :date, :content, :type, :paymentMethod, now(), now())")
     void insert(@BindBean CoinHistory input);

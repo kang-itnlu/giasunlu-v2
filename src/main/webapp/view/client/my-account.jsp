@@ -184,7 +184,11 @@
 
                 <h5 class="mt-3 pl-1">Mã gia sư: <span class="text-success">GD3669</span></h5>
 
-                <h5 class="pl-1">Số dư: <span class="text-primary">0 coin</span></h5>
+                <h5 class="pl-1">Số dư:<span class="text-primary">0 coin</span></h5>
+
+                <a href="${pageContext.request.contextPath}/my-account/top-up-coin" class="btn btn-primary mb-2">Nạp xu</a><br>
+
+                <a href="${pageContext.request.contextPath}/my-account/coin-history">Lịch sử biến động</a>
 
                 <!-- -->
 
