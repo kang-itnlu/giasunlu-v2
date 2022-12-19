@@ -158,15 +158,19 @@
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb ">
-                        <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
-                        <li class="breadcrumb-item"><a href="/myaccount">Tài khoản của tôi</a></li>
+                        <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/home"><i class="fas fa-home"></i></a></li>
+                        <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/my-account">Tài khoản của tôi</a></li>
                         <li class="breadcrumb-item active" aria-current="page">GD3669</li>
                     </ol>
                 </nav>
 
                 <h3 class="mb-4">Thông tin cơ bản</h3>
 
+<<<<<<< Updated upstream
                 <form method="POST" action="/myaccount/update" novalidate="">
+=======
+                <form method="POST" action="${pageContext.request.contextPath}/my-account/profile-basic" novalidate="">
+>>>>>>> Stashed changes
                     <input type="hidden" name="_token" value="ObYY9viIpfTwZ2tMWPEdDxUTH2WsLtz7EqYDSHC6">
                     <input type="hidden" name="target" value="">
                     <div class="mt-4 pt-3">
