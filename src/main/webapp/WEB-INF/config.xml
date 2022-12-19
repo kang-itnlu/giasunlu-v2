@@ -17,9 +17,9 @@
 	Configure the location of uploaded files. See the following article for more details:
 	http://docs.cksource.com/CKFinder_2.x/Developers_Guide/Java/Configuration/baseURL_and_baseDir
 	-->
-<!--	<baseDir>E:\Ltw\Final CelineShop\CelineShop\CelineShop\src\main\webapp\CKLibraries\images</baseDir>-->
+	<baseDir>E:\4th Years\E-commerce\jsp\giasunlu-v2\src\main\webapp\CKLibraries\images</baseDir>
 	<baseDir></baseDir>
-	<baseURL>http://localhost:8080/CelineShop/CKLibraries/images</baseURL>
+	<baseURL>http://localhost:8080/giasunlu/CKLibraries/images</baseURL>
 	<licenseKey>LWCPD1FBUYSSMW9A3NDPP5V6XQTTUACT</licenseKey>
 	<licenseName>localhost</licenseName>
 	<!--

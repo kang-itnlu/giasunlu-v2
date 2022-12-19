@@ -186,7 +186,7 @@
                             </div>
                         </div>
                         <div class="mt-3 mt-lg-0 col-lg-2 filter-parent">
-                            <select class="form-select" name="cost" aria-label="Default select example">
+                            <select class="form-select" style="padding: 0.373em 0.75em;" name="cost" aria-label="Default select example">
                                 <% String cost = request.getParameter("cost");
                                     String[] costs = {"150000", "250000", "500000"};
                                     out.print("<option value=\"all\"");

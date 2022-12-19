@@ -23,14 +23,8 @@ public class MyAccountController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-//        HttpSession session = request.getSession();
-//        String token = (String) session.getAttribute("token");
-//
-//        User user = accountService.getUser(token);
-//        request.setAttribute("user", user);
-//
-//        TutorPortfolio tutorPortfolio = accountService.getTutorPortfolio(user.getId());
-//        request.setAttribute("tutorPortfolio", tutorPortfolio);
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("account");
 
         request.getRequestDispatcher("/view/client/my-account.jsp").forward(request, response);
     }
