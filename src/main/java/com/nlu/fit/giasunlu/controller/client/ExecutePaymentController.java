@@ -43,15 +43,20 @@ public class ExecutePaymentController extends HttpServlet {
             request.setAttribute("payer", payerInfo);
             request.setAttribute("transaction", transaction);
             float coin = Float.parseFloat(transaction.getDescription().substring(transaction.getDescription().indexOf(":")+1));
+            float total = Float.parseFloat(transaction.getAmount().getTotal());
             System.out.println(coin);
             Jdbi jdbi= JDBIConnection.get();
             User user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUser(Integer.parseInt(userId)));
-            jdbi.useExtension(NewUserDao.class, dao -> dao.updateCoin(user.getId(), (long) (user.getCoin() + coin)));
+//            jdbi.useExtension(NewUserDao.class, dao -> dao.updateCoin(user.getId(), (long) (user.getCoin() + coin)));
+            user.setCoin((int) (user.getCoin() + coin));
+            HttpSession session = request.getSession();
+            session.setAttribute("account", user);
+            jdbi.useExtension(NewUserDao.class, dao -> dao.updateUser(user));
             CoinHistory coinHistory = new CoinHistory(user.getId(), String.format("Nạp %s xu vào tài khoản", coin), coin, "Paypal", new Date(), 0);
             jdbi.useExtension(CoinHistoryDao.class, dao -> dao.insert(coinHistory));
             TurnoverService turnoverService = new TurnoverServiceImpl();
 
-            turnoverService.insertTurnover(user.getId(), Long.parseLong(String.valueOf(coin)), Long.parseLong(transaction.getAmount().getTotal()));
+            turnoverService.insertTurnover(user.getId(), (long) coin, (long) total);
             request.getRequestDispatcher("/view/client/receipt-detail.jsp").forward(request, response);
 
         } catch (PayPalRESTException ex) {
