@@ -1,9 +1,7 @@
 package com.nlu.fit.giasunlu.service.serviceImpl;
 
-import com.nlu.fit.giasunlu.dao.TutorPortfolioDao;
 import com.nlu.fit.giasunlu.dao.UserDao;
 import com.nlu.fit.giasunlu.dao.daoImpl.UserDaoImpl;
-import com.nlu.fit.giasunlu.model.TutorPortfolio;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.UserService;
 import com.nlu.fit.giasunlu.utils.SecurityUtils;
@@ -127,5 +125,9 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public void subCoin(int id, int coin) {
+
+    }
 }
 

@@ -85,9 +85,9 @@ public interface NewUserDao {
     @SqlQuery("select count(*) from user where role_id = 3")
     Integer countTeacher();
 
-    @SqlQuery("select * from user where role_id = 2")
+    @SqlQuery("select * from user where role_id = 1")
     List<User> getAllCustomer();
 
-    @SqlQuery("select * from user where role_id = 3")
+    @SqlQuery("select * from user where role_id = 2")
     List<User> getAllTeacher();
 }
