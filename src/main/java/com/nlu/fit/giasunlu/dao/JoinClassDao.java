@@ -20,15 +20,15 @@ public interface JoinClassDao {
     @SqlQuery("select * from join_class")
     List<JoinClass> getJoinClass();
 
-    @SqlUpdate("insert into join_class (user_id, class_id) values (:userId, :classId)")
+    @SqlUpdate("insert into join_class (user_id,id_class, role,create_at, update_at) values (:userId, :idClass,:role, :createAt, :updateAt)")
     void insertJoinClass(@BindBean JoinClass joinClass);
 
-    @SqlUpdate("delete from join_class where user_id = :userId and class_id = :classId")
+    @SqlUpdate("delete from join_class where user_id = :userId and id_class = :idClass")
     void deleteJoinClass(@BindBean JoinClass joinClass);
 
     @SqlUpdate("delete from join_class where user_id = :userId")
     void deleteJoinClassByUserId(@Bind("id") int userId);
 
-    @SqlUpdate("delete from join_class where class_id = :classId")
+    @SqlUpdate("delete from join_class where id_class = :idClass")
     void deleteJoinClassByClassId(@Bind("classId") int classId);
 }

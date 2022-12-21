@@ -17,7 +17,7 @@ public interface ClassDao {
     @SqlQuery("select * from class")
     List<Class> getAllClass();
 
-    @SqlUpdate("insert into class (user_create, class_name, id_subject, level, cost, address, brief_desc, max_student, status, create_at, update_at) values (:userCreate, :className, :subjectId, :level, :cost, :address, :briefDesc, :maxStudent, :status, :createAt, :updateAt)")
+    @SqlUpdate("insert into class (user_create, class_name, id_subject, level, cost, address, brief_desc, max_student, status, create_at, update_at) values (:userCreate, :className, :idSubject, :level, :cost, :address, :briefDesc, :maxStudent, :status, :createAt, :updateAt)")
     void insertClass(@BindBean Class theClass);
 
     @SqlUpdate("update class set user_create = :userCreate, class_name = :className, id_subject = :subjectId, level = :level, cost = :cost, address = :address, brief_desc = :briefDesc, max_student = :maxStudent, status = :status, create_at = :createAt, update_at = :updateAt where id = :id")
