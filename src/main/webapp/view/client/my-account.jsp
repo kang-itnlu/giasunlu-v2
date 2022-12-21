@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
     <meta content="GiaSuNLU Templates" name="keywords">
     <meta content="GiaSuNLU Templates" name="description">
 
-    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+    <link rel="shortcut icon" type="image/png" href="${url}img/logo.png"/>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -178,13 +180,13 @@
 
                 <div class="mt-3 avatar_upload_wrap">
                     <div id="avatar_preview">
-                        <img src="img/placeholder-250.jpg">
+                        <img src="${sessionScope.account.avatar}">
                     </div>
                 </div>
 
                 <h5 class="mt-3 pl-1">Mã gia sư: <span class="text-success">GD3669</span></h5>
 
-                <h5 class="pl-1">Số dư:<span class="text-primary">0 coin</span></h5>
+                <h5 class="pl-1">Số dư:<span class="text-primary">${sessionScope.account.coin} coin</span></h5>
 
                 <a href="${pageContext.request.contextPath}/my-account/top-up-coin" class="btn btn-primary mb-2">Nạp xu</a><br>
 
@@ -241,19 +243,20 @@
                     <h4 class="ux_card-title">Hồ sơ thông tin</h4>
                     <div class="mt-4 pt-1">
                         <label class="mb-3 font-weight-bold">Họ và tên :</label>
-                        <p class="mb-4">Tên người dùng</p>
+                        <p class="mb-4">${sessionScope.account.lastName}</p>
                     </div>
                     <div class="mt-4 pt-1">
                         <label class="mb-3 font-weight-bold">Email :</label>
-                        <p class="mb-4">Email</p>
+                        <p class="mb-4">${sessionScope.account.email}</p>
                     </div>
                     <div class="mt-4 pt-1">
                         <label class="mb-3 font-weight-bold">Số điện thoai :</label>
-                        <p class="mb-4">Tên người dùng</p>
+                        <p class="mb-4">${sessionScope.account.phoneNumber}</p>
                     </div>
                     <div class="mt-4 pt-1">
                         <label class="mb-3 font-weight-bold">Ngày sinh :</label>
-                        <p class="mb-4">Tên người dùng</p>
+
+                        <p class="mb-4"><fmt:formatDate pattern = "yyyy-MM-dd" value = "${sessionScope.account.dateOfBirth}" /></p>
                     </div>
 
                     <div class="mt-3">

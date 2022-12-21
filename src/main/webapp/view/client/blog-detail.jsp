@@ -73,7 +73,7 @@
                 <li>Giấy giới thiệu gia sư của trung tâm</li>
               </ul>
 
-              <img src="img/blog/trung-tam-gia-su-uy-tin.jpg" alt="Trung tâm gia sư uy tín">
+              <img src="${url}img/blog/trung-tam-gia-su-uy-tin.jpg" alt="Trung tâm gia sư uy tín">
 
               <h2 id="co_chinh_sach_hoc_thu">5. Có chính sách học thử</h2>
 

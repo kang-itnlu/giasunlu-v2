@@ -6,6 +6,9 @@ import com.nlu.fit.giasunlu.model.Report;
 import com.nlu.fit.giasunlu.service.ReportService;
 import org.jdbi.v3.core.Jdbi;
 
+import java.util.List;
+
+
 public class ReportServiceImpl implements ReportService {
     Jdbi jdbi = JDBIConnection.get();
 
@@ -20,8 +23,9 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public void getReportPost() {
-        jdbi.useExtension(ReportDao.class, ReportDao::getReports);
+    public List<Report> getReportPost() {
+        return jdbi.withExtension(ReportDao.class, ReportDao::getReports);
+
     }
 
     @Override

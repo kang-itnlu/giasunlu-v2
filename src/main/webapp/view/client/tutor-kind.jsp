@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:url value="/view/client/" var="url"/>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +11,7 @@
   <meta content="GiaSuNLU Templates" name="keywords">
   <meta content="GiaSuNLU Templates" name="description">
 
-  <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+  <link rel="shortcut icon" type="image/png" href="${url}img/logo.png"/>
 
   <!-- Google Web Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">

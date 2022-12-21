@@ -16,7 +16,7 @@ public interface NewUserDao {
     @SqlUpdate("insert into user (firstname, lastname, password, email, phone_number, gender, address, role_id, profile_image, date_of_birth, coin, status, create_at, update_at, verify_code, access_token, avatar, phone) " + "values ( :firstName, :lastName, :password, :email, :phoneNumber, :gender, :address, :roleId, :profileImage, :dateOfBirth, :coin, :status, :createAt, :updateAt, :verifyCode, :accessToken, :avatar, :phone)")
     void insertUser(@BindBean User user);
 
-    @SqlUpdate("update user set user.id=:id, user.firstname=:firstname, user.lastname=:lastname, user.password=:password, user.email=:email, user.phone_number=:phoneNumber,user.gender=:grender," + "user.address=:address,user.role_id=:roleId,user.profile_image=:profileImage, user.date_of_birth=:dateOfBirth, user.coin=:coin, user.status=:status,user.update_at=now(),user.verify_code=:verifyCode,user.access_token=:accessToken,user.avatar=:avatar,user.phone=:phone  where user.id=:id")
+    @SqlUpdate("update user set user.firstname=:firstName, user.lastname=:lastName, user.password=:password, user.email=:email, user.phone_number=:phoneNumber,user.gender=:gender," + "user.address=:address,user.role_id=:roleId,user.profile_image=:profileImage, user.date_of_birth=:dateOfBirth, user.coin=:coin, user.status=:status,user.update_at=now(),user.verify_code=:verifyCode,user.access_token=:accessToken,user.avatar=:avatar,user.phone=:phone  where user.id=:id")
     void updateUser(@BindBean User user);
 
     @SqlUpdate("delete from user where id = :id")

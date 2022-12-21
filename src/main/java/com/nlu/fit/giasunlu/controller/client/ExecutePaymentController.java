@@ -5,6 +5,8 @@ import com.nlu.fit.giasunlu.dao.NewUserDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.CoinHistory;
 import com.nlu.fit.giasunlu.model.User;
+import com.nlu.fit.giasunlu.service.TurnoverService;
+import com.nlu.fit.giasunlu.service.serviceImpl.TurnoverServiceImpl;
 import com.nlu.fit.giasunlu.utils.PaymentServices;
 import com.paypal.api.payments.PayerInfo;
 import com.paypal.api.payments.Payment;
@@ -41,12 +43,20 @@ public class ExecutePaymentController extends HttpServlet {
             request.setAttribute("payer", payerInfo);
             request.setAttribute("transaction", transaction);
             float coin = Float.parseFloat(transaction.getDescription().substring(transaction.getDescription().indexOf(":")+1));
+            float total = Float.parseFloat(transaction.getAmount().getTotal());
             System.out.println(coin);
             Jdbi jdbi= JDBIConnection.get();
             User user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUser(Integer.parseInt(userId)));
-            jdbi.useExtension(NewUserDao.class, dao -> dao.updateCoin(user.getId(), (long) (user.getCoin() + coin)));
+//            jdbi.useExtension(NewUserDao.class, dao -> dao.updateCoin(user.getId(), (long) (user.getCoin() + coin)));
+            user.setCoin((int) (user.getCoin() + coin));
+            HttpSession session = request.getSession();
+            session.setAttribute("account", user);
+            jdbi.useExtension(NewUserDao.class, dao -> dao.updateUser(user));
             CoinHistory coinHistory = new CoinHistory(user.getId(), String.format("Nạp %s xu vào tài khoản", coin), coin, "Paypal", new Date(), 0);
             jdbi.useExtension(CoinHistoryDao.class, dao -> dao.insert(coinHistory));
+            TurnoverService turnoverService = new TurnoverServiceImpl();
+
+            turnoverService.insertTurnover(user.getId(), (long) coin, (long) total);
             request.getRequestDispatcher("/view/client/receipt-detail.jsp").forward(request, response);
 
         } catch (PayPalRESTException ex) {

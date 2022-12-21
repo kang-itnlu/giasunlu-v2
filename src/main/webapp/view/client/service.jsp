@@ -167,7 +167,7 @@
 
                 <div class="col-lg-6 graphic_block">
                     <div class="graphic_block-img">
-                        <img src="img/page/order/tuyen-chon-gia-su-v2.png" alt="Tuyển chọn gia sư">
+                        <img src="${url}img/page/order/tuyen-chon-gia-su-v2.png" alt="Tuyển chọn gia sư">
                     </div>
                     <div class="graphic_block-body">
                         <h3 class="mb-3 text-600">Tuyển chọn gia sư chặt chẽ</h3>
@@ -177,7 +177,7 @@
 
                 <div class="col-lg-6 graphic_block">
                     <div class="graphic_block-img">
-                        <img src="img/page/order/hoc-thu-gia-su-v2.png" alt="Học thử với gia sư">
+                        <img src="${url}img/page/order/hoc-thu-gia-su-v2.png" alt="Học thử với gia sư">
                     </div>
                     <div class="graphic_block-body">
                         <h3 class="mb-3 text-600">Học thử 2 buổi</h3>
@@ -187,7 +187,7 @@
 
                 <div class="col-lg-6 graphic_block">
                     <div class="graphic_block-img">
-                        <img src="img/page/order/ho-su-gia-su-v2.png" alt="Hồ sơ gia sư">
+                        <img src="${url}img/page/order/ho-su-gia-su-v2.png" alt="Hồ sơ gia sư">
                     </div>
                     <div class="graphic_block-body">
                         <h3 class="mb-3 text-600">Hồ sơ gia sư đầy đủ</h3>
@@ -197,7 +197,7 @@
 
                 <div class="col-lg-6 graphic_block">
                     <div class="graphic_block-img">
-                        <img src="img/page/order/quan-ly-ky-luat-gia-su-v2.png" alt="Quản lý kỷ luật gia sư">
+                        <img src="${url}img/page/order/quan-ly-ky-luat-gia-su-v2.png" alt="Quản lý kỷ luật gia sư">
                     </div>
                     <div class="graphic_block-body">
                         <h3 class="mb-3 text-600">Gia sư có kỷ luật tốt</h3>

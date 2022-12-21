@@ -1,8 +1,8 @@
 package com.nlu.fit.giasunlu.service.serviceImpl;
 
 import com.nlu.fit.giasunlu.dao.CommentDao;
+import com.nlu.fit.giasunlu.dao.NewUserDao;
 import com.nlu.fit.giasunlu.dao.ReplyCommentDao;
-import com.nlu.fit.giasunlu.dao.UserDao;
 import com.nlu.fit.giasunlu.jdbc.JDBIConnection;
 import com.nlu.fit.giasunlu.model.Comment;
 import com.nlu.fit.giasunlu.model.ReplyComment;
@@ -23,27 +23,27 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void insertComment(Comment comment) {
-        jdbi.useExtension(CommentService.class, dao -> dao.insertComment(comment));
+        jdbi.useExtension(CommentDao.class, dao -> dao.insertComment(comment));
     }
 
     @Override
     public void deleteComment(int id) {
-        jdbi.useExtension(CommentService.class, dao -> dao.deleteComment(id));
+        jdbi.useExtension(CommentDao.class, dao -> dao.deleteComment(id));
     }
 
     @Override
     public void updateComment(Comment comment) {
-        jdbi.useExtension(CommentService.class, dao -> dao.updateComment(comment));
+        jdbi.useExtension(CommentDao.class, dao -> dao.updateComment(comment));
     }
 
     @Override
     public void insertReplyComment(ReplyComment replyComment) {
-
+        jdbi.useExtension(ReplyCommentDao.class, dao -> dao.insertReplyComment(replyComment));
     }
 
     @Override
     public void updateReplyComment(ReplyComment replyComment) {
-
+        jdbi.useExtension(ReplyCommentDao.class, dao -> dao.updateReplyComment(replyComment));
     }
 
     @Override
@@ -53,15 +53,16 @@ public class CommentServiceImpl implements CommentService {
 
 
     private Comment mapOther(Comment comment) {
-        User user = jdbi.withExtension(UserDao.class, dao -> dao.getUser(Math.toIntExact(comment.getUserId())));
+        User user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUser(Math.toIntExact(comment.getUserId())));
         comment.setUser(user);
         List<ReplyComment> replyComments = jdbi.withExtension(ReplyCommentDao.class, dao -> dao.getReplyCommentByCommentId(comment.getId()));
+        replyComments = replyComments.stream().map(this::mapOtherReplyCommet).toList();
         comment.setReplyComments(replyComments);
         return comment;
     }
 
     private ReplyComment mapOtherReplyCommet(ReplyComment replyComment) {
-        User user = jdbi.withExtension(UserDao.class, dao -> dao.getUser(Math.toIntExact(replyComment.getUserId())));
+        User user = jdbi.withExtension(NewUserDao.class, dao -> dao.getUser(Math.toIntExact(replyComment.getUserId())));
         replyComment.setUser(user);
         return replyComment;
     }

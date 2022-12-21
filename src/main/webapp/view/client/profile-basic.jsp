@@ -9,7 +9,7 @@
     <meta content="GiaSuNLU Templates" name="keywords">
     <meta content="GiaSuNLU Templates" name="description">
 
-    <link rel="shortcut icon" type="image/png" href="img/logo.png"/>
+    <link rel="shortcut icon" type="image/png" href="${url}img/logo.png"/>
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -73,11 +73,13 @@
 <div class="container-fluid hr-header">
     <div class="row border-top px-xl-5">
         <div class="col-lg-2 d-none d-lg-block">
-            <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none" data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
+            <a class="d-flex align-items-center justify-content-between bg-secondary w-100 text-decoration-none"
+               data-toggle="collapse" href="#navbar-vertical" style="height: 67px; padding: 0 30px;">
                 <h5 class="text-primary m-0"><i class="fa fa-book-open mr-2"></i>Cấp bậc</h5>
                 <i class="fa fa-angle-down text-primary"></i>
             </a>
-            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light" id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
+            <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
+                 id="navbar-vertical" style="width: calc(100% - 30px); z-index: 9;">
                 <div class="navbar-nav w-100">
                     <a href="" class="nav-item nav-link">Cấp 1</a>
                     <a href="" class="nav-item nav-link">Cấp 2</a>
@@ -123,7 +125,8 @@
                         </div>
                         <a href="contact.jsp" class="nav-item nav-link">Liên hệ</a>
                     </div>
-                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="my-account.jsp">Quản lý tài khoản</a>
+                    <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="my-account.jsp">Quản lý tài
+                        khoản</a>
                     <div class="nav-item dropdown ml-4" style="margin-right: 100px">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                             <i class="fas fa-user"></i>
@@ -156,14 +159,14 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb ">
                         <li class="breadcrumb-item"><a href="/"><i class="fas fa-home"></i></a></li>
-                        <li class="breadcrumb-item"><a href="/myaccount">Tài khoản của tôi</a></li>
+                        <li class="breadcrumb-item"><a href="${pageContext.request.contextPath}/my-account">Tài khoản của tôi</a></li>
                         <li class="breadcrumb-item active" aria-current="page">GD3669</li>
                     </ol>
                 </nav>
 
                 <h3 class="mb-4">Thông tin cơ bản</h3>
 
-                <form method="POST" action="/myaccount/profile/basic" novalidate="">
+                <form method="POST" action="${pageContext.request.contextPath}/my-account/profile-basic" novalidate="">
                     <input type="hidden" name="_token" value="ObYY9viIpfTwZ2tMWPEdDxUTH2WsLtz7EqYDSHC6">
 
                     <input type="hidden" name="target" value="">
@@ -176,20 +179,22 @@
 
                         <p class="mb-4">Sử dụng ảnh hồ sơ rõ khuôn mặt, nền ảnh đơn giản và nghiêm túc. Ảnh chỉ bao gồm mình bạn, không bị lẫn thêm người khác.</p>
 
-
-                        <input type="file" id="avatar" class="upload_file none">
                         <div id="avatar_notice" class="text-smaller mb-3 none">
                             <span class="text-muted">Click vào ảnh để upload.</span>
                         </div>
                         <div class="mt-3 avatar_upload_wrap">
-                            <a href="javascript:upload_image('avatar')" id="avatar_btn" class="d-inline-block image-preview">
-                                <div id="avatar_preview">
-                                    <img src="img/placeholder-250.jpg">
-                                </div>
-                                <div class="backdrop">
-                                    <div class="loader"></div>
-                                </div>
-                            </a>
+                            <figure class="figure col-md-2 col-sm-3 col-xs-12">
+
+                                <img class="img-rounded img-responsive avatar" name="image" src="${sessionScope.account.avatar}"
+                                     alt="">
+                            </figure>
+
+                            <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                                <input type="button" value="Tải ảnh lên"
+                                       onclick="BrowseServer();" class="btn btn-controls"/>
+                                <input type="text" name="avatar" id="avatar" hidden="true"
+                                       value="${sessionScope.account.avatar}">
+                            </div>
                         </div>
 
                     </div>
@@ -198,14 +203,14 @@
 
                         <div class="col-md-4 form-group">
                             <label class="font-weight-bold text-danger">* Họ và tên:</label>
-                            <input class="form-control" type="text" name="name" value="" autocomplete="off" maxlength="50">
+                            <input class="form-control" type="text" name="name" value="${sessionScope.account.firstName} ${sessionScope.account.lastName}" autocomplete="off" maxlength="50">
                         </div>
 
                         <div class="col-md-3 form-group mt-1 mt-md-0">
                             <label class="font-weight-bold text-danger">* Điện thoại:</label>
 
                             <div class="form-control-wrap">
-                                <input class="form-control" type="tel" name="phone" value="" autocomplete="off" maxlength="15">
+                                <input class="form-control" type="tel" name="phone" value="${sessionScope.account.phoneNumber}" autocomplete="off" maxlength="15">
                             </div>
                         </div>
 
@@ -213,7 +218,7 @@
                             <label class="font-weight-bold">Email:</label>
 
                             <div class="form-control-verified">
-                                <input class="form-control" type="email" name="email" value="thantrongtruonggiang@gmail.com" autocomplete="off" readonly="" maxlength="100">
+                                <input class="form-control" type="email" name="email" value="${sessionScope.account.email}" autocomplete="off" readonly="" maxlength="100">
                                 <i class=" fas fa-verified_user text-success"></i>
                             </div>
 
@@ -225,7 +230,7 @@
                         <div class="col-md-3 form-group">
                             <label class="font-weight-bold text-danger">* Giới tính:</label>
                             <select class="form-control nice " name="gender_id" id="gender_id" autocomplete="off" style="display: none;">
-                                <option value="">Lựa chọn</option>
+                                <option value="1">Lựa chọn</option>
                                 <option value="1">Nam</option>
                                 <option value="2">Nữ</option>
                             </select><div class="nice-select form-control nice" tabindex="0"><span class="current">Lựa chọn</span><ul class="list"><li data-value="" class="option selected">Lựa chọn</li><li data-value="1" class="option">Nam</li><li data-value="2" class="option">Nữ</li></ul></div>
@@ -234,7 +239,7 @@
                         <div class="col-md-3 form-group mt-1 mt-md-0">
                             <label class="font-weight-bold text-danger">* Năm sinh:</label>
                             <select class="form-control nice " name="birthday" autocomplete="off" style="display: none;">
-                                <option value="">Chọn năm</option>
+                                <option value="2001">Chọn năm</option>
                                 <option value="2004">Năm 2004</option>
                                 <option value="2003">Năm 2003</option>
                                 <option value="2002">Năm 2002</option>
@@ -289,11 +294,11 @@
 
                         <div class="col-md-6 form-group">
                             <label class="font-weight-bold text-danger">* Tên trường học:</label>
-                            <input class="form-control" type="text" name="college_name" value="" autocomplete="off" maxlength="250">
+                            <input class="form-control" type="text" name="school_name" value="${certificates.schoolName}" autocomplete="off" maxlength="250">
                         </div>
                         <div class="col-md-6 form-group mt-2 mt-md-0">
                             <label class="font-weight-bold text-danger">* Ngành học:</label>
-                            <input class="form-control" type="text" name="college_major" value="" autocomplete="off" maxlength="250">
+                            <input class="form-control" type="text" name="major" value="${certificates.major}" autocomplete="off" maxlength="250">
                         </div>
 
                         <div class="w-100 mt-2"></div>
@@ -307,11 +312,11 @@
                                     <div class="form_date">
                                         <div class="form_date-month">
                                             <label class="text-muted">Tháng</label>
-                                            <input class="form-control" name="start_month" type="number" min="1" max="12" value="">
+                                            <input class="form-control" name="start_month" type="number" min="1" max="12" value="1">
                                         </div>
                                         <div class="form_date-year">
                                             <label class="text-muted">Năm</label>
-                                            <input class="form-control" name="start_year" type="number" min="1900" value="">
+                                            <input class="form-control" name="start_year" type="number" min="1900" value="2002">
                                         </div>
                                     </div>
 
@@ -322,11 +327,11 @@
                                     <div class="form_date">
                                         <div class="form_date-month">
                                             <label class="text-muted">Tháng</label>
-                                            <input class="form-control" name="end_month" type="number" min="1" max="12" value="">
+                                            <input class="form-control" name="end_month" type="number" min="1" max="12" value="1">
                                         </div>
                                         <div class="form_date-year">
                                             <label class="text-muted">Năm</label>
-                                            <input class="form-control" name="end_year" type="number" min="1900" value="">
+                                            <input class="form-control" name="end_year" type="number" min="1900" value="2001">
                                         </div>
                                     </div>
 
@@ -373,7 +378,7 @@
                                 </div>
                                 <a href="javascript:upload_image('student_card')" id="student_card_btn" class="d-inline-block image-preview">
                                     <div id="student_card_preview">
-                                        <img src="img/placeholder-250.jpg">
+                                        <img src="${url}img/placeholder-250.jpg">
                                     </div>
                                     <div class="backdrop">
                                         <div class="loader"></div>
@@ -391,7 +396,7 @@
 
                     <div class="mt-5 text-right">
                         <a href="/myaccount/profile" class="btn btn-secondary mr-4 btn-cancel">Quay lại</a>
-                        <input type="submit" class="btn btn-primary" value="Tiếp theo">
+                        <input type="submit" class="btn btn-primary" value="Cập nhật">
                     </div>
 
                 </form>
@@ -442,8 +447,7 @@
                 </ul>
 
                 <h5 class="mt-4">Số dư tài khoản</h5>
-                <h5 class="text-primary">0 xu</h5>
-                <a href="coin.jsp" class="btn btn-primary">Nạp xu</a>
+                <h5 class="text-primary">0 ₫</h5>
 
                 <div class="mt-4 pt-2 h5">
                     <a href="/myaccount/mynote"><span>Note nhận lớp</span></a>
@@ -465,6 +469,19 @@
 </main>
 
 <jsp:include page="footer.jsp"/>
+<script src="${pageContext.request.contextPath}/CKLibraries/ckfinder/ckfinder.js"></script>
+
+
+<script type="text/javascript">
+    function BrowseServer() {
+        var finder = new CKFinder();
+        finder.basePath = "/CKLibraries/ckfinder";
+        finder.selectActionFunction = function (fileUrl) {
+            document.getElementById('avatar').value = fileUrl;
+        };
+        finder.popup();
+    }
+</script>
 
 </body>
 

@@ -22,7 +22,7 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="img/carousel-1.jpg" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100" src="${url}img/carousel-1.jpg" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Trung tâm gia sư GiaSuNLU</h5>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="img/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100" src="${url}img/carousel-2.jpg" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Trung tâm gia sư GiaSuNLU</h5>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="carousel-item" style="min-height: 300px;">
-                    <img class="position-relative w-100" src="img/carousel-3.jpg" style="min-height: 300px; object-fit: cover;">
+                    <img class="position-relative w-100" src="${url}img/carousel-3.jpg" style="min-height: 300px; object-fit: cover;">
                     <div class="carousel-caption d-flex align-items-center justify-content-center">
                         <div class="p-5" style="width: 100%; max-width: 900px;">
                             <h5 class="text-white text-uppercase mb-md-3">Trung tâm gia sư GiaSuNLU</h5>
@@ -62,7 +62,7 @@
         <div class="container py-5">
             <div class="row align-items-center">
                 <div class="col-lg-5">
-                    <img class="img-fluid rounded mb-4 mb-lg-0" src="img/about.jpg" alt="">
+                    <img class="img-fluid rounded mb-4 mb-lg-0" src="${url}img/about.jpg" alt="">
                 </div>
                 <div class="col-lg-7">
                     <div class="text-left mb-4">
@@ -93,7 +93,7 @@
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid" src="${url}img/team-1.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -109,7 +109,7 @@
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid" src="${url}img/team-2.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -125,7 +125,7 @@
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid" src="${url}img/team-3.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -141,7 +141,7 @@
                 <div class="col-md-6 col-lg-3 text-center team mb-4">
                     <div class="team-item rounded overflow-hidden mb-2">
                         <div class="team-img position-relative">
-                            <img class="img-fluid" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid" src="${url}img/team-4.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-light btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -168,7 +168,7 @@
             <div class="row graphic_block-list-3">
                 <div class="col-lg-4 col-md-6 mb-4 graphic_block">
                     <div class="graphic_block-img">
-                        <img class="img-fluid" src="img/phuong-phap-day-hieu-qua.svg" alt="">
+                        <img class="img-fluid" src="${url}img/phuong-phap-day-hieu-qua.svg" alt="">
                     </div>
                     <div class="graphic_block-body">
                         <h4>Dạy hiệu quả</h4>
@@ -179,7 +179,7 @@
 
                 <div class="col-lg-4 col-md-6 mb-4 graphic_block">
                     <div class="graphic_block-img">
-                        <img class="img-fluid" src="img/cam-ket-tien-bo.svg" alt="">
+                        <img class="img-fluid" src="${url}img/cam-ket-tien-bo.svg" alt="">
                     </div>
                     <div class="graphic_block-body">
                         <h4>Tiến bộ nhanh</h4>
@@ -189,7 +189,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4 graphic_block">
                     <div class="graphic_block-img">
-                        <img class="img-fluid" src="img/hoc-thu-2-buoi.svg" alt="">
+                        <img class="img-fluid" src="${url}img/hoc-thu-2-buoi.svg" alt="">
                     </div>
                     <div class="graphic_block-body">
                         <h4>Học thử 2 buổi</h4>
@@ -281,7 +281,7 @@
                 <div class="col-lg-4">
 
                     <div style="max-width:200px" class="d-inline-block">
-                        <img src="img/page/tao-dung-tuong-lai-cho-con.png" alt="Tạo dựng tương lai cho con">
+                        <img src="${url}img/page/tao-dung-tuong-lai-cho-con.png" alt="Tạo dựng tương lai cho con">
                     </div>
 
                 </div><!-- End col -->

@@ -20,9 +20,12 @@
 <link href="${url}css/style.css" rel="stylesheet">
 
 <!-- Libraries Stylesheet -->
+
 <link href="${url}lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 
 <header>
     <div class="container-fluid d-none d-lg-block">
@@ -84,22 +87,33 @@
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dành cho gia sư</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="${pageContext.request.contextPath}/overview" class="dropdown-item">Tổng quan</a>
-                                    <a href="${pageContext.request.contextPath}/new-class-list" class="dropdown-item">Danh sách lớp mới</a>
-                                    <a href="${pageContext.request.contextPath}/receive-class" class="dropdown-item">Cách thức nhận lớp</a>
-                                    <a href="${pageContext.request.contextPath}/refund-policy" class="dropdown-item">Chính sách hoàn phí</a>
-                                    <a href="${pageContext.request.contextPath}/contract" class="dropdown-item">Hợp đồng mẫu</a>
-                                    <a href="${pageContext.request.contextPath}/class-status" class="dropdown-item">Kiểm tra tình trạng lớp</a>
-                                    <a href="${pageContext.request.contextPath}/note-receive-class" class="dropdown-item">Tạo note nhận lớp</a>
-                                    <a href="${pageContext.request.contextPath}/debt-policy" class="dropdown-item">Chính sách nợ phí</a>
-                                    <a href="${pageContext.request.contextPath}/class-admission-fee" class="dropdown-item">Tính lại phí nhận lớp </a>
+                                    <a href="${pageContext.request.contextPath}/overview" class="dropdown-item">Tổng
+                                        quan</a>
+                                    <a href="${pageContext.request.contextPath}/new-class-list" class="dropdown-item">Danh
+                                        sách lớp mới</a>
+                                    <a href="${pageContext.request.contextPath}/receive-class" class="dropdown-item">Cách
+                                        thức nhận lớp</a>
+                                    <a href="${pageContext.request.contextPath}/refund-policy" class="dropdown-item">Chính
+                                        sách hoàn phí</a>
+                                    <a href="${pageContext.request.contextPath}/contract" class="dropdown-item">Hợp đồng
+                                        mẫu</a>
+                                    <a href="${pageContext.request.contextPath}/class-status" class="dropdown-item">Kiểm
+                                        tra tình trạng lớp</a>
+                                    <a href="${pageContext.request.contextPath}/note-receive-class"
+                                       class="dropdown-item">Tạo note nhận lớp</a>
+                                    <a href="${pageContext.request.contextPath}/debt-policy" class="dropdown-item">Chính
+                                        sách nợ phí</a>
+                                    <a href="${pageContext.request.contextPath}/class-admission-fee"
+                                       class="dropdown-item">Tính lại phí nhận lớp </a>
                                 </div>
                             </div>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Blog</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="${pageContext.request.contextPath}/blog-customer" class="dropdown-item">Blog khách hàng</a>
-                                    <a href="${pageContext.request.contextPath}/blog-tutor" class="dropdown-item">Blog gia sư</a>
+                                    <a href="${pageContext.request.contextPath}/blog-customer" class="dropdown-item">Blog
+                                        khách hàng</a>
+                                    <a href="${pageContext.request.contextPath}/blog-tutor" class="dropdown-item">Blog
+                                        gia sư</a>
                                 </div>
                             </div>
                             <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
@@ -107,12 +121,14 @@
                         <c:choose>
                             <c:when test="${sessionScope.account.id==null}">
                                 <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/login">Đăng nhập tài khoản</a>
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/login">Đăng ký làm gia sư</a>
                             </c:when>
                             <c:otherwise>
                                 <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
                             </c:otherwise>
                         </c:choose>
-                        <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
+
                     </div>
                 </nav>
             </div>

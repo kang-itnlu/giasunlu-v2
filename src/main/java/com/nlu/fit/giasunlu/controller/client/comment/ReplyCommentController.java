@@ -1,6 +1,6 @@
 package com.nlu.fit.giasunlu.controller.client.comment;
 
-import com.nlu.fit.giasunlu.model.Comment;
+import com.nlu.fit.giasunlu.model.ReplyComment;
 import com.nlu.fit.giasunlu.model.User;
 import com.nlu.fit.giasunlu.service.CommentService;
 import com.nlu.fit.giasunlu.service.serviceImpl.CommentServiceImpl;
@@ -16,25 +16,24 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
 
-@WebServlet(name = "AddCommentController", value = "/class/comment/add")
-public class AddCommentController extends HttpServlet {
+@WebServlet(name = "ReplyCommentController", value = "/class/comment/reply")
+public class ReplyCommentController extends HttpServlet {
     CommentService commentService = new CommentServiceImpl();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Comment comment = new Comment();
-        PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ReplyComment replyComment = new ReplyComment();
+        HttpSession session = req.getSession();
         User user = (User) session.getAttribute("account");
+        PrintWriter out = resp.getWriter();
         try {
-            BeanUtils.populate(comment, request.getParameterMap());
-            comment.setUserId((long) user.getId());
-            System.out.println(comment);
-            commentService.insertComment(comment);
+            BeanUtils.populate(replyComment, req.getParameterMap());
+            System.out.println(replyComment);
+            // map user id
+            replyComment.setUserId(user.getId());
+
+
+            commentService.insertReplyComment(replyComment);
             out.print("success");
 
         } catch (IllegalAccessException | InvocationTargetException e) {

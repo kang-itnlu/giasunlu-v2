@@ -2,7 +2,6 @@ package com.nlu.fit.giasunlu.model;
 
 public class Blog extends BaseEntity {
 
-
     private int id;
     private int userCreate;
 
