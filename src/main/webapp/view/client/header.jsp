@@ -70,6 +70,11 @@
     <!-- Navbar Start -->
     <div class="container-fluid hr-header">
         <div class="row border-top px-xl-5">
+            <div class="col-lg-2 d-none d-lg-block text-center">
+                <div class="align-items-center justify-content-between bg-secondary w-100 text-decoration-none" style="height: 67px; padding: 0 30px;">
+                    <a class="text-primary m-0" style="font-weight: 600; font-size: 20px; line-height: 67px;" href="${pageContext.request.contextPath}/post"><i class="fa fa-book-open mr-2"></i>ĐĂNG BÀI</a>
+                </div>
+            </div>
             <div class="col-lg-10">
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
@@ -116,6 +121,7 @@
                                         gia sư</a>
                                 </div>
                             </div>
+<%--                            <a href="${pageContext.request.contextPath}/post" class="nav-item nav-link">Đăng bài</a>--%>
                             <a href="${pageContext.request.contextPath}/contact" class="nav-item nav-link">Liên hệ</a>
                         </div>
                         <c:choose>
@@ -125,7 +131,20 @@
                             </c:when>
                             <c:otherwise>
                                 <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
-                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
+<%--                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>--%>
+                                <div class="nav-item dropdown ml-4" style="margin-right: 100px">
+                                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-user"></i>
+                                    </a>
+                                    <div class="dropdown-menu rounded-0 m-0">
+                                        <a class="dropdown-item" href="">Mã gia sư: GD3669</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/change-password">Đổi mật
+                                            khẩu</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/security">Bảo mật tài
+                                            khoản</a>
+                                        <a class="dropdown-item" href="${pageContext.request.contextPath}/logout">Đăng xuất</a>
+                                    </div>
+                                </div>
                             </c:otherwise>
                         </c:choose>
 

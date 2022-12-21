@@ -12,7 +12,7 @@
 <body>
 <jsp:include page="header.jsp"/>
 <main role="main">
-    <div class="container">
+    <div class="container d-flex">
         <c:if test="${not empty message}">
             <div class="alert alert-danger" role="alert">
                     ${message}
@@ -28,8 +28,8 @@
                 <!-- Text input-->
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Tên lớp:</label>
-                    <div class="col-md-4 inputGroupContainer">
+                    <label class=" control-label">Tên lớp:</label>
+                    <div class=" inputGroupContainer">
                         <div class="input-group">
                             <input name="className" placeholder="Tên lớp" class="form-control" type="text">
                         </div>
@@ -39,8 +39,8 @@
                 <!-- Select Basic -->
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Môn học:</label>
-                    <div class="col-md-4 selectContainer">
+                    <label class=" control-label">Môn học:</label>
+                    <div class="selectContainer">
                         <div class="input-group">
                             <select name="idSubject" class="form-control selectpicker">
                                 <c:forEach items="${listSubject}" var="subject">
@@ -53,8 +53,8 @@
                 <!-- Select Basic -->
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Cấp bậc:</label>
-                    <div class="col-md-4 selectContainer">
+                    <label class="control-label">Cấp bậc:</label>
+                    <div class="selectContainer">
                         <div class="input-group">
                             <select name="level" class="form-control selectpicker">
                                 <option selected>Vui lòng chọn cấp bậc</option>
@@ -69,8 +69,8 @@
                 </div>
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Học phí:</label>
-                    <div class="col-md-4 inputGroupContainer">
+                    <label class=" control-label">Học phí:</label>
+                    <div class="inputGroupContainer">
                         <div class="input-group">
                             <input name="cost" placeholder="Học phí" class="form-control" type="text">
                         </div>
@@ -80,8 +80,8 @@
                 <!-- Text input-->
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Địa chỉ:</label>
-                    <div class="col-md-4 inputGroupContainer">
+                    <label class=" control-label">Địa chỉ:</label>
+                    <div class="inputGroupContainer">
                         <div class="input-group">
                             <input name="address" placeholder="Địa chỉ" class="form-control" type="text">
                         </div>
@@ -90,8 +90,8 @@
                 <!-- Text area -->
 
                 <div class="form-group">
-                    <label class="col-md-4 control-label">Mô tả:</label>
-                    <div class="col-md-4 inputGroupContainer">
+                    <label class="control-label">Mô tả:</label>
+                    <div class="inputGroupContainer">
                         <div class="input-group">
                             <textarea class="form-control" id="description" name="briefDesc" cols="250" rows="20"
                                       placeholder="Mô tả"></textarea>
@@ -102,8 +102,8 @@
 
                 <!-- Button -->
                 <div class="form-group">
-                    <label class="col-md-4 control-label"></label>
-                    <div class="col-md-4">
+                    <label class="control-label"></label>
+                    <div class="">
                         <button type="submit" class="btn btn-warning">Đăng bài</button>
                     </div>
                 </div>
