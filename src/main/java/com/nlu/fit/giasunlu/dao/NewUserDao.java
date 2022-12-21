@@ -79,10 +79,10 @@ public interface NewUserDao {
     @SqlQuery("select password from user where email = :email")
     String getPassword(@Bind("email") String email);
 
-    @SqlQuery("select count(*) from user where role_id = 2")
+    @SqlQuery("select count(*) from user where role_id = 1")
     Integer countCustomer();
 
-    @SqlQuery("select count(*) from user where role_id = 3")
+    @SqlQuery("select count(*) from user where role_id = 2")
     Integer countTeacher();
 
     @SqlQuery("select * from user where role_id = 1")

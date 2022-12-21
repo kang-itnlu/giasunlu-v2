@@ -30,6 +30,7 @@ public class TurnoverController extends HttpServlet {
         int countCustomer = userService.countCustomer();
         int countTeacher = userService.countTeacher();
 
+
         request.setAttribute("countCustomer", countCustomer);
         request.setAttribute("countTeacher", countTeacher);
 

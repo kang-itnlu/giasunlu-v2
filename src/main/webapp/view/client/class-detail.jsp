@@ -73,7 +73,7 @@
                     </p>
                     <p class="mb-4"></p>
                     <div class="my-4">
-                        <a href="/class/register?id=${theClass.getId()}"
+                        <a href="${pageContext.request.contextPath}/class/register?id=${theClass.getId()}"
                            class="btn btn-cta py-2 px-5 font-weight-bold"
                                 <c:if test="${theClass.getStatus()!=0}">
                                     disabled
@@ -99,6 +99,12 @@
 
         <div class="row mt-3">
             <div class="h4 font-weight-bold"> Mô tả lớp học</div>
+            <div class="col-lg-12 mt-3 mt-lg-0 mb-5">
+                <div class="googlemap-myclass-wrap">
+                    <p class="p-icon mb-2 h4">
+                        ${theClass.getBriefDesc()}
+                    </p>
+                </div>
         </div>
         <hr>
         <!-- Strat comment  -->
@@ -107,8 +113,6 @@
         <hr>
 
         <div class="container my-5 related_myclass_field">
-
-            <h2 class="h3 mb-4">Các lớp tương tự:</h2>
 
 
             <div class="row mt-3">
@@ -235,7 +239,7 @@
                                             ${i.getCost()} ₫/buổi, 1 buổi/tuần
                                     </p>
                                     <div class="text-right mt-3">
-                                        <a href="/class-detail?id=${i.getId()}" class="btn btn-success" rel="nofollow">Xem
+                                        <a href="${pageContext.request.contextPath}/class-detail?id=${i.getId()}" class="btn btn-success" rel="nofollow">Xem
                                             chi tiết<i
                                                     class="fas fa-arrow-right ml-2"></i></a>
                                     </div>
@@ -269,7 +273,7 @@
 
             $.ajax({
                 type: "POST",
-                url: '/class/comment/reply',
+                url: '${pageContext.request.contextPath}/class/comment/reply',
                 data: $form.serialize(),
                 success: function (data) {
                     if (data === 'success') {
@@ -290,7 +294,7 @@
         let report = $('#textAreaExample6').val();
         let id = ${theClass.getId()};
         $.ajax({
-            url: '/class/report-class',
+            url: '${pageContext.request.contextPath}/class/report-class',
             type: 'POST',
             data: {
                 content: report,
@@ -313,11 +317,12 @@
         let report = $('#textAreaExample6').val();
         let id = ${theClass.getId()};
         $.ajax({
-            url: '/class/report-class',
+            url: '${pageContext.request.contextPath}/class/report-class',
             type: 'POST',
             data: {
                 content: report,
                 portId: id,
+                userId: ${sessionScope.account.id}
             },
             success: function (data) {
                 if (data === 'success') {
@@ -353,7 +358,7 @@
     function loadComment() {
         console.log("load comment");
         $.ajax({
-            url: '/class/comment/load',
+            url: '${pageContext.request.contextPath}/class/comment/load',
             type: 'GET',
             data: {
                 classId: ${theClass.getId()},
@@ -372,12 +377,12 @@
     function comment() {
         let comment = $('#comment').val();
         $.ajax({
-            url: '/class/comment/add',
+            url: '${pageContext.request.contextPath}/class/comment/add',
             type: 'POST',
             data: {
                 content: comment,
                 postId:${theClass.getId()},
-                userId: 1,
+                userId: ${sessionScope.account.id},
             },
             success: function (data) {
                 if (data === 'success') {

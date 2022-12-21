@@ -51,26 +51,26 @@
     </div>
     <hr>
     <ul class="app-menu">
-        <li><a class="app-menu__item" href="/admin/dashboard"><i
+        <li><a class="app-menu__item" href="${pageContext.request.contextPath}/admin/dashboard"><i
                 class='app-menu__icon bx bx-tachometer'></i><span class="app-menu__label">Bảng điều khiển</span></a>
         </li>
-        <li><a class="app-menu__item" href="/admin/turnover"><i
+        <li><a class="app-menu__item" href="${pageContext.request.contextPath}/admin/turnover"><i
                 class='app-menu__icon bx bx-pie-chart-alt-2'></i><span class="app-menu__label">Báo cáo doanh thu</span></a>
         </li>
 
-        <li><a class="app-menu__item " href="/admin/report"><i class='app-menu__icon bx bx-tachometer'></i><span
+        <li><a class="app-menu__item " href="${pageContext.request.contextPath}/admin/report"><i class='app-menu__icon bx bx-tachometer'></i><span
                 class="app-menu__label">Báo cáo</span></a></li>
 
-        <li><a class="app-menu__item " href="/admin/tutor"><i class='app-menu__icon bx bx-id-card'></i>
+        <li><a class="app-menu__item " href="${pageContext.request.contextPath}/admin/tutor"><i class='app-menu__icon bx bx-id-card'></i>
             <span class="app-menu__label">Quản lý gia sư</span></a></li>
 
-        <li><a class="app-menu__item" href="/admin/customer"><i class='app-menu__icon bx bx-user-voice'></i><span
+        <li><a class="app-menu__item" href="${pageContext.request.contextPath}/admin/customer"><i class='app-menu__icon bx bx-user-voice'></i><span
                 class="app-menu__label">Quản lý khách hàng</span></a></li>
 
-        <li><a class="app-menu__item" href="/admin/class"><i class='app-menu__icon bx bx-task'></i><span
+        <li><a class="app-menu__item" href="${pageContext.request.contextPath}/admin/class"><i class='app-menu__icon bx bx-task'></i><span
                 class="app-menu__label">Quản lý lớp học</span></a></li>
 
-        <li><a class="app-menu__item" href="/admin/logout"><i class='app-menu__icon bx bx-cog'></i><span
+        <li><a class="app-menu__item" href="${pageContext.request.contextPath}/admin/logout"><i class='app-menu__icon bx bx-cog'></i><span
                 class="app-menu__label">Đăng xuất</span></a></li>
     </ul>
 </aside>

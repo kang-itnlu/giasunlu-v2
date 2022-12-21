@@ -58,7 +58,7 @@
                     <div class="widget-small info coloured-icon"><i class='icon bx bxs-data fa-3x'></i>
                         <div class="info">
                             <h4>Tổng gia sư </h4>
-                            <p><b>${countTutor} gia sư </b></p>
+                            <p><b>${countTeacher} gia sư </b></p>
                             <!-- <p class="info-tong">Tổng số gia sư được quản lý.</p> -->
                         </div>
                     </div>

@@ -26,9 +26,9 @@ public class ReportClassController extends HttpServlet {
         try {
             BeanUtils.populate(report, req.getParameterMap());
             System.out.println(report);
-            printWriter.println("success");
+            printWriter.print("success");
         } catch (IllegalAccessException | InvocationTargetException e) {
-            printWriter.println("fail");
+            printWriter.print("fail");
         }
 
 

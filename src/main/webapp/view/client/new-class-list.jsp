@@ -33,7 +33,7 @@
             <div class="col-lg-8 pt-lg-3">
             </div>
         </div>
-        <form method="GET" action="/class">
+        <form method="GET" action="${pageContext.request.contextPath}/class">
             <div class="mt-4 mb-4">
                 <div role="search">
                     <input type="text" class="search-input" name="keyword" placeholder="Tìm kiếm lớp gia sư ...">
@@ -226,7 +226,7 @@
                 <div class="col-lg-3">
                     <div class="myclass-item text-small">
                         <div class="myclass-item-head d-flex">
-                            <a href="/class-detail?id=${theClass.getId()}" class="mr-auto" rel="nofollow">
+                            <a href="${pageContext.request.contextPath}/class-detail?id=${theClass.getId()}" class="mr-auto" rel="nofollow">
                                 <span class="font-weight-bold">${theClass.getId()}</span>
                             </a>
                         </div>
@@ -264,7 +264,7 @@
                                     ${theClass.getCost()} ₫/buổi, 1 buổi/tuần
                             </p>
                             <div class="text-right mt-3">
-                                <a href="/class-detail?id=${theClass.getId()}" class="btn btn-success" rel="nofollow">Xem
+                                <a href="${pageContext.request.contextPath}/class-detail?id=${theClass.getId()}" class="btn btn-success" rel="nofollow">Xem
                                     chi tiết<i
                                             class="fas fa-arrow-right ml-2"></i></a>
                             </div>

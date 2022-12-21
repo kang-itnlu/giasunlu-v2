@@ -337,7 +337,7 @@
                     <p>Ồ không! Bạn chưa nhận lớp nào tại GiaSuNLU.</p>
 
                     <div class="mt-3">
-                        <a href="${pageContext.request.contextPath}/new-class-list" class="btn btn-outline-primary">Xem
+                        <a href="${pageContext.request.contextPath}/class" class="btn btn-outline-primary">Xem
                             danh sách lớp mới</a>
                     </div>
 
