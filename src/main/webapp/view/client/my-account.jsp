@@ -27,8 +27,8 @@
 
                 <h2>Tài khoản của tôi</h2>
 
-                <div class="mt-3 avatar_upload_wrap">
-                    <div id="avatar_preview" style="width: 100px; height: 100px">
+                <div class="mt-3 avatar_upload_wrap" style="width: 100px; height: 100px; display: table;">
+                    <div id="avatar_preview" >
                         <img src="${sessionScope.account.avatar}">
                     </div>
                 </div>

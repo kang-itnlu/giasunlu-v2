@@ -131,7 +131,7 @@
                             </c:when>
                             <c:otherwise>
                                 <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/my-account">Quản lý tài khoản</a>
-<%--                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>--%>
+                                <a class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block" href="${pageContext.request.contextPath}/register-teach">Đăng ký làm gia sư</a>
                                 <div class="nav-item dropdown ml-4" style="margin-right: 100px">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
                                         <i class="fas fa-user"></i>

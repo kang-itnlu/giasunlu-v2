@@ -10,13 +10,14 @@
 
 <style>
   table {
-    width: 280px;
+    width: 800px;
     font-size: 16px;
     line-height: 1.6;
     font-weight: bold;
     border-spacing: 0;
     position: relative;
     left: 415px;
+    margin-left: -242px;
   }
   tr {
     color: #d4d4d4;
@@ -46,33 +47,33 @@
 <jsp:include page="header.jsp"/>
 <main role="main">
   <div class="container text-center receipt-box">
-    <h2>Payment Done. Thank you for purchasing our products</h2>
+    <h2>Thanh toán thành công. Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi</h2>
     <div class="receipt mt-5">
-      <h3 class="mt-3 mb-3">Receipt Details:</h3>
+      <h3 class="mt-3 mb-3">Chi tiết hoá đơn:</h3>
       <table>
         <tbody>
         <tr>
-          <td>Merchant</td>
+          <td>Bên cung cấp dịch vụ</td>
           <td>GIASUNLU</td>
         </tr>
         <tr>
-          <td>Payer</td>
+          <td>Người sử dụng dịch vụ</td>
           <td>${payer.firstName} ${payer.lastName}</td>
         </tr>
         <tr>
-          <td>Description</td>
+          <td>Mô tả</td>
           <td>${transaction.description}</td>
         </tr>
         <tr>
-          <td>Subtotal</td>
+          <td>Ước tính</td>
           <td>${transaction.amount.details.subtotal} USD</td>
         </tr>
         <tr>
-          <td>Tax</td>
+          <td>Thuế</td>
           <td>${transaction.amount.details.tax} USD</td>
         </tr>
         <tr>
-          <td>Total</td>
+          <td>Tổng cộng</td>
           <td>${transaction.amount.total} USD</td>
         </tr>
         </tbody>

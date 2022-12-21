@@ -10,7 +10,8 @@
 
 <style>
     table {
-        width: 400px;
+        margin-left: -242px;
+        width: 800px;
         font-size: 15px;
         line-height: 1.3;
         font-weight: bold;
@@ -45,9 +46,9 @@
     <main role="main">
         <form action="${pageContext.request.contextPath}/execute-payment" method="post">
         <div class="container text-center">
-            <h2>Please Review Before Paying</h2>
+            <h2>Vui lòng kiểm tra thông tin trước khi thanh toán</h2>
             <div class="transaction mt-5">
-                <h4>Transaction Details</h4>
+                <h4>Chi tiết giao dịch</h4>
                 <table>
                     <input type="hidden" name="paymentId" value="${param.paymentId}" />
                     <input type="hidden" name="user_id" value="${sessionScope.account.id}" />
@@ -55,23 +56,19 @@
                     <input type="hidden" name="PayerID" value="${param.PayerID}" />
                     <tbody>
                     <tr>
-                        <td>Description</td>
+                        <td>Mô tả</td>
                         <td>${transaction.description}</td>
                     </tr>
                     <tr>
-                        <td>Subtotal</td>
+                        <td>Ước tính</td>
                         <td>${transaction.amount.details.subtotal} USD</td>
                     </tr>
                     <tr>
-                        <td>Shipping</td>
-                        <td>${transaction.amount.details.shipping} USD</td>
-                    </tr>
-                    <tr>
-                        <td>Tax</td>
+                        <td>Thuế</td>
                         <td>${transaction.amount.details.tax} USD</td>
                     </tr>
                     <tr>
-                        <td>Total</td>
+                        <td>Tổng cộng</td>
                         <td>${transaction.amount.total} USD</td>
                     </tr>
                     </tbody>
@@ -79,16 +76,12 @@
             </div>
 
             <div class="payer_information mt-5">
-                <h4>Payer Information</h4>
+                <h4>Người sử dụng dịch vụ</h4>
                 <table>
                     <tbody>
                     <tr>
-                        <td>First Name</td>
-                        <td>${payer.firstName}</td>
-                    </tr>
-                    <tr>
-                        <td>Last Name</td>
-                        <td>${payer.lastName}</td>
+                        <td>Họ và tên</td>
+                        <td>${payer.firstName} ${payer.lastName}</td>
                     </tr>
                     <tr>
                         <td>Email</td>

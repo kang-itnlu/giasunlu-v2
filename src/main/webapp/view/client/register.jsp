@@ -25,7 +25,7 @@
 
         <div class="pb-3">
 
-          <h1 class="h3 text-success text-center mb-3">Đăng ký làm gia sư</h1>
+          <h1 class="h3 text-success text-center mb-3">Đăng ký tài khoản</h1>
 
 <%--          <div class="mt-4 mb-3">--%>
 <%--            <div class="text-center">--%>
